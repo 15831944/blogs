@@ -1,36 +1,52 @@
 # 1. 概述
 
-文件类型, 文件访问权限, 设置用户ID, 设置组ID, 粘着位, 都包含在文件模式字 st_mode 成员中
+文件模式字包含以下信息
 
-## 1. 宏定义
+1. 文件类型
+2. 设置用户ID位
+3. 设置组ID位
+4. 粘着位
+5. 文件访问权限
 
-| macro   | value    | 说明 |
-| ------- | -------- | ---------------------------------- |
-| S_ISREG(st_mode)   |  |  |
-| S_ISDIR(st_mode)   | (((mode)&S_IFMT)==S_IFDIR) | |
-| S_ISLINK(st_mode)  |  |  |
-| S_ISBLK(st_mode)   |  |  |
-| S_ISCHR(st_mode)   |  |  |
-| S_ISSOCK(st_mode)  |  |  |
-| S_ISFIFO(st_mode)  |  |  |
+## 1. st_mode 宏
+
+| macro              | value                              |
+| ------------------ | ---------------------------------- |
+| S_ISREG(st_mode)   | (((st_mode) & S_IFMT) == S_IFREG)  |
+| S_ISDIR(st_mode)   | (((st_mode) & S_IFMT) == S_IFDIR)  |
+| S_ISLINK(st_mode)  | (((st_mode) & S_IFMT) == S_IFLNK)  |
+| S_ISBLK(st_mode)   | (((st_mode) & S_IFMT) == S_IFBLK)  |
+| S_ISCHR(st_mode)   | (((st_mode) & S_IFMT) == S_IFCHR)  |
+| S_ISSOCK(st_mode)  | (((st_mode) & S_IFMT) == S_IFSOCK) |
+| S_ISFIFO(st_mode)  | (((st_mode) & S_IFMT) == S_IFIFO)  |
 
 ## 2. st_mode 屏蔽
 
-| st_mode | value    | 说明 |
-| ------- | -------- | ---------------------------------- |
-| S_IFDIR            |       | 目录文件 |
-| S_ISUID            | 04000 | 文件的（set user-id on execution）位 |
-| S_ISGID            | 02000 | 文件的（set group-id on execution）位 |
-| S_ISVTX            | 01000 | 文件的sticky位 |
-| S_IRUSR, S_IREAD   | 00400 | 文件所有者具可读取权限 |
-| S_IWUSR, S_IWRITE  | 00200 | 文件所有者具可写入权限 |
-| S_IXUSR, S_IEXEC   | 00100 | 文件所有者具可执行权限 |
-| S_IRGRP            | 00040 | 用户组具可读取权限 |
-| S_IWGRP            | 00020 | 用户组具可写入权限 |
-| S_IXGRP            | 00010 | 用户组具可执行权限 |
-| S_IROTH            | 00004 | 其他用户具可读取权限 |
-| S_IWOTH            | 00002 | 其他用户具可写入权限 |
-| S_IXOTH            | 00001 | 其他用户具可执行权限 |
+| st_mode            | value | 说明 |
+| ------------------ | ----- | --- |
+| S_IFMT             | f000H | 文件类型遮罩位 |
+| S_IFSOCK           | c000H | 套接字文件 |
+| S_IFLNK            | a000H | 符号链接 |
+| S_IFREG            | 8000H | 普通文件 |
+| S_IFBLK            | 6000H | 块特殊文件 |
+| S_IFDIR            | 4000H | 目录文件 |
+| S_IFCHR            | 2000H | 字符特殊文件 |
+| S_IFIFO            | 1000H | FIFO |
+| S_ISUID            | 4000H | 文件的（set user-id on execution）位 |
+| S_ISGID            | 2000H | 文件的（set group-id on execution）位 |
+| S_ISVTX            | 1000H | 文件的sticky位 |
+| S_IRWXU            | 0700H | 文件所有者的遮罩值 |
+| S_IRUSR, S_IREAD   | 0400H | 文件所有者具可读取权限 |
+| S_IWUSR, S_IWRITE  | 0200H | 文件所有者具可写入权限 |
+| S_IXUSR, S_IEXEC   | 0100H | 文件所有者具可执行权限 |
+| S_IRWXG            | 0070H | 用户组的遮罩值 |
+| S_IRGRP            | 0040H | 用户组具可读取权限 |
+| S_IWGRP            | 0020H | 用户组具可写入权限 |
+| S_IXGRP            | 0010H | 用户组具可执行权限 |
+| S_IRWXO            | 0007H | 其他用户的遮罩值 |
+| S_IROTH            | 0004H | 其他用户具可读取权限 |
+| S_IWOTH            | 0002H | 其他用户具可写入权限 |
+| S_IXOTH            | 0001H | 其他用户具可执行权限 |
 
 # 2. 文件类型
 
@@ -99,3 +115,5 @@
 《UNIX 环境高级编程》
 
 《鸟哥的 Linux 私房菜》
+
+《Linux C 函数库参考手册》

@@ -25,10 +25,10 @@ Linux 2.4.22 强制规定文件描述符大小最多不能超过 1,048,576 (0010
 # 2. 文件描述符常量
 
 | 进程 | 文件描述符 | POSIX.1 在 unistd.h 中宏定义 | 标准I/O流 |
-| ----------------------------- | -- | ------------- | ------ |
-| 进程的标准输入（standard input） | 0  | STDIN_FILENO  | stdin  |
-| 进程的标准输出（standard output）| 1  | STDOUT_FILENO | stdout |
-| 进程的标准错误（standard error） | 2  | STDERR_FILENO | stderr |
+| ----------------------------- | --- | ------------- | ------ |
+| 进程的标准输入（standard input） | 0   | STDIN_FILENO  | stdin  |
+| 进程的标准输出（standard output）| 1   | STDOUT_FILENO | stdout |
+| 进程的标准错误（standard error） | 2   | STDERR_FILENO | stderr |
 
 # 3. 创建文件描述符
 
@@ -89,9 +89,9 @@ Linux 2.4.22 强制规定文件描述符大小最多不能超过 1,048,576 (0010
 FDCLOEXEC
 
 | 值 | 说明 |
-| --  | -------------------------------- |
-| 0  | exec 时不关闭已经打开的文件描述符(默认) |
-| 1  | exec 时关闭已经打开的文件描述符        |
+| --- | -------------------------------- |
+| 0   | exec 时不关闭已经打开的文件描述符(默认) |
+| 1   | exec 时关闭已经打开的文件描述符        |
 
 ## 1. exec 函数集对文件描述符标志的影响
 

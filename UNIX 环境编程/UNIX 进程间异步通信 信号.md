@@ -1,4 +1,4 @@
-信号本质
+# 信号本质
 
 信号是在软件层次上对中断机制的一种模拟，在原理上，一个进程收到一个信号与处理器收到一个中断请求可以说是一样的。
 
@@ -8,13 +8,74 @@
 
 信号机制经过 POSIX 实时扩展后，功能更加强大，除了基本通知功能外，还可以传递附加信息。
 
-信号来源
+# 信号来源
 
 信号事件的发生有两个来源：
 
-硬件来源(比如我们按下了键盘或者其它硬件故障)；
+1. 终端按键
+2. 硬件异常, 除数为0, 无效的内存引用
+3. kill 函数或 kill 命令
+4. 软件来源, raise, alarm 和 setitimer 以及 sigqueue 函数，软件来源还包括一些非法运算等操作。
 
-软件来源，最常用发送信号的系统函数是kill, raise, alarm和setitimer以及sigqueue函数，软件来源还包括一些非法运算等操作。
+# 信号处理
+
+软件或硬件通知内核对信号进行处理
+
+1. 忽略此信号
+2. 捕捉信号, 编写并通知内核调用捕捉函数
+3. 执行系统默认动作
+
+# UNIX 系统信号
+
+| 信号名称     | 编号 | 说明 | 默认动作 |
+| ----------- | --- | --- | --- |
+| 空信号       | 0 |  | 终止+ core |
+| SIGABRT     |   | 异常终止(abort) | 终止 |
+| SIGALRM     |   | 定时器超时(alarm) | 终止+ core |
+| SIGBUS      |  | 硬件故障 | 忽略 |
+| SIGCANCEL   |  | 线程库内部使用 | 忽略 |
+| SIGCHLD     |  | 子进程状态改变, 一个子进程已经终止, 此信号的捕捉函数可以调用 waitpid 以取得其进程 ID 和终止状态 |  |
+| SIGCONT     |  | 使暂停子进程继续 |  |
+| SIGEMT      |  | 硬件故障 |  |
+| SIGFPE      |  | 算术异常 |  |
+| SIGFREEZE   |  | 检查点冻结 |  |
+| SIGHUP      |  | 连接断开 |  |
+| SIGILL      |  | 非法硬件指令 |  |
+| SIGINFO     |  | 键盘状态请求 |  |
+| SIGINT      |  | 终端中断符 |  |
+| SIGIO       |  | 异步 I/O |  |
+| SIGIOT      |  | 硬件故障 |  |
+| SIGJVM1     |  | Java 虚拟机内部使用 |  |
+| SIGJVM2     |  | Java 虚拟机内部使用 |  |
+| SIGKILL     |  | 可靠终止进程, 不可忽略, 不可捕捉 |  |
+| SIGLOST     |  | 资源丢失 |  |
+| SIGLWP      |  | 线程库内部使用 |  |
+| SIGPIPE     |  | 写至无读进程管道, 在管道的读进程已经终止后, 一个进程写此管道 |  |
+| SIGPOLL     |  | 可轮询事件(poll) |  |
+| SIGPROF     |  | 梗概事件超时( settitimer) |  |
+| SIGPWR      |  | 电源失效/重启动 |  |
+| SIGQUIT     |  | 终端退出符 |  |
+| SIGSEGV     |  | 硬件异常, 无效的内存引用 |  |
+| SIGSTKFLT   |  | 协处理器栈故障 |  |
+| SIGSTOP     |  | 可靠停止进程, 不可忽略, 不可捕捉 |  |
+| SIGSYS      |  | 无效系统调用 |  |
+| SIGTERM     |  | 终止信号 |
+| SIGTHAW     |  | 检查点解冻 |  |
+| SIGTHR      |  | 线程库内部使用 |  |
+| SIGTRAP     |  | 硬件故障 |  |
+| SIGTSTP     |  | 终端停止符 |  |
+| SIGTTIN     |  | 后台读控制 tty |  |
+| SIGTTOU     |  | 后台写向控制 tty |  |
+| SIGURG      |  | 紧急情况(套接字), 在网络连接上传来带外的数据 |  |
+| SIGUSR1     |  | 用户定义信号 |  |
+| SIGUSR2     |  | 用户定义信号 |  |
+| SIGVTALRM   |  | 虚拟时间闹钟( settitimer) |  |
+| SIGWAITING  |  | 线程库内部使用 |  |
+| SIGSIGWINCH |  | 终端窗口大小改变 |  |
+| SIGXCPU     |  | 超过 CPU 限制(setrlimit) |  |
+| SIGXFSZ     |  | 超过文件长度限制(setrlimit) |  |
+| SIGXRES     |  | 超过资源控制 |  |  |
+
 
 不可靠信号
 
@@ -23,3 +84,71 @@
 非实时信号
 
 实时信号
+
+# 设置信号处理程序
+
+```
+#include <signal.h>
+void (*signal(int signo, void (*func) (int))) (int);
+```
+
+```
+typedef void Sigfunc(int);
+Sigfunc *signal(int, Sigfunc *);
+```
+
+```
+#include <signal.h>
+#define SIG_ERR		(void (*)())-1
+#define SIG_DFL		(void (*)())0
+#define SIG_IGN		(void (*)())1
+```
+
+参数1: signo
+
+信号编号, 即信号名
+
+参数2: func 指向 void 类型的信号处理函数的指针
+
+1. SIG_IGN 向内核表示忽略此信号
+2. SIG_DFL 接到此信号后的动作是系统默认动作
+3. 捕捉函数地址
+
+返回指向 void 类型的函数的指针
+
+# 信号集
+
+```
+#include <signal.h>
+
+int sigemptyset(sigset_t *set);
+int sigfillset(sigset_t *set);
+
+int sigaddset(sigset_t *set, int signo);
+int sigdelset(sigset_t *set, int signo);
+
+int sigismember(const sigset_t *set, int signo);
+```
+
+sigemptyset  初始化有 set 指向的信号集, 清除其中所有信号
+
+sigfillset  初始化由 set 指向的信号集, 使其包括所有信号
+
+sigaddset 将一个信号添加到已有的信号集中
+
+sigdelset 从信号集中删除一个信号
+
+# 信号屏蔽字
+
+阻塞而不能递送给该进程的信号集
+
+```
+#include <signal.h>
+int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset);
+```
+
+| how         | 说明 |
+| ----------- | --- |
+| SIG_BLOCK   | 并集 |
+| SIG_UNBLOCK | 交集 |
+| SIG_SETMASK | 赋值 |

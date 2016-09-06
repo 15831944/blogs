@@ -115,3 +115,12 @@ int fflush(FILE *fp);
 
 1. 若 fp 非空，使该流所有未写的数据都被传送至内核
 2. 若 fp 为空，使所有输出流被冲洗
+
+# 5. 文件描述符
+
+每个标准 I/O 流都有一个与其想关联的文件描述符
+
+```
+#include <stdio.h>
+int fileno(FILE *fp);
+```

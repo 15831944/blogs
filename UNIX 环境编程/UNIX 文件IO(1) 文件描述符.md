@@ -24,7 +24,7 @@ Linux 2.4.22 强制规定文件描述符大小最多不能超过 1,048,576 (0010
 
 # 2. 文件描述符常量
 
-| 进程 | 文件描述符 | POSIX.1 在 unistd.h 中宏定义 | 标准I/O流文件指针 |
+| 进程 | 文件描述符 | POSIX.1 在 unistd.h 中文件描述符常量 | 标准I/O流文件指针 |
 | ----------------------------- | --- | ------------- | ------ |
 | 进程的标准输入（standard input） | 0   | STDIN_FILENO  | stdin  |
 | 进程的标准输出（standard output）| 1   | STDOUT_FILENO | stdout |

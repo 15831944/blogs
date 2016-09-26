@@ -65,6 +65,12 @@ int fcntl(int fd, int cmd, struct flock flockptr);
 
 不同的加锁区变得相邻时会成为一个加锁区
 
+# 疑问
+
+不同进程是否需要有共同的父进程？
+
+进程休眠是否会导致锁失效？
+
 # 参考
 
 [linux系统编程之struct flock 结构体](http://blog.csdn.net/wallwind/article/details/7816221)

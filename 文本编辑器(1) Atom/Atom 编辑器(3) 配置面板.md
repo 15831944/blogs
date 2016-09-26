@@ -2,19 +2,6 @@
 
 <font color=red>有个有趣的发现，settings 面板上的文字是可以拖动的，可以直接拖到 QQ 的聊天窗口变成txt格式的文本。</font>
 
-# 编辑器常识
-
-1. soft tab 就是用空格代替 tab， 当你按下tab时，实际会被空格代替，不建议开启。
-
-2. soft wrap 就是自动折行，一行内容过多时，就会折到下一行进行显示，但实际上还是会当作一行来处理。
-
-3. 字符编码，统一码一般用UTF-8, 简体中文用GBK, 繁体中文用big5。
-
-4. buffer就是指加载到内存中的某个文件。
-
-5. pane就是各个面板。打开的面板标题是常规字体，临时打开的面板(Pending)是斜体。
-
-
 # Core settings
 
 These are Atom's core setting which affect behavior unrelated to text editing. Individual packages might have additional config settings of their own. Check individual package settings by clicking its package card in the Packages list.
@@ -175,7 +162,7 @@ Character used to render hard tab characters(\t) when the Show Invisibles settin
 
 ## 8. Line Height
 
-Height of editor lines, as a multiplier of font size. 
+Height of editor lines, as a multiplier of font size.
 
 行间距默认当前字号的1.5倍。
 
@@ -184,7 +171,7 @@ Height of editor lines, as a multiplier of font size.
 A string of non-word characters to define word boundaries.
 
 用来定义单词边界的非字母符号。
- 
+
 ## 10. Preferred Line Length
 
 Identifies the length of a line which is used when wrapping text with the Soft Wrap At Preferred Line Length setting enabled, in number of characters.
@@ -264,7 +251,7 @@ tab类型。
 Time interval in milliseconds within which text editing operations will be grouped together in the undo history.
 
  多少毫秒内，文本编辑会被计入撤消历史。
- 
+
 ## 23. Use Shadow DOM
 
 Disable if you experience styling issues with packages or themes. Be sure to open an issue on the relevant package or theme, because this option is going away eventually.
@@ -277,8 +264,3 @@ Disable if you experience styling issues with packages or themes. Be sure to ope
 Change the editor font size when pressing the Ctrl key and scrolling the mouse up/down.
 
 用Ctrl和鼠标滚轮调整字号。
-
-
-
-
-

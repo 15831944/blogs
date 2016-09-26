@@ -43,6 +43,10 @@ tree-view 是 atom 自带的目录树视图面板，当你打开一个文件，�
 
 `ctrl-p`
 
+若文件后面加冒号接数字，则打开文件直接定位在该行；
+
+若文件后面加@符号则可指定函数名(仅在 sublime 中支持)。
+
 ### 4. <font color=red> 查找和替换 Find And Replace
 
 #### 1. Close Project Find Panel After Search

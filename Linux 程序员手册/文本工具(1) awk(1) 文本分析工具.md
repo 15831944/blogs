@@ -143,3 +143,11 @@ $awk脚本文本名 待处理文件
 awk -f awk-script-file input-file(s)
 
 其中，-f选项加载awk-script-file中的awk脚本，input-file(s)跟上面的是一样的。
+
+# 参考
+
+http://www.cnblogs.com/dong008259/archive/2011/12/06/2277287.html
+
+http://www.cnblogs.com/ggjucheng/archive/2013/01/13/2858470.html
+
+http://www.jianshu.com/p/15c92e9602df

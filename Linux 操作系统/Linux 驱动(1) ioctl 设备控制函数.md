@@ -69,3 +69,9 @@ cmd除了可区别数字外，还包含有助于处理的几种相应信息。 c
 #define		TEST_DRV_RESET				_IO ('Q', 0)
 #define		TEST_DEV_READ				_IRQ('Q', 1, int)
 ```
+
+# 参考
+
+http://www.cnblogs.com/li-hao/archive/2011/12/22/2297551.html
+
+http://blog.csdn.net/shanshanpt/article/details/19897897

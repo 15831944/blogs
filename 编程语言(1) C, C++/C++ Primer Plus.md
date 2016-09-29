@@ -1,10 +1,12 @@
-# 1 编程方式
+# 1 编程范式
 
-## 1.1 面向过程编程
+## 1.1 面向过程编程 procedure oriented programming
 
-C, 结构化编程 structured programming, 自顶向下 top-down, 算法
+C, 结构化编程 structured programming,
 
-## 1.2 面向过程编程 OOP
+自顶向下 top-down, 算法
+
+## 1.2 面向过程编程 object oriented programming, OOP
 
 对象, 类, 封装, 数据隐藏, 多态, 继承
 
@@ -39,7 +41,7 @@ C, 结构化编程 structured programming, 自顶向下 top-down, 算法
 | 语言 | 编译器 | 后缀名 |
 | --- | --- | --- |
 | c   | cc | .c |
-| c++ | CC | .C | 
+| c++ | CC | .C |
 
 # 5 启动代码 startup code
 

@@ -25,12 +25,14 @@ git clone             克隆远程仓库到本地
 git remote add        关联远程仓库
 git remote -v         查看远程仓库
 
-# 设置用户名和邮箱
+# 配置
+
+## 设置用户名和邮箱
 
 git config --global user.name "stormzhang"
 git config --global user.email "stormzhang.dev@gmail.com"
 
-# 设置别名
+## 设置别名
 
 git config --global alias.co checkout  # 别名
 git config --global alias.ci commit
@@ -39,13 +41,20 @@ git config --global alias.br branch
 git config --global alias.psm 'push origin master'
 git config --global alias.plm 'pull origin master'
 
-# 设置日志格式
+### 设置日志格式
 
 git log -–graph -–pretty=format:’%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset’ -–abbrev-commit –-date=relative
 
-git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+git config --global alias.lg "log
+--graph
+--pretty=format:'%Cred%h%Creset
+-%C(yellow)%d%Creset
+%s
+%Cgreen(%cr)
+%C(bold blue)<%an>%Creset'
+--abbrev-commit --date=relative"
 
-git config --global core.editor "vim"  # 设置Editor使用vim
+git config --global core.editor "vim"    # 设置Editor使用vim
 git config --global color.ui true
 git config --global core.quotepath false # 设置显示中文文件名
 
@@ -55,15 +64,15 @@ git config --global core.quotepath false # 设置显示中文文件名
 
 ~/.gitconfig
 
-git config -l           查看配置文件
-git config --global -l  查看配置文件
+git config -l           # 查看项目配置文件
+git config --global -l  # 查看用户配置文件
 
 # 比较文件差异
 
 git diff
-git diff <$id1> <$id2>   # 比较两次提交之间的差异
+git diff <$id1> <$id2>        # 比较两次提交之间的差异
 git diff <branch1>..<branch2> # 在两个分支之间比较
-git diff --staged   # 比较暂存区和版本库差异
+git diff --staged             # 比较暂存区和版本库差异
 
 git checkout develop
 git checkout v1.0
@@ -83,4 +92,4 @@ git rebase featureA
 
 # 参考
 
-[从0开始学习 GITHUB 系列](http://stormzhang.com/github/2016/06/19/learn-github-from-zero-summary/)
+[从0开始学习 GITHUB 系列](http://stormzhang.com/github/2016/06/19/learn-github-from-zero-summary

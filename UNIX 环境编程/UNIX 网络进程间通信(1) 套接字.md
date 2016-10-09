@@ -2,7 +2,7 @@
 
 使用TCP/IP协议的应用程序通常采用应用编程接口：
 
-| 接口 | 标准 | 应用 | 
+| 接口 | 标准 | 应用 |
 | - | - | - |
 | 套接字(socket) | POSIX | UNIX BSD |
 | 传输层接口(Transport Layer Interface, TLI) |  | UNIX System V |
@@ -103,7 +103,7 @@ IP 协议的数据报文接口(在 POSIX.1 中为可选)
 
 有序的, 可靠的, 双向的, 需先建立逻辑连接的字节流, 端到端的通信链路
 
-基于字节流意味着无法分辨报文界限, 发送和接收的数据量可能不一致(前3者可以), 需要若干次函数调用才能接收完成 
+基于字节流意味着无法分辨报文界限, 发送和接收的数据量可能不一致(前3者可以), 需要若干次函数调用才能接收完成
 
 AF_INET 域默认协议为 TCP
 
@@ -166,4 +166,58 @@ int setsockopt(int sockfd, int level, int option, const void *val, socklen_t len
 ```
 #include <sys/socket.h>
 int getsockopt(int sockfd, int level, int option, void *restrict val, socklen_t *restrict lenp);
+```
+
+# 总结
+
+服务器的地址需要绑定到服务器的套接字
+
+客户端的描述符通过地址访问服务器,去连接服务器的描述符
+
+客户端的描述符如果可写,说明客户端成功连接到了服务器
+
+服务器的描述符如果可读,说明服务器正在等待客户端的请求
+
+面向连接的服务,对话中不包含地址信息,需要先建立连接
+
+无连接的服务,数据包包含接受者地址
+
+```
+创建和删除套接字描述符
+int socket (int domain, int type, int protocol);
+int shutdown (int sockfd, int how);
+
+地址查询
+int getaddrinfo (const char *restrict host,
+                 const char *restrict service,
+                 const struct addrinfo *restrict hint,
+                 struct addrinfo **restrict res);
+void freeaddrinfo (struct addrnifo *ai);
+
+套接字与地址关联
+int bind (int sockfd, const struct sockaddr *addr, socklen_t len);
+
+int getsockname (int sockfd, struct sockaddr *restrict addr, socklen_t *restrict alenp);
+int getpeername (int sockfd, struct sockaddr *restrict addr, socklen_t *restrict alenp);
+
+建立连接
+int connect (int sockfd, const struct sockaddr *addr, aocklen_t len);
+
+int listen (int sockfd, int backlog);
+int accept (int sockfd, struct sockaddr *restrict addr, socklen_t *restrict len);
+
+数据传输
+ssize_t send (int sockfd, const void *buf, size_t nbytes, int flags);
+ssize_t sendto (int sockfd, const void *buf, size_t nbytes, int flags,
+                const struct sockaddr *destaddr, socklen_t destlen);
+ssize_t sendmsg (int sockfd, const struct msghdr *msg, int flags);
+
+ssize_t recv (int sockfd, void *buf, size_t nbytes, int flags)
+ssize_t recvfrom (int sockfd, void *restrict buf, size_t len, int flags,
+                  strcut sockaddr *restrict addr, socklen_t *restrict addrlen);
+ssize_t recvmsg (int sockfd, struct msghdr *msg, int flags);
+
+套接字选项
+int setsockopt (int sockfd, int level, int option, const void *val, socklen_t len);
+int getsockopt (int sockfd, int level, int option, void *restrict val, socklen_t *restrict lenp);
 ```

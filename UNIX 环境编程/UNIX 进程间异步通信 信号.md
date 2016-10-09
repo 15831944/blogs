@@ -39,15 +39,15 @@
 | SIGEMT      |  | 硬件故障 |  |
 | SIGFPE      |  | 算术异常 |  |
 | SIGFREEZE   |  | 检查点冻结 |  |
-| SIGHUP      |  | 连接断开 |  |
+| SIGHUP      |  | 连接断开, 启动被终止的进程，可让该PID重新读取自己的配置文件，类似重新启动 |  |
 | SIGILL      |  | 非法硬件指令 |  |
 | SIGINFO     |  | 键盘状态请求 |  |
-| SIGINT      |  | 终端中断符 |  |
+| SIGINT      |  | 终端中断符, 相当于键盘输入Ctrl c 来中断一个进程的进行 |  |
 | SIGIO       |  | 异步 I/O |  |
 | SIGIOT      |  | 硬件故障 |  |
 | SIGJVM1     |  | Java 虚拟机内部使用 |  |
 | SIGJVM2     |  | Java 虚拟机内部使用 |  |
-| SIGKILL     |  | 可靠终止进程, 不可忽略, 不可捕捉 |  |
+| SIGKILL     |  | 可靠终止进程, 不可忽略, 不可捕捉, 代表强制中断一个进程的进行，如果该进程进行到一半，那么尚未完成的部分可能会有半成品产生，类似 vim 会有 filename.swp 保留下来 |  |
 | SIGLOST     |  | 资源丢失 |  |
 | SIGLWP      |  | 线程库内部使用 |  |
 | SIGPIPE     |  | 写至无读进程管道, 在管道的读进程已经终止后, 一个进程写此管道 |  |
@@ -57,9 +57,9 @@
 | SIGQUIT     |  | 终端退出符 |  |
 | SIGSEGV     |  | 硬件异常, 无效的内存引用 |  |
 | SIGSTKFLT   |  | 协处理器栈故障 |  |
-| SIGSTOP     |  | 可靠停止进程, 不可忽略, 不可捕捉 |  |
+| SIGSTOP     |  | 可靠停止进程, 不可忽略, 不可捕捉, 相当于用键盘输入 Ctrl z 来暂停一个进程的进行 |  |
 | SIGSYS      |  | 无效系统调用 |  |
-| SIGTERM     |  | 终止信号 |
+| SIGTERM     |  | 终止信号, 以正常的结束进程来终止该进程，由于是正常的终止，所以后续的操作会将它完成。不过，如果该进程已经发生问题，就是无法使用正常的方法终止时，输入这个 signal 也是没有用的 |
 | SIGTHAW     |  | 检查点解冻 |  |
 | SIGTHR      |  | 线程库内部使用 |  |
 | SIGTRAP     |  | 硬件故障 |  |
@@ -152,3 +152,9 @@ int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset);
 | SIG_BLOCK   | 并集 |
 | SIG_UNBLOCK | 交集 |
 | SIG_SETMASK | 赋值 |
+
+# 参考
+
+《UNIX 环境高级编程》
+
+《鸟哥的Linux私房菜》

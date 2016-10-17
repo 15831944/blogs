@@ -1,7 +1,7 @@
 # 内核中的定义
 
 ```
-struct mutex 
+struct mutex
 {
     /* 1: unlocked, 0: locked, negative: locked, possible waiters */
     atomic_t			count;
@@ -101,3 +101,7 @@ PTHREAD_PROCESS_PRIVATE(进程内锁：进程内线程间同步)
 1. 对互斥量进行排序, 总是以相同的顺序对互斥量进行加锁
 
 2. 使用 pthread_mutex_trylock 接口, 如果成功返回, 则可以继续前进, 如果不能获取锁, 则先释放已经占有的锁, 做好清理工作, 然后过一段时间再试
+
+# 参考
+
+[进程间的通信（互斥锁、条件变量、读写锁、文件锁、信号灯）-chumojing-ChinaUnix博客](http://blog.chinaunix.net/uid-12461657-id-3182843.html)

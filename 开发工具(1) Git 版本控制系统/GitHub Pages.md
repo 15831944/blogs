@@ -4,6 +4,8 @@
 
 jekyll-Bootstrap
 
+https://windwanghuiyong.github.io/pages/
+
 # 参考
 
 [如何搭建一个独立博客——简明 Github Pages与 jekyll 教程](http://cnfeat/blog/2014/05/10/how-to-build-a-blog/)

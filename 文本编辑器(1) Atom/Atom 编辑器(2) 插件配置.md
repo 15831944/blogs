@@ -168,7 +168,11 @@ vim 就不多解释了，问题是 vim 和 一般 GUI 下的软件的操作习�
 
 装逼利器，不用解释。。
 
+### 4. language-viml
 
+alhadis
+
+vim 脚本语言语法高亮
 
 
 ## 3. 开发者插件 Development Packages

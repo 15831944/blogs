@@ -130,3 +130,9 @@ int ioctl(int fd, int request, ...);
 # 参考
 
 [chmod 函数改变文件的权限](http://www.iteedu.com/os/linux/linuxprgm/linuxcfunctions/filepermission/chmod.php)
+
+[驱动中的open函数和应用程序中的open函数是什么关系阿？](http://bbs.csdn.net/topics/360153596)
+
+[linux创建大文件](http://blog.csdn.net/weiyuefei/article/details/16858025)
+
+[空洞文件的感想](http://blog.csdn.net/wangxiaoqin00007/article/details/6621209)

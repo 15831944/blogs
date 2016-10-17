@@ -71,3 +71,7 @@ about:histograms
 about:memory
 about:cache
 about:dns
+
+# 参考
+
+[百度谷歌搜索引擎高级指令](http://www.admin10000.com/document/323.html)

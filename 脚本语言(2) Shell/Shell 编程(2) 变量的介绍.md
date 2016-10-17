@@ -236,8 +236,22 @@ read -p "sex(m/f) : " -n 1 sex
       
 
   
+# 参考
 
-——观看慕课网 Tony 《shell编程之变量》的总结。
+Tony老师聊shell
 
+1. [Linux达人养成计划 I](http://www.imooc.com/learn/175)
+2. [Linux达人养成计划 II](http://www.imooc.com/learn/111)
 
+1. [shell编程之变量](http://www.imooc.com/learn/336)
+2. [shell编程之运算符](http://www.imooc.com/learn/355)
+3. [shell编程之环境变量配置文件](http://www.imooc.com/learn/361)
+4. [shell编程之正则表达式](http://www.imooc.com/learn/378)
+5. [shell编程之条件判断与流程控制](http://www.imooc.com/learn/408)
 
+1. [Linux网络管理](http://www.imooc.com/learn/258)
+2. [Linux软件安装管理](http://www.imooc.com/learn/447)
+3. [Linux权限管理之基本权限](http://www.imooc.com/learn/481)
+4. [Linux权限管理之特殊权限](http://www.imooc.com/learn/499)
+5. [Linux服务管理](http://www.imooc.com/learn/537)
+6. [Linux系统管理](http://www.imooc.com/learn/583)

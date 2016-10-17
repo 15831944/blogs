@@ -68,3 +68,5 @@ i 节点包含:
 # 参考
 
 [每天进步一点点——Linux中的文件描述符与打开文件之间的关系](http://blog.csdn.net/cywosp/article/details/38965239)
+
+[页面缓存——内存与文件的那些事儿](http://blog.csdn.net/drshenlei/article/details/4582197)

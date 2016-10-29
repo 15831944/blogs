@@ -1,45 +1,40 @@
-函数声明的发展
+# 函数声明的发展
 
-# 1 隐式函数声明 implicit function declaration
+## 1 隐式函数声明 implicit function declaration
 
-main 函数和 printf 函数返回值类型为 int, 若不声明, 编译器默认函数返回值为 int 类型
-
-C90标准起，这种写法就步入了被逐步抛弃的过程(尽管当时还没有完全立即废止)
-
-C99废除了隐式函数声明法则(remove implicit function declaration), 省略main()前面的int也已经不再容许了
+1. main 函数和 printf 函数返回值类型为 int, 若不声明, 编译器默认函数返回值为 int 类型
+2. C90标准起，这种写法就步入了被逐步抛弃的过程(尽管当时还没有完全立即废止)
+3. C99废除了隐式函数声明法则(remove implicit function declaration), 省略main()前面的int也已经不再容许了
 
 ```
 main()
 {
-	printf("hello,world!\n");
+	printf("hello, world!\n");
 }
 ```
 
-# 2 函数类型声明 function type declaration
+## 2 函数类型声明 function type declaration
 
-sqrt 函数类型不是 int, 需要进行函数类型说明(只声明函数类型和函数名)
-
-调用函数时存在参数类型或个数方面的错误编译器是无法察觉的
+1. sqrt 函数类型不是 int, 需要进行函数类型说明(只声明函数类型和函数名)
+2. 调用函数时存在参数类型或个数方面的错误编译器是无法察觉的
 
 ```
 double sqrt();
 
 int main()
 {
-	printf("%f\n" , sqrt(9.) );
+	printf("%f\n" , sqrt(9.));
 }
 ```
 
-# 3 函数定义声明
+## 3 函数定义声明
 
-把函数定义写在函数调用之前, 这种声明可以检查出函数调用时在参数个数和类型方面的错误
-
-弊端是在由多个源文件组成的源程序时, 不利于代码的组织
-
-函数定义声明属于函数原型声明
+1. 把函数定义写在函数调用之前, 这种声明可以检查出函数调用时在参数个数和类型方面的错误
+2. 弊端是在由多个源文件组成的源程序时, 不利于代码的组织
+3. 函数定义声明属于函数原型声明
 
 ```
-double square ( double x)
+double square(double x)
 {
 	return x * x ;
 }
@@ -51,11 +46,9 @@ int main(void)
 }
 ```
 
-# 4 函数原型声明 function propotype
+## 4 函数原型声明 function propotype
 
-C标准借鉴C++语言规定了函数原型（Function Propotype）声明
-
-不但可以检查函数调用时参数类型和个数方面的错误，同时解决了源代码的组织问题
+C 标准借鉴 C++ 语言规定了函数原型(Function Propotype)声明, 不但可以检查函数调用时参数类型和个数方面的错误，同时解决了源代码的组织问题
 
 ```
 double square (double x);
@@ -72,13 +65,15 @@ double square ( double x)
 }
 ```
 
-# 5 总结
+# 总结
 
 函数类型声明, 函数定义, 函数原型都是函数声明
 
 ## 声明 declaration
 
-指定标识符的意义和性质 A declaration specifies the interpretation and attributes of a set of identifiers.
+指定标识符的意义和性质
+
+A declaration specifies the interpretation and attributes of a set of identifiers.
 
 ## 定义 definition
 
@@ -90,7 +85,7 @@ A definition of an identifier is a declaration for that identifier that: ……f
 
 特指包括说明参数类型的函数声明，它同样包含用这种方式写出的函数定义
 
-# 6 错误辨析
+# 错误辨析
 
 ## 错误原文
 

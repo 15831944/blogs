@@ -1,14 +1,7 @@
 # 概念
 
 1. 运行阶段决策: 可以在运行阶段确定数组的长度, 在运行时创建数组, 本质是使用 new 运算符动态申请内存
-
-# 编程范式 Programming Paradigms
-
-| Programming Paradigms       | feature                | method              |
-| --------------------------- | ---------------------- | ------------------- |
-| Procedural Programming      | structured programming | algorithm, top-down |
-| object oriented programming | class and object       | data, bottom-up     |
-| generic programming         | template               | 独立于特定数据类型, 将类型和数据都作为参数传入 |
+2. 静态联编( static binding ): 使用数组声明创建数组; 动态联编( dynamic binding ): 使用 new[] 创建数组
 
 # C++ 标准
 

@@ -1,12 +1,26 @@
-# cin (istream)
+# iostream
 
 1. << 操作符一次读取一个字符串(单词)
 2. getline(array, size), 读取一行输入, 丢弃行末换行符(类似于 gets 函数), 在存储字符串时, 用空字符替换换行符, 返回 cin 对象
 3. get(array, size), 读取一行输入, 将换行符保留在输入队列中(类似于 fgets 函数), 返回 cin 对象
 4. 使用不带参数的重载的 get() 读取一个字符(换行符)
 5. get 函数更加仔细, 可以通过判断下一个字符是否是换行符, 知道是读取了整行还是数组已填满
-6. get 读取空行后将设置失效位(failbit)
+6. 失效位: get 读取空行后将设置失效位(failbit)
+7. 文件结束位: eofbit
 7. getline 函数中数组溢出将设置失效位
+8. cin 会忽略空格和换行符 c++ primer plus p153
+9. cin.get 函数参数是引用类型
+
+ios base::showpoint
+ios base::
+
+# fstream
+
+1. ofstream 继承自 ostream
+
+open
+is_open
+close
 
 # string (string)
 

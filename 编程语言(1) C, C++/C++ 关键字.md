@@ -32,3 +32,5 @@
 | export       |
 | false        |  boolean literal
 | friend       |  friend specifier
+
+auto: 自动推断数据类型 c++ primer plus p119

@@ -39,6 +39,9 @@ GCC 是 GNU 的 C 编译器，可用来编译 C, C++ 以及 Objective-C 源程�
 
 ## Options for linking
 
+-lm 搜索数学库
+-lpthread 搜索线程库
+
 -L dir
 
 -l library

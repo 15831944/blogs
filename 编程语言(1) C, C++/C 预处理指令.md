@@ -61,7 +61,19 @@
 3. #if指令后面的表达式在编译时求值, 因此必须是常量, 且不允许含有sizeof操作符, 虽然sizeof是编译时求值
 4. 在嵌套的条件编译中, #endif, #else 或 #elif 与最近 #if 或 #elif 匹配
 
-# 6 修改文件指定行 #line
+# 6 #if defined(), #if !defined()
+
+1. #if defined() 相当于 #ifdef
+2. #if !defined() 相当于 #ifndef
+3. defined 应用范围更大，可以支持多个预编译变量的检查
+
+```
+#if ( !defined(_DEBUG) && defined(USE_MYLIB) )
+	......
+#endif   
+```
+
+# 7 修改文件指定行 #line
 
 1. 主要用于调试及其它特殊应用
 

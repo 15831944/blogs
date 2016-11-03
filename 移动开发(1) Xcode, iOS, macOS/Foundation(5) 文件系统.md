@@ -18,45 +18,28 @@
 | --------- | -------------------------------------------------------------------- | ------- |
 | Documents | 保存程序创建或应用浏览产生的数据文件                                       | iTunes 备份和恢复数据时会使用此目录 |
 | Library   | 保存程序的默认设置或状态信息                                              | 略 |
-| tmp       | 保存即时创建的临时的不需要持久化的文件，应用关闭时自动删除或应用不运行时由系统删除 | 略 |
+| tmp       | 保存即时创建的临时的不需要持久化的文件, 应用关闭时自动删除, 应用不运行时由系统删除 | 略 |
 
 1. 所谓持久化的数据一般是指保存在数据库中的数据，iOS 8 以前的沙盒路径文件还有一个fmdbDemo, 是一个 bundle 包，现在这个文件已经被分离
 
 # 沙盒路径
 
-1. 程序中，路径用字符串表示
+1. 程序中, 路径用字符串表示
 2. 对于沙盒路径和 tmp 路径，提供有 api 接口函数
 3. 对于 Documents 路径 和 Library 路径，可以使用路径名称进行检索，或者使用已有的沙盒路径进行拼接
 
-获取路径
-
-1. 获取沙盒路径, 返回路径字符串
-2. 获取 Documents 路径, 返回搜索到的指向各路径字符串的指针数组
-3. 获取 Library 路径, 返回搜索到的路径字符串数组
-4. 获取 tmp 路径, 返回路径字符串
-
 ```
-NSHomeDirectory()
-NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)
-NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)
-NSTemporaryDirectory()
+NSHomeDirectory();			// 获取沙盒路径, 返回路径字符串
+NSTemporaryDirectory();		// 获取 tmp 路径, 返回路径字符串
+NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);	// 获取 Documents 路径, 返回搜索到的指向各路径字符串的指针数组
+NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);		// 获取 Library 路径, 返回搜索到的路径字符串数组
+pathComponents;						// 获取路径各组成部分，包括文件名，该字符串对象方法返回存在路径组成的数组
+lastPathComponent;					// 获取路径中最后一个组成部分，可以是文件名或目录名
+stringByDeletingLastPathComponent;	// 删除路径中最后一个组成部分，可以是文件名或目录名
+stringByAppendingPathComponent:;	// 添加路径中最后一个组成部分，可以是文件名或目录名
 ```
 
-获取路径组成
-
-1. 获取路径各组成部分，包括文件名，该字符串对象方法返回存在路径组成的数组
-2. 获取路径中最后一个组成部分，可以是文件名或目录名
-3. 删除路径中最后一个组成部分，可以是文件名或目录名
-4. 在路径的最后追加文件名或目录名
-
-```
-pathComponents
-lastPathComponent
-stringByDeletingLastPathComponent
-stringByAppendingPathComponent:
-```
-
-# NSFileManger
+# NSFileManager
 
 对文件本身的创建和删除
 
@@ -75,8 +58,8 @@ NSFileManger 的方法
 2. 打开一个文件之后，就需要关闭一个文件；
 3. 根据不同的要求可能要设定不同的偏移量（即光标所在位置），可以通过移动到开头或结尾，也可以先获取当前位置然后增加和减少多少字节来移动；
 4. 文件路径是NSString对象，可以用 stringByAppendingPathComponent+文件全称 方法构造一个完整的文件路径；
-5. 往文件里面写的内容是NSData，如果是其他的格式则可以用 dataUsingEncoding : NSUTF8StringEncoding 来转化成data类型；
-6. 同样，目录的写法于Linux类似，~家目录，/根目录，.当前目录，..父目录，用/表示层级等。
+5. 往文件里面写的内容是NSData，如果是其他的格式, 则可以用 dataUsingEncoding : NSUTF8StringEncoding 来转化成data类型；
+6. 目录的写法于Linux类似，~家目录，/根目录，.当前目录，..父目录，用/表示层级等
 
 NSFileHandle 的方法
 

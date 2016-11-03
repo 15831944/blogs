@@ -11,3 +11,14 @@ WritePrivateProfileString
 WritePrivateProfileInt
 
 They retrieve information from and copy information to a system- or application-defined initialization file. These functions are provided only for compatibility with 16-bit versions of Windows. New applications should use the registry.
+
+# windows.h
+
+GetCurrentDirectory
+GetModuleFileName
+
+# AfxGetApp( )
+
+得到当前应用进程的指针, 访问到这个进程中的对象, 单一的 CWinApp 对象的指针(A pointer to the single CWinApp object for the application)
+
+CWinApp *AFXAPI AfxGetApp()

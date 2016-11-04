@@ -40,14 +40,16 @@ BOOL rtn = [str writeToURL:fileURL atomically:YES encoding:NSUTF8StringEncoding 
 
 1. 在实例化可变字符串时指定长度可以提升性能
 2. 用 NSString 对象初始化 NSMutableString 对象会报类型不匹配
-3. 对字符串的操作将修改原字符串
+3. 对字符串的操作将修改原字符串, 返回的是引用
+4. NSMutableString 继承自 NSString, 即可变字符串可以使用普通字符串的方法
+5. 字符串替换只能按范围进行替换
 
 ```
 NSMutableString *str = [[NSMutableString alloc] initWithCapacity:10];	// 实例化可变字符串
-[str setString:@"hello"];									// 初始化可变字符串
-[str appendString:@" world"];								// 使用字符串追加可变字符串
-[str appendFormat:@" %d", a];								// 以指定格式追加字符串
-[str replaceCharactersInRange:range withString:@"substr"];	// 按范围替换字符串中的字符
-[str insertString:@"substr" atIndex:6];						// 在指定位置插入字符串
-[str deleteCharactersInRange:range];						// 按范围删除字符串中的字符
+[str setString:@"hello"];												// 初始化可变字符串
+[str appendString:@" world"];											// 使用字符串追加可变字符串
+[str appendFormat:@" %d", a];											// 以指定格式追加字符串
+[str replaceCharactersInRange:range withString:@"substr"];				// 按范围替换字符串中的字符
+[str insertString:@"substr" atIndex:6];									// 在指定位置插入字符串
+[str deleteCharactersInRange:range];									// 按范围删除字符串中的字符
 ```

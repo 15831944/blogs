@@ -1,6 +1,7 @@
 # NSArray
 
 1. 数组的元素只能是对象指针, 由于都是指针类型, 同一个数组可以存储不同类型的对象, 数组的内存空间依然连续
+2. 不可变数组在实例化时必须指定长度
 
 ```
 NSArray *array = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"5", nil];	// 在堆中实例化数组
@@ -9,7 +10,7 @@ BOOL ishas = [array containsObject:@"2"];		// 数组元素判断
 str = [array lastObject];						// 数组最后一个元素
 str = [array firstObject];						// 数组第一个元素
 str = [array objectAtIndex:3];					// 按索引号访问数组元素
-int index = (int) [array indexOfObject:@"3"];	// 查找数组元素的索引位置
+int index = (int) [array indexOfObject:@"3"];	// 查找数组元素的索引位置, 元素不存在则返回-1
 for (int i = 0; i < array.count; i++)			// 使用 for 循环遍历数组
 {
 	NSString *str = [array objectAtIndex:i];

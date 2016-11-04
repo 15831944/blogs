@@ -3,6 +3,27 @@
 ps [-AaCcEefhjlMmrSTvwXx] [-O fmt | -o fmt] [-G gid] [-g grp] [-u uid] [-p pid] [-t tty] [-U user]
 ps [-L]
 
+precess status
+
+-l long
+a 打印终端相关的所有进程
+x 打印属于你的所有进程
+ax 打印所有进程
+u 显示面向用户的格式
+
+| F     | process flags | 进程的权限  | 4:root 1:fork |
+| S     | status        | 进程的状态  | R: running S: sleep D T: stop Z: Zombie |
+| C     | CPU           | CPU的使用率 | |
+| PRI   | priority      |            | |
+| NI    | nice          |            | |
+| ADDR  | address       | 内存地址    | - 表示进程正在运行 |
+| SZ    | size          | 内存容量    | |
+| WCHAN |               |            | -表示进程正在运行 |
+| TTY   |               |            | 登录者的终端机位置 |
+| TIME  |               | CPU运行时间 | |
+| CMD   | command       |            | 造成此进程触发的命令 |
+
+
 # Options
 
 -A, 显示其他用户的进程信息

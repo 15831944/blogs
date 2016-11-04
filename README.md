@@ -2,18 +2,32 @@
 
 发现规律, 认识本质, 总结学习经历
 
+对事物的抽象, 对知识的梳理, 本身也是一种能力
+
+战胜无知, 就战胜了一切
+
 # 书籍
 
-1. 《UNIX环境高级编程》
-2. 《鸟哥的LINUX私房菜》
-3. 《C和指针》
+1. 《UNIX 环境高级编程》
+2. 《鸟哥的 LINUX 私房菜》
+3. 《C 和指针》
+4. 《Linux C 编程一站式学习》
 4. 《C++ Primer Plus》
 5. 《易学 C++》
 6. 《深入浅出 MFC》
+7. 《Objective-C 程序设计》
 
-# 教程
+# C++ 教程
 
-# iOS 慕课网教程
+1. [C++远征之起航篇](http://www.imooc.com/learn/342)
+2. [C++远征之离港篇](http://www.imooc.com/learn/381)
+3. [C++远征之封装篇（上）](http://www.imooc.com/learn/382)
+4. [C++远征之封装篇（下）](http://www.imooc.com/learn/405)
+5. [C++远征之继承篇](http://www.imooc.com/learn/426)
+6. [C++远征之多态篇](http://www.imooc.com/learn/474)
+7. [C++远征之模板篇](http://www.imooc.com/learn/477)
+
+# iOS 教程
 
 DavidChin
 

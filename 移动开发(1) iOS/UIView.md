@@ -3,7 +3,7 @@
 1. 单从图形界面看，UIView 可以看作是基类来用, 视图对象属于"模型-视图-控制器"设计模式中的视图部分
 2. UIWindow 相当于画板, UIview 相当于画布
 
-## 视图层次
+## UIView 的视图层次
 
 1. 子视图是指嵌入到另一视图对象边框内部的视图对象, 被嵌入的视图被称为父视图或超视图, 视图的这种布局方式被称为视图层次
 2. 一个视图可以包含任意数量的子视图, 通过为子视图添加子视图的方式，视图可以实现任意深度的嵌套
@@ -113,9 +113,3 @@ UILabel, UIProgressView, UIActivityIndicatorView, UIImageView
 ## 8 其他
 
 UIPickerView, UITableViewCell, UISearchBar
-
-# UIView 的属性
-
-1. bounds: 边框大小, CGRect 解耦固体, 只具有 size, bounds.size.width, bounds.size.height
-2. frame: 画面大小, CGRect 结构体, 具有 size 和 origin, frame.origin.x, frame.origin.y 
-3. center, CGPoint 结构体, 中心点的坐标, center.x, center.y

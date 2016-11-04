@@ -68,6 +68,7 @@ Core Animation 的功能
 
 1. Core Data 框架管着理应用程序数据模型, 创建模型对象，并管理这些对象间的联系并修改数据
 2. Core Data 提供的内建 SQLlite 技术可以高效的管理数据
+3. 苹果自带的数据库
 
 Core Data 的功能
 

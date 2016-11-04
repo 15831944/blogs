@@ -2,6 +2,8 @@
 
 1. MFC, Microsoft Foundation Class
 2. OWL, ObjectWindow Library
+3. ATL
+4. WPF
 
 # DC (Device context)
 

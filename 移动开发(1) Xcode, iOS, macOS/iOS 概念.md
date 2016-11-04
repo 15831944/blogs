@@ -7,7 +7,7 @@
 
 # Cocoa
 
-1. Cocoa 是在 Mac OS X 系统上原生的一个编译环境, 支持多种编程语言
+1. Cocoa 是在 Mac OS X 系统上原生的一个编译环境, 支持多种编程语言, 是面向对象的接口
 2. 包含2个框架(类库): Foundation, AppKit
 3. Cocoa 程序是由一些对象组成, 而这些对象的类最后都是继承于它们的根类: NSObject, 而且都基于 Objective-C 运行环境
 4. AppKit 框架是 Mac OS X 上的用户图形包, 类名以NS开头

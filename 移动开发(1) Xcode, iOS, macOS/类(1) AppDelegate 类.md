@@ -1,5 +1,8 @@
 # AppDelegate
 
+
+1. AppDelegate 类继承自 UIResponder 类, 遵循 UIApplicationDelegate 协议
+
 AppDelegate.h/m define a class that manages the application overall.
 The app will create one instance of that class and send that object messages that let the delegate influence the app's behavior at well-defined times.
 For example, -application:didFinishLaunchingWithOptions: is sent when the app has finished launching and is ready to do something interesting.

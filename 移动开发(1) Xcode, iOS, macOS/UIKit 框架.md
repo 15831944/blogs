@@ -52,27 +52,6 @@ UIPrintFormatter 的子类有:
 2. UIMarkupTextPrintFormatter
 3. UIViewPrintFormatter
 
-# UIView
-
-| Class                   | Subclass |
-| ----------------------- | -------- |
-| ** UIWindow **          |          |
-| UILabel                 |          |
-| UIPickerView            |          |
-| UIProgressView          |          |
-| UIActivityIndicatorView |          |
-| UIImageView             |          |
-| UITabBar                |          |
-| UIToolBar               |          |
-| UINavigationBar         |          |
-| UITableViewCell         |          |
-| UIActionSheet           |          |
-| UIAlertView             |          |
-| UIScrollView            | UITableView, UITextView |
-| UISearchBar             |          |
-| UIWebView               |          |
-| UIControl               | UIButton, UIDatePicker, UIPageControl, UISegmentedControl, UITextField, UISlider, UISwitch |
-
 # 参考
 
 教程

@@ -113,3 +113,9 @@ UILabel, UIProgressView, UIActivityIndicatorView, UIImageView
 ## 8 其他
 
 UIPickerView, UITableViewCell, UISearchBar
+
+# UIView 的属性
+
+1. bounds: 边框大小, CGRect 解耦固体, 只具有 size, bounds.size.width, bounds.size.height
+2. frame: 画面大小, CGRect 结构体, 具有 size 和 origin, frame.origin.x, frame.origin.y 
+3. center, CGPoint 结构体, 中心点的坐标, center.x, center.y

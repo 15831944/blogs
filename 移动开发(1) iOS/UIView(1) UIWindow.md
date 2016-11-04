@@ -1,3 +1,17 @@
+# main 函数
+
+1. 对于命令行应用，程序总是从 main 函数执行，main.m 文件在项目文件夹中
+2. 对于图形界面应用，main.m 文件转移到 Supporting Files 文件夹下，直接调用用户界面的 main 函数, 转到 AppDelegate
+
+`UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));`
+
+# xib
+
+# main.storyboard
+
+1. 旧版本中, 在 AppDelegate 类的 didFinishLaunchingWithOptions 函数中初始化 UIWindow
+2. 新版本中, 默认使用 main.storyboard(可视化开发工具) 初始化 UIWindow, 将 Deployment Info 中的 main interface 指定为空, 则可以在上述函数中手动进行初始化 UIWindow
+
 ## UIWindow
 
 1. macOS 中一般是多窗口应用，表示为 NSWindow 类的多个实例, NSWindow 继承自 NSResponder
@@ -27,3 +41,11 @@
 3. 窗口中可以添加标签，按钮等不同的控件，或者说添加一或多个视图
 4. UIWindow 的初始的边框尺寸总是应设置为整个屏幕的大小, 除了屏幕矩形之外，没有理由传入其它边框矩形
 5. 如果窗口从 nib 文件装载得到，Interface Builder 并不允许创建比屏幕尺寸小的窗口, 如果窗口通过编程方式创建, 则必须在创建时传入期望的边框矩形
+
+```
+_window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
+_window.backgroundColor = [UIColor whiteColor];
+[_window makeKeyAndVisible];
+UIViewController* vc = [[UIViewController alloc]initWithNibName:nil bundle:nil];
+[_window setRootViewController:vc];
+```

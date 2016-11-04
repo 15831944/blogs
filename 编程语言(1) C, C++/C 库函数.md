@@ -1,3 +1,22 @@
+# strtok, strtok_r
+
+```
+#include <string.h>
+char *strtok(char *str, const char *delim);
+char *strtok_r(char *str, const char *delim, char **saveptr);
+```
+
+strtok() 函数把字符串分为零个或多个非空标记的序列, 首次调用时, 将要被解析的字符串应该被指定在 str 参数中, 随后的解析同一个字符串的每个调用中，str 参数必须是 NULL
+delim 参数指定了一组用于分割字符串中的标记的字节, 在连续的解析同一个字符串的调用中, 调用者可以在 delim 参数中指定不同的字符串
+每次调用返回一个指向包含下一个标记的非结束字符串, 此字符串不包括分割字节, 若未找到更多标记，则函数返回 NULL
+操作同一的字符串的对 strtok 函数的一系列调用维护了一个指针, 这个指针决定了从哪里开始搜索下一个标记的点, 对 strtok 函数的首次调用使这个指针指向字符串的第一个字节, 下一个标记的开始通过向前扫描得到字符串中下一个非分隔符字节来确定, 如果找到这样的字节，它就作为下一个标记开始, 如果没有找到这样的字节，那表示没有更多的标记，strtok 函数返回 NULL, 空字符串或者只包含分隔符的字符串会导致 strtok 在首次调用时就返回 NULL
+找到标记的结束是通过向前扫描直到下一个分隔符被找到或者直到遇到字符串结束符, 如果找到分割字节，则该分割字节被空字节覆盖来终止当前标记，并且 strtok 函数保存指向下一个字节的指针, 这个指针将被用做搜索下一个标记时的起始点, 这种情况下，strtok 返回指向找到的标记的起始点的指针
+从以上的描述中，它遵循：被解析的字符串中的两个或多个相连的分隔符字节序列被认为是一个单独的分隔符, 并且字符串开始或末尾的分隔符字节将被忽略, 换种方式说：strtok 函数返回的标记总是非空字符串, 如此，例如：给出"aaa;;bbb,"这样一个字符串, 连续调用指定";,"作为分隔符的 strtok 函数将会返回字符串"aaa", "bbb"和 NULL 指针
+
+strtok_r 函数是 strtok 函数的可再入版本, saveptr 参数是字符型指针变量，用于 strtok_r 函数内部, 为了维护解析相同字符串的连续调用的上下文环境
+首次调用 strtok 时，str 参数应该指向被解析字符串，并且 saveptr 参数的值被忽略。随后的调用中，str 参数应为 NULL，并且 saveptr子之前的调用后不应被改变。
+对不同的字符串可以在使用一系列 strtok_r 函数调用并发进行解析时，指定不同的 saveptr 参数。
+
 # 注意 NOTE
 
 A common mistake is to do
@@ -5,7 +24,7 @@ A common mistake is to do
 一个常见的错误是像下面这样
 
 ```
-if (somecall() == -1) 
+if (somecall() == -1)
 {
 	printf("somecall() failed\n");
 	if (errno == ...) { ... }
@@ -89,3 +108,45 @@ It  was  common  in traditional C to declare errno manually (i.e., extern int er
 # 参考 SEE ALSO
 
        errno(1), err(3), error(3), perror(3), strerror(3)
+
+	   # 类型
+
+	   标准 C 库函数
+	   Standard C Library (libc, -lc)
+
+	   # 声明
+
+	   ```
+	   #include <stdio.h>
+	   int ferror(FILE *stream);
+
+
+
+	   ```
+
+	   # 功能
+
+	    The function ferror() tests the error indicator for the stream pointed to by stream, returning non-zero if it is set.
+	   函数参数为文件指针。
+	   在调用各种输入输出函数时，如果出现错误，除了函数返回值有所反映外，还可以用ferror函数检查。
+	   如果返回一个非零值，表示出错。
+	   应该注意，对同一个文件（文件指针或文件描述符）每一次调用输入输出函数，均产生一个新的ferror函数值，因此，应当在调用一个输入输出函数后立即检查ferror函数的值，否则信息会丢失。
+	   在执行fopen函数时，ferror函数的初始值自动置为0。
+
+	   # 相关函数
+
+	   ```
+	   #include <stdio.h>
+
+	   void clearerr(FILE *stream);
+	   void clearerr_unlocked(FILE *stream);
+
+	   int feof(FILE *stream);
+	   int feof_unlocked(FILE *stream);
+
+	   int ferror(FILE *stream);
+	   int ferror_unlocked(FILE *stream);
+
+	   int fileno(FILE *stream);
+	   int fileno_unlocked(FILE *stream);
+	   ```

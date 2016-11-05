@@ -2,7 +2,6 @@
 
 1. Foundation 框架对于 macOS 和 iOS 两个平台均适用
 
-![ddd](https://github.com/windwanghuiyong/blogs/blob/master/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91(1)%20iOS/images/Foundation.JPG)
 <figure>
     <img src="https://github.com/windwanghuiyong/blogs/blob/master/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91(1)%20iOS/images/Foundation.JPG" width="400"/>
 </figure>

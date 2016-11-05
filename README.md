@@ -6,6 +6,15 @@
 
 战胜无知, 就战胜了一切
 
+所有的中文技术博客都是作者按个人意愿丢给读者的二手不完整资料
+
+# 网站
+
+1. [Apple Developer](https://developer.apple.com/)
+2. [API Reference](https://developer.apple.com/reference)
+3. [Guides and Sample Code](https://developer.apple.com/library/content/navigation/)
+4. [Stack Overflow](http://stackoverflow.com/)
+
 # 书籍
 
 1. 《UNIX 环境高级编程》

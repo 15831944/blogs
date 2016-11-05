@@ -16,7 +16,7 @@
 {"weatherinfo":{"city":"北京","temp1":"15°C","temp2":"5°C","weather":"多云"}}
 ```
 
-## JASN 库
+## JSON 库
 
 库中的代码会静态的编译到程序中
 

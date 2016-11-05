@@ -65,7 +65,3 @@ NSFileHandle 的方法
 
 1. 文件内容追加
 2. 删除文件
-
-# 参考
-
-[iOS基础教程-文件操作](http://www.imooc.com/learn/655)

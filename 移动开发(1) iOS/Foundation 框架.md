@@ -1,3 +1,11 @@
+# Foundation.framework
+
+1. Foundation 框架对于 macOS 和 iOS 两个平台均适用
+
+<figure>
+    <img src="images/Foundation.jpg" width="400"/>
+</figure>
+
 # 值对象 Value Objects
 
 | Class                  | Subclass       | Subclass        |
@@ -48,7 +56,7 @@
 | NSPointerFunctions(OS X) |                        |              |
 | NSSet                    | NSMutableSet           | NSCountedSet |
 
-# Predicates
+# 谓词 Predicates
 
 | Class              | Subclass                                   |
 | ------------------ | ------------------------------------------ |
@@ -160,7 +168,7 @@
 | NSMethodSignature                        |                          |
 | NSUndoManager                            |                          |
 
-# Scripting
+# 脚本 Scripting
 
 | Class                      |
 | -------------------------- |
@@ -176,7 +184,7 @@
 | NSScriptSuiteRegistry      |
 | NSScriptWhoseTest          |
 
-# Distributed Objects
+# 分布式对象 Distributed Objects
 
 | Class                  |
 | ---------------------- |
@@ -184,7 +192,3 @@
 | NSDistantObjectRequest |
 | NSDistantObject        |
 | NSProtocolChecker      |
-
-# 参考
-
-[iOS 基础入门之 Foundation 框架初体验](http://www.imooc.com/learn/420)

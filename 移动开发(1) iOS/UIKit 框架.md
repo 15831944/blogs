@@ -54,12 +54,5 @@ UIPrintFormatter 的子类有:
 
 # 参考
 
-教程
-
-[iOS 基础教程之界面初体验](http://www.imooc.com/learn/486)
-
-博客
-
 1. [OC学习之UIKit的类层次结构图](http://blog.csdn.net/heyddo/article/details/9631919)
 2. [IOS UIKIT框架类之窗口和视图架构介绍！](http://blog.csdn.net/qq_31082775/article/details/50424454)
-3. [UIWindow 与 UIView 深层解析](http://blog.csdn.net/gf771115/article/details/7761904)

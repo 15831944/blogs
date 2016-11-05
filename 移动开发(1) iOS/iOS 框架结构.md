@@ -1,3 +1,5 @@
+![Cocoa](images/Cocoa.jpg)
+
 # iOS 框架结构
 
 在系统中的位置, 由上到下依次是:

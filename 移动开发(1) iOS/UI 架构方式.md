@@ -54,6 +54,8 @@ StoryBoard 可以看做是一组 viewController 对应的 xib, 以及它们之�
 博客
 
 1. [代码手写UI，xib和StoryBoard间的博弈，以及Interface Builder的一些小技巧](https://onevcat.com/2013/12/code-vs-xib-vs-storyboard/)
+1. [Storyboards & XIBs: Best Practices](https://mobilejazz.com/blog/storyboards-xibs-best-practices/)
+1. [iOS 开发可视化编程之Xib 简述](http://www.jianshu.com/p/ea3f90cc744b)
 
 stackoverflow
 

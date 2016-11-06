@@ -49,7 +49,7 @@ An information property list is a specialized type of property list that contain
 4. macOS Keys
 5. iOS Keys
 6. watchOS Keys
-7. App Extension Keys 
+7. App Extension Keys
 
 # UIWindow 的作用
 

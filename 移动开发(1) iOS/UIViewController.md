@@ -27,3 +27,9 @@ ViewController 的作用
 1. 处理视图的装载与卸载
 2. 处理由于设备旋转导致的界面旋转
 3. 用于构建复杂用户界面的高级导航对象进行交互
+
+# ViewController
+
+ViewController.h/m define a view controller class that manages a hierarchy of views -- basically, one screen of an application.
+
+You might have multiple screens that each have their own view controller.

@@ -27,8 +27,9 @@
 
 # storyboard
 
-使用 StoryBoard 来通过单个或很少的几个文件构建全部 UI
-StoryBoard 可以看做是一组 viewController 对应的 xib, 以及它们之间的转换方式的集合, 在 StoryBoard 中不仅可以看到每个 ViewController 的布局样式, 也可以明确地知道各个 ViewController 之间的转换关系
+1. 使用 StoryBoard 来通过单个或很少的几个文件构建全部 UI, storyboard 的本质是 xml 文件
+2. StoryBoard 可以看做是一组 viewController 对应的 xib, 以及它们之间的转换方式的集合
+3. 在 StoryBoard 中不仅可以看到每个 ViewController 的布局样式, 也可以明确地知道各个 ViewController 之间的转换关系
 
 优势
 

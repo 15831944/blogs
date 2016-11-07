@@ -17,7 +17,7 @@
 | FLOAT DOUBLE      | 转换成 REAL                         |
 | VARCHAR CHAR CLOB | 转换成 TEXT 类型                     |
 
-# SQLite 指令
+# SQLite 语句
 
 表名: USER; 字段: uid, name; 值: 0, 'wanghuiyong'
 
@@ -44,9 +44,12 @@ sqlite3_column_text	// 提取字段数据
 
 # 开发过程
 
+1. 输入数据, 写入数据库
+2. 读取数据库, 存入 table
+
 HomeViewController : UITableViewController
 
-HomeViewController 的属性: 
+HomeViewController 的属性:
 
 ```
 @property NSMutableArray *studentArray;	// 数据源(学生模型)

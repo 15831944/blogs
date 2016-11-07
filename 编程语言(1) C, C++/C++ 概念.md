@@ -79,6 +79,10 @@
 1. 链接程序将启动代码, 函数和库目标代码组合成可执行程序
 2. 启动代码调用 main 函数
 
+# 命名空间 namespace
+
+1. 使用 namespace{} 指定任意函数或变量所属的命名空间
+
 # using 编译指令
 
 | 语法                    | 调用方式         | 命名空间作用域                    |
@@ -87,13 +91,6 @@
 | using namespace std    | 函数定义中        | 函数作用域                       |
 | using std::cout        | 使用指定元素前     | 仅将指定元素指定命名空间, 供下文使用 |
 | std::cout << std::endl | 随用随指定空间前缀  | 当前语句                        |
-
-# 输入输出方式
-
-1. 输入: 输入设备 -> 输入流缓冲区 -> scanf(cin) -> 变量
-2. 输出: 变量 -> printf(cout) -> 输出流缓冲区 -> 输出设备
-3. 流插入(输出)运算符 <<, 向 cout 对象发送消息
-4. 流提取(输入)运算符 >>, 从输入流中提取信息
 
 # 域解析操作符 scope resolution operator
 
@@ -108,9 +105,16 @@
 | ::std::cout                 | names the global variable cout in namespace std, which is a top-level namespace.                |
 | boost::signals2::connection | names the type connection declared in namespace signals2, which is declared in namespace boost. |
 
+# 输入输出方式
+
+1. 输入: 输入设备 -> 输入流缓冲区 -> scanf(cin) -> 变量
+2. 输出: 变量 -> printf(cout) -> 输出流缓冲区 -> 输出设备
+3. 流插入(输出)运算符 <<, 向 cout 对象发送消息
+4. 流提取(输入)运算符 >>, 从输入流中提取信息
+
 # C++ 数据类型
 
-1. 基本类型: 整数, 浮点数
+1. 基本类型: 整数, 浮点数, 布尔型(逻辑类型)
 2. 复合类型: 数组, 字符串, 指针, 结构
 3. 声明结构类型变量是可以省略 struct 关键字
 4. 结构之间可以直接赋值, 称为成员赋值( memberwise assignment )

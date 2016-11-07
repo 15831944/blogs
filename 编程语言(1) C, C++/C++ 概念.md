@@ -1,3 +1,10 @@
+# 背景
+
+1. 贝尔实验室
+2. Bjarne Stroustrup 本贾尼·斯特劳斯特卢普
+3. 嵌入式, 游戏编程, 系统编程, 网络编程
+4. Visual Studio 2010, Visual Assist X for Visual Studio
+
 # 概念
 
 1. 运行阶段决策: 可以在运行阶段确定数组的长度, 在运行时创建数组, 本质是使用 new 运算符动态申请内存

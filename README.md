@@ -48,11 +48,6 @@ Visitor.zc
 2. [iOS基础入门之Foundation框架初体验](http://www.imooc.com/learn/420)
 3. [iOS基础教程之界面初体验](http://www.imooc.com/learn/486)
 
-Keegan
-
-1. [iOS基础教程-文件操作](http://www.imooc.com/learn/655)
-2. [iOS基础教程-SQLite数据库操作](http://www.imooc.com/learn/661)
-
 于海_
 
 1. [iOS基础教程-网络操作](http://www.imooc.com/learn/671)
@@ -60,6 +55,11 @@ Keegan
 james_yuan
 
 1. [iOS基础教程-数据解析](http://www.imooc.com/learn/681)
+
+Keegan
+
+1. [iOS基础教程-文件操作](http://www.imooc.com/learn/655)
+2. [iOS基础教程-SQLite数据库操作](http://www.imooc.com/learn/661)
 
 大城小胖
 

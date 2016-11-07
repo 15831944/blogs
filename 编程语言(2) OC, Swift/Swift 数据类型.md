@@ -23,9 +23,11 @@
 
 ## 元组 Tuple
 
+1. 多个元素的组合?
 1. 解包: 将元组中的分量"分解出来"赋给各变量, 使用下划线忽略不需要解包的分量
 2. 分量的名称: 使用":"在初始值中或显式类型声明中为元组的各分量命名
 3. 分量的访问: 使用.运算符以分量的序号或名称访问各分量
+4. 在 Objective-C 版本的 Cocoa API 中有不少需要传递指针来获取值的地方, 这一般是由于在 Objective-C 中返回值只能有一个所造成的妥协
 
 # 可选型 option
 
@@ -87,7 +89,7 @@ var arr = Array<Int> (repeating: 0, count: 3)
 
 1. 数组元素的添加: append 的参数是字符串, += 操作符的操作数是数组
 
-数组的范围: 
+数组的范围:
 
 数组的遍历:
 
@@ -95,7 +97,7 @@ var arr = Array<Int> (repeating: 0, count: 3)
 
 二维数组: 即数组元素本身为数组
 
-类型: [[Int]], [Array<Int>], Arrat<Array<>>, 
+类型: [[Int]], [Array<Int>], Arrat<Array<>>,
 
 ## 字典 Dictionary
 

@@ -20,6 +20,8 @@
 - (void)application:(UIApplication*)application didChangeStatusBarOrientation:(UIInterfaceOrientation)oldStatusBarOrientation	// 当 StatusBar 框方向变化完成后执行
 ```
 
+# App 的启动方式
+
 # 参考
 
 stackoverflow

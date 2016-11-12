@@ -11,7 +11,20 @@ sources
 
 resources
 
-# Command Line Tools
+# 静态代码分析器
+
+Product -> Analyze
+
+# Command Line Tool
+
+Preference -> Downloads -> Components
+
+# clang 编译器
+
+```
+clang -fobj-arc main.m -o program
+clang -fobj-arc -framework Foundation main.m classname.m -o program
+```
 
 # Components
 
@@ -32,6 +45,8 @@ debug -> clean 清理编译
 
 1. 用于在类视图中标记名称(tag), 仅用于提高可阅读性
 2. Preferences -> Code Sense -> Sort list alphabetically 取消勾选
+
+`#warning`
 
 # 参考
 

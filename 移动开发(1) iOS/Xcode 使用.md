@@ -24,6 +24,7 @@ Preference -> Downloads -> Components
 ```
 clang -fobj-arc main.m -o program
 clang -fobj-arc -framework Foundation main.m classname.m -o program
+clang -fobjc -arc -D MACRO program.m -	// 定义宏 MACRO
 ```
 
 # Components
@@ -47,6 +48,14 @@ debug -> clean 清理编译
 2. Preferences -> Code Sense -> Sort list alphabetically 取消勾选
 
 `#warning`
+
+指定头文件搜索路径
+
+项目设置->
+
+定义预处理宏
+
+Build Settings -> Preprocessor Macros ->
 
 # 参考
 

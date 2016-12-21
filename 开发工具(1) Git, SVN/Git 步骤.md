@@ -34,12 +34,14 @@ git config --global user.email "stormzhang.dev@gmail.com"
 
 ## 设置别名
 
+```
 git config --global alias.co checkout  # 别名
 git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.br branch
 git config --global alias.psm 'push origin master'
 git config --global alias.plm 'pull origin master'
+```
 
 ### 设置日志格式
 

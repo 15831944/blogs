@@ -91,3 +91,10 @@ Ruby 的一个包管理器, 用于安装 Bundler
 博客
 
 1. [一步步在GitHub上创建博客主页](http://www.pchou.info/ssgithubPage/2013-01-03-build-github-blog-page-01.html)
+
+别人的 pages
+
+1. http://smallkiss.github.io/
+2. https://github.com/cnfeat/cnfeat.github.io
+3. https://github.com/SmallKiss/smallkiss.github.io
+4. https://github.com/EZLippi/EZLippi.github.io

@@ -121,7 +121,7 @@ SegmentFault D-Day
 
 1. [SegmentFault D-Day 2015 北京：iOS 站](http://www.imooc.com/learn/599)
 
-@Conf
+\@Conf
 
 1. [中国首届swift开发者大会](http://www.imooc.com/learn/600)
 
@@ -131,7 +131,8 @@ SegmentFault D-Day
 
 不死鸟fj
 
-1. [iOS-弹幕实现](http://www.imooc.com/learn/689)
+1. [iOS基础之搞定多线程](http://www.imooc.com/learn/761)
+2. [iOS-弹幕实现](http://www.imooc.com/learn/689)
 
 KevinGong
 
@@ -141,3 +142,8 @@ KevinGong
 七牛云课堂
 
 1. [2小时搞定移动直播 App 开发](http://www.imooc.com/learn/707)
+
+TerryG
+
+1. [iOS架构初探](http://www.imooc.com/learn/774)
+2. [iOS-直播间礼品发送](http://www.imooc.com/learn/711)

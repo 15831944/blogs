@@ -30,7 +30,7 @@ NSString *filePath  = [directoryPath stringByAppendingPathComponent:@"fileName.t
 
 1. NSData 类用于包装数据, 用于在网络数据通信时对文件进行读写, 为二进制形式, 屏蔽了数据之间的差异, 文本, 音频, 图片等都可以使用 NSData 进行处理
 
-## NSData 的数据转换
+NSData 的数据转换
 
 ```
 NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];	// NSData 转换为 NSString
@@ -44,7 +44,7 @@ NSData *data = UIImageJPEGRepresentation(image);										// UIImage (jpeg) 转�
 
 1. NSFileManager 类实例化的单例模式的对象可创建和删除文件或目录, 即对文件本身进行操作
 
-## NSFileManager 的方法
+NSFileManager 的方法
 
 ```
 NSFileManager *fileManager = [NSFileManager defaultManager];															// 声明 NSFileManager
@@ -62,7 +62,7 @@ BOOL *result = [data   writeToFile:filePath automically:YES];															// �
 2. 文件偏移量: 可以将文件偏移量设置到文件开始或结尾, 也可以根据当前偏移量前进或后退
 3. 文件读写的内容是 NSData 类的对象
 
-## NSFileHandle 的方法
+NSFileHandle 的方法
 
 ```
 NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];	// 为更新而打开文件

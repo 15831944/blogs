@@ -14,7 +14,7 @@
 5. 层级是跟随父视图的, 父视图的层级低, 其子视图的层级也就低, 即使后加入, 也会被覆盖, 属于不同父视图的子视图之间无关
 6. 子视图跟随父视图自动变化, 目前已不再用 UIView 的自适应做适配, 而用 autolayout
 
-## UIView 的属性
+UIView 的属性
 
 1. bounds: 边框大小, CGRect 结构体, 具有 size, bounds.size.width, bounds.size.height, bounds 为 0
 2. frame: 画面大小, CGRect 结构体, 具有 size 和 origin, frame.origin.x, frame.origin.y 
@@ -25,7 +25,7 @@
 7. autoresizesSubviews
 8. autoresizingMask
 
-## UIView 的方法
+UIView 的方法
 
 ```
 [self.view addSubView: subView];
@@ -72,7 +72,7 @@ for (NSString *fontName in [UIFont familyNames])	// 系统字体库
 
 1. UILabel 默认也是透明的
 
-## UILabel 的属性
+UILabel 的属性
 
 | property      | meaning |
 | ------------- | ------- |
@@ -87,7 +87,7 @@ for (NSString *fontName in [UIFont familyNames])	// 系统字体库
 | numberOfLines | 限制行数(设置为0或-1表示不限制行数) |
 
 
-## UILabel 的方法
+UILabel 的方法
 
 ```
 CGSize size = [label.text sizeWithFont: constrainedToSize: lineBreakMode: ];	// 根据字符串内容获取 label 大小
@@ -114,13 +114,13 @@ UIImage *image2 = [UIImage imageNamed:@"pngname"];	// 加载到内存，耗费�
 3. 载体控制屏幕上显示的图片的大小和模式, content Mode 是 UIView 的方法
 4. 序列图: 将图片对象存入可变数组，进行动画播放
 
-## UIImageView 的属性
+UIImageView 的属性
 
 1. animationImages
 2. animationDuration
 3. animationRepeatCount	// 0值则无限循环, 直到手动停止
 
-## UIImageView 的方法
+UIImageView 的方法
 
 ```
 startAnimating

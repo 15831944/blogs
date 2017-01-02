@@ -1,6 +1,6 @@
 # UITableView
 
-# UITableView 的方法
+UITableView 的方法
 
 ```
 // Returns a reusable table-view cell object for the specified reuse identifier and adds it to the table.
@@ -19,14 +19,14 @@ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeCellIde
 3. managing accessory views
 4. initiating the editing of the cell contents
 
-# UITableViewCell 的属性
+UITableViewCell 的属性
 
 1. textLabel, detailTextLabel, imageView: set the text and images of the cell
 2. contentView: add subviews
 3. backgroundView:
 4. backgroundColor:
 
-# uitableviewcell 的方法
+UITableViewCell 的方法
 
 ```
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

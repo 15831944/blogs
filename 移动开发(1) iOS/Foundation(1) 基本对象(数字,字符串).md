@@ -1,7 +1,28 @@
+# NSNumber
+
+1. NSNumber 类会依据基本数据的类型创建对象
+
+```
+NSNumber *number = @1;
+number = [NSNumber numberWithInt:10];
+NSLog(@"%i", [number intValue]);
+number = [NSNumber numberWithInteger:100];
+NSLog(@"%li", [number integerValue]);
+number = [[NSNumber alloc] initWithInt:200];
+NSLog(@"%i", [number intValue]);
+number = [[NSNumber alloc] initWithInteger:400];
+NSLog(@"%li", [number integerValue]);
+if ([number isEqualToNumber:number] == YES)
+if ([number compare:number] == NSOrderedAscending)
+```
+
+# NSDecimalNumber
+
+
 # NSString
 
 1. 在栈中实例化字符串对象自动释放内存, 在堆中实例化对象需要手动释放内存
-2. C 风格的字符串称为 UTF8String
+2. C 风格的字符串称为 UTF8String, 由 char 字符组成, NSString 对象由 unichar 字符(Unicode 标准的多字节字符)组成
 3. Range 的实现为结构体, 成员为位置和长度
 4. 网络路径和本地路径虽然都是 NSURL 类, 但获取的方法不同, 不能混用
 5. 字符串比较较为复杂, 涉及读音等
@@ -53,3 +74,5 @@ NSMutableString *str = [[NSMutableString alloc] initWithCapacity:10];	// 实例�
 [str insertString:@"substr" atIndex:6];									// 在指定位置插入字符串
 [str deleteCharactersInRange:range];									// 按范围删除字符串中的字符
 ```
+
+# NSConstantString

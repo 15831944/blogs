@@ -57,6 +57,10 @@ debug -> clean 清理编译
 
 Build Settings -> Preprocessor Macros ->
 
+# 文档
+
+Help -> Documention and API Reference
+
 # 参考
 
 1. [iOS之#pragma mark用法](https://my.oschina.net/u/615517/blog/90282)

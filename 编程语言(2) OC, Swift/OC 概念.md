@@ -1,7 +1,13 @@
 # 概念
 
-1. Objective-C 由 GNU 接管, 可以用于 Linux 嵌入式开发和服务器端开发
-2. Objective-C 文件扩展名为".m", 与 C++ 混编的文件扩展名为 ".mm"
+1. OC 由 GNU 接管, 可以用于 Linux 嵌入式开发和服务器端开发
+2. OC 文件扩展名为".m", 与 C++ 混编的文件扩展名为 ".mm"
+3. Foundation 框架和 UIKit 框架是 OC 语言编写的
+4. OC 具有封装, 继承, 多态, 重用; 不具有重载, 模版, 多继承, 垃圾回收机制
+5. OC 的优势是它的动态能力
+6. 动态类: 运行时确定类的对象
+7. 动态绑定: 运行时确定要调用的方法
+8. 动态加载: 运行时为程序加载新的模块
 
 ```
 // 头文件, 类的声明
@@ -32,14 +38,15 @@
 
 1. 基本数据类型: int, float, double, char
 2. 类型修饰符: long, long long, short, signed, unsigned
-3. 整型类型变量默认初始值为0, 而非任意值
-4. 布尔类型变量本质是"预处理程序"的机制, 使用预定义的值 YES, NO
-5. id 类型是通用指针类型, 是多态和动态绑定的基础, nil 是 id 类型, 本质是指针类型, 声明时没有星号, 可以使用强制类型转换将 id 类型转换为指定类型的对象,
-6. id 类型的方法只是返回指向内存中某个对象的指针, 对象总是携带 isa 成员, 因此总是可以确定它的类
-7. instancetype 类型, 决定了基于上下文的返回类型, 被继承时, 可以正确返回子类
-8. 枚举类型可以在冒号后面指定数据类型
-9. 复合字面量: (type) {initialize list}, 可以用于初始化结构或数组
-10. 一些应用程序为了优化, 要求使用底层数据类型, 比如使用大型数据的数组, 可能会使用 C 语言的内置数据结构, 而不是 Foundation 框架提供的数组对象
+3. 整型类型变量默认初始值为0(不是任意值)
+4. 枚举类型可以在冒号后面指定数据类型
+5. 复合字面量: (type) {initialize list}, 可以用于初始化结构或数组
+6. 布尔类型变量本质是预处理机制, 使用预定义的值 YES 和 NO
+7. id 类型是通用指针类型, 可以强制类型转换为指定类型的对象, 是多态和动态绑定的基础
+8. id 类型的方法只是返回指向内存中某个对象的指针, 对象总是携带 isa 成员, 因此总能确定对象的类
+9. nil 是 id 类型, 本质是指针类型, 声明时没有星号
+10. instancetype 类型, 决定了基于上下文的返回类型, 被继承时, 可以正确返回子类
+11. 程序为了性能优化, 可能要求使用底层数据类型, 例如存储大量数据的数组, 可能会使用 C 语言的内置数据结构, 而不是 Foundation 框架提供的数组对象
 
 # 常量
 
@@ -47,12 +54,12 @@
 
 # 运算符
 
-1. 条件运算符从右向左结合, Objective-C 支持非 ANSI 扩展的语句:` condition ? : expression`
+1. 条件运算符从右向左结合, OC 支持非 ANSI 扩展的语句:` condition ? : expression`
 
 # 语句
 
-1. switch 语句支持整型, 字符型
-2. 使用编译器选项 `-W Conversion` 和 `-Wswitch`,当赋值和使用枚举类型表达式以及枚举常量应用在 switch 语句时, 提供类型检查
+1. switch 语句支持整型和字符型
+2. 使用编译器选项 `-W Conversion` 和 `-Wswitch`, 当赋值和枚举类型表达式或枚举常量应用在 switch 语句时, 提供类型检查
 
 # 变量
 
@@ -73,7 +80,7 @@
 # 属性, 成员变量
 
 1. 成员变量: 使用大括号声明在接口文件`@interface`(公有, 可以被继承)或实现文件`@implementation`(私有)中, 在类内按名称直接访问, 推荐后者方式
-2. 属性: 是成员变量的外部接口, 只能在接口文件中声明, 本质是调用 set 和 get 方法访问成员变量, 叫做访问器(accessor)方法(since Objective-C 2.0), 在类外使用 "." 运算符调用方法进行访问
+2. 属性: 是成员变量的外部接口, 只能在接口文件中声明, 本质是调用 set 和 get 方法访问成员变量, 叫做访问器(accessor)方法(since OC 2.0), 在类外使用 "." 运算符调用方法进行访问
 3. 成员变量名是属性名加下划线前缀, 二者内存操作不同, 在实现文件中使用 `@synthesize var = _var` 的形式将成员变量名和属性名进行对接
 4. 若只在头文件中声明属性, 则会自动生成以下划线开头的同名的成员变量, 不再需要 `@synthesize`
 5. 成员变量被访问限定符修饰, 默认为 protected
@@ -168,7 +175,7 @@
 5. 分类的接口可以定义在单独的接口文件中(应包含主类的头文件)或写在主类接口文件下面(前提是可以访问主类的源代码)
 6. 分类的实现可以定义在单独的实现文件中(主类不能访问分类方法)或写在主类实现文件下面(该类的所有用户都可以访问分类中的方法)
 7. 未命名的分类: 用于类的扩展, 可以定义额外的实例变量和属性(有命名的分类不允许)
-8. Objective-C 名称空间是程序代码与所有的库, 框架和插件共享的
+8. OC 名称空间是程序代码与所有的库, 框架和插件共享的
 9. 通过分类向主类添加的方法可以被子类继承
 
 ```
@@ -200,10 +207,11 @@ BOOL c = [currentObject conformToProtocol: @protocol (protocolName)];	// 指定�
 BOOL c = [currentObject respondsToSelector: @selector (method)];		// 指定类是否实现指定方法
 ```
 
-# 代理 delegate
+# 代理(委托) delegate
 
 1. 采用某个协议的类实现了协议定义的方法, 可称作代理类
 2. UITableView 类遵循 UITableViewDataSource 协议和 UITableViewDelegate 协议, 让用户决定表格中每个区块有多少行(tableView: numberOfRowsInSection:), 表格中某些行被选中需要怎么样(tableView: didSelectRowAtIndexPath:)
+3. respondsToSelector: 方法
 
 # 非正式协议
 
@@ -211,6 +219,7 @@ BOOL c = [currentObject respondsToSelector: @selector (method)];		// 指定类�
 2. 非正式协议实际上仅仅是一个名称之下的一组方法, 声明非正式协议的类自己并不实现这些方法
 3. 选择实现这些方法的子类需要在它的接口部分重新声明这些方法, 并实现这些方法中的一个或多个
 4. 编译器不提供有关非正式协议的帮助, 没有遵守协议或者由编译器测试这样的概念
+5. 非正式协议是委托技术的基础
 
 # 合成对象 composite object
 
@@ -232,13 +241,28 @@ BOOL c = [currentObject respondsToSelector: @selector (method)];		// 指定类�
 
 # 动态解析方法
 
-# 委托 delegation
-
-1. respondsToSelector: 方法
-
 # isa 指针
 
-1. 每个对象都会继承 isa 指针这个保护成员, 从根对象获得, 用于确定对象所属的类
+1. isa 指针是对象的隐藏数据, 也是对象的第一个成员变量, 每个对象都会继承这个保护成员, 从根对象获得, 用于确定对象所属的类
+2. isa 指针指向一个类对象(class object), 类对象占用内存空间, 在编译的时候生成, 用来描述某个类的定义
+3. 类对象包含了 OC 对象的一些信息, 包括 OC 对象的方法调度表，实现了什么协议等等, 这个包含信息就是 OC 动态能力的根源
+
+isa 指针类型的数据结构
+
+```
+struct objc_class {
+    Class isa;			//指向元类对象(metaclass object)
+    Class super_class;	//指向父类的类对象
+    const char *name;  
+    long version;  
+    long info;
+    long instance_size;  
+    struct objc_ivar_list *ivars;  
+    struct objc_method_list **methodLists;   
+    struct objc_cache *cache;  
+    struct objc_protocol_list *protocols;     
+ }  
+ ```
 
 # 高阶函数
 

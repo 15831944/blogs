@@ -17,6 +17,10 @@
 1. User interfaces are actually archived Cocoa or Cocoa Touch objects (saved as .nib files)
 使用单个 xi b文件组织 viewController 或者 view , 应用程序在启动后, 从 xib 文件创建窗口
 
+原理
+
+xib 的原理就是将 xml 文件解析出来, 找到相应的 view, 转换成代码, 然后创建对象并显示
+
 优势
 
 1. 良好的 MVC 设计模式: 一个 xib 文件对应一个 ViewController, 对于自定义的 view, 也使用单个 xib 文件并从 main bundle 进行加载的方式来载入, Interface Builder 帮助完成 view 的创建, 布局和与 file owner 的关系映射等一些列工作, xib 文件都是 view 的内容, 有助于建立起较好的 MVC 的概念
@@ -30,6 +34,10 @@
 1. 使用 StoryBoard 来通过单个或很少的几个文件构建全部 UI, storyboard 的本质是 xml 文件
 2. StoryBoard 可以看做是一组 viewController 对应的 xib, 以及它们之间的转换方式的集合
 3. 在 StoryBoard 中不仅可以看到每个 ViewController 的布局样式, 也可以明确地知道各个 ViewController 之间的转换关系
+
+原理
+
+storyboard 的原理也是将 xml 文件解析出来, 找到相应的控制器等, 转换成代码, 然后创建对象并显示, 和 xib 原理一样
 
 优势
 
@@ -57,6 +65,7 @@
 1. [代码手写UI，xib和StoryBoard间的博弈，以及Interface Builder的一些小技巧](https://onevcat.com/2013/12/code-vs-xib-vs-storyboard/)
 1. [Storyboards & XIBs: Best Practices](https://mobilejazz.com/blog/storyboards-xibs-best-practices/)
 1. [iOS 开发可视化编程之Xib 简述](http://www.jianshu.com/p/ea3f90cc744b)
+1. [ iOS中xib与storyboard原理，与Android界面布局的异同](http://blog.csdn.net/xn4545945/article/details/32171353)
 
 stackoverflow
 

@@ -9,3 +9,8 @@
 1. 大多数控件都可以通过这三种模式使用, 并且几乎都支持一种以上的模式, 可根据需求选择合适的模式
 2. 所有 iOS 控件都是 UIControl 的子类, 都能够触发操作方法
 3. 大多数控件都支持被动模式, 所有控件都支持静态或者不可见模式
+
+# text field (UITextField)
+
+1. A text field lets a user type in a single line of text
+2. placeholder

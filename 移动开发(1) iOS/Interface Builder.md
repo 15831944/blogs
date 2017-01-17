@@ -2,21 +2,25 @@
 
 1. Interface Buidler 原本是独立的应用, 现被集成到 Xcode 中, 用于建立逻辑操作代码和界面对象之间的通信
 2. Interface Buidler 创建的是 OC 或 Swift 对象, 与在代码中所做的一样, 但不会生成任何需要手动维护的代码, 然后把这些对象序列化到 nib 或 storyboard 文件中
-3. 应用程序运行时, 加载 nib 文件或 storyboard 文件, 实例化对象, 加载到内存中
+3. 应用程序运行时, 自动加载 nib 文件或 storyboard 文件, 实例化对象, 加载到内存中
+4. 应用程序内容的组织和呈现方式是, 一个应用程序(application)对应一个或多个屏幕(sereen), 一个屏幕对应一个视图控制器, 管理该屏幕的一组视图对象, 多个屏幕则各自有其试图控制器
+5. 视图就是眼睛能看到并且可以在 Interface Buidler 中进行编辑的部分
+6. 控制器就是编写的代码, 用来处理用户的交互事件, 实际的操作都在控制器内执行, 新建一个项目后, 默认的主视图控制器覆盖整个屏幕
 
 # 文件类型
 
-1. .nib 是二进制格式文件, 只包含一个视图及相关联的控制器或对象, 只在需要显示某个视图时加载他的 nib 文件, 一次加载完所有内容, 节省内存
-2. .xib 是 XML 衍生格式文件
-3. .storyboard 文件, 相当于一个元 nib 文件(meta-nib file), 可以包含多组视图和控制器, 以及如何在应用运行时进行相互连接的配置信息, 加载某视图和控制器时请求特定内容
-4. Main.storyboard 文件会在应用程序启动时自动加载
+1. .nib 是二进制格式文件, 只包含一个视图及相关联的控制器或对象, 只在需要显示某个视图时加载他的 nib 文件, 一次加载完所有内容, 节省内存, .xib 是 XML 衍生格式文件, 文本文件便于版本管理
+2. .storyboard 文件, 相当于一个元 nib 文件(meta-nib file), 可以包含多组视图和控制器, 以及如何在应用运行时进行相互连接的配置信息, 加载某视图和控制器时请求特定内容
 
 # storyboard
 
-1. 视图就是眼睛能看到并且可以在 Interface Buidler 中进行编辑的部分
-2. 控制器就是编写的代码, 用来处理用户的交互事件, 实际的操作都在控制器内执行
-3. 新建一个项目后, 默认的主视图控制器覆盖整个屏幕
-4. 文档略图(Document Outline): 以场景(Scene)作为相关内容的容器进行划分
+1. storyboards: 用于规划 flow 或 story 来驱动你的 app
+2. canvas: 画布, storyboard 的背景, 用于添加和安排界面元素
+3. scene: 场景, 用于表示一个屏幕的内容, 每个场景有自己的视图层次, 由一个视图控制器进行管理
+4. storyboard entry point: 指向 canvas 上的 scene 的左侧的箭头
+5. outline view: 大纲视图, 显示在 canvas 的左侧, 用于查看 storyboard 中的对象层次, 以场景作为相关内容的容器进行划分
+6. content view: 目录视图对象, 用于定位视图层次顶部, 在其视图层次中作为一个容器为子视图提供服务
+7. elements: 界面元素, 包括: views, view controllers, gesture recognizers
 
 # 代码和界面对象之间的通信
 
@@ -56,11 +60,13 @@ IBOutlet UILabel *label;				// 变量 label 在 Interface Builder 里被连接�
 
 # 自动布局 autolayout
 
+1. stack view (UIStackView): A stack view provides a streamlined interface for laying out a collection of views in either a column or a row.
+1. 自动布局 (Auto Layout): 为视图添加约束(constraint)
+2. Trait Variations: 尺寸分类
 
+约束 Constraints
 
-# 约束 Constraints
-
-1. 蓝色引导虚线
+1. 蓝色引导虚线 blue layout guides
 1. 约束实线: 蓝色表示成功, 橙色表示有问题
 
 拖动到父类
@@ -77,7 +83,9 @@ IBOutlet UILabel *label;				// 变量 label 在 Interface Builder 里被连接�
 8. Equal Height
 9. Aspect Ratio
 
-# 自动布局按钮
+自动布局按钮
+
+Embed In Stack
 
 Align(对齐)
 
@@ -96,10 +104,24 @@ Resolve Auto Layout Issues(解决自动布局问题)
 
 Resizing Behavior(尺寸变化行为)
 
+# View Controller Scene
 
+1. View Controller: 视图控制器对象, 从文件加载控制器及相关的视图, 其中 View(主视图) 代表 UIView 类的一个实例
+2. First Responder: 第一响应者指用户当前正在交互的对象(控件或视图)
+3. Exit
 
+# Assets.xcassets
 
+1. Assets 目录包含应用程序的所有图片
+2. 图片格式是 png(portable network graphic, 便携式网络图像)文件
 
+应用图标 AppIcon
+
+1. 图标尺寸: 点数尺寸 * 倍数 = 像素尺寸
+2. 图标类型: notification, spotlight, Settings, App
+
+1. 启动图片
+2. 启动文件 LaunchScreen.xib
 
 # action sheet
 

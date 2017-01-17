@@ -10,3 +10,14 @@
 指定头文件搜索路径
 
 # Prefix 头
+
+项目设置->
+
+定义预处理宏
+
+Build Settings -> Preprocessor Macros ->
+
+# 参考
+
+2. [What is the significance of #pragma marks? Why do we need #pragma marks?](http://stackoverflow.com/questions/6853821/what-is-the-significance-of-pragma-marks-why-do-we-need-pragma-marks)
+1. [iOS之#pragma mark用法](https://my.oschina.net/u/615517/blog/90282)

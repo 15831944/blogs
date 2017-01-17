@@ -1,9 +1,11 @@
 # 消息发送和消息转发机制
 
 1. 动态绑定机制: 使用对象进行方法调用是一个消息发送的过程, 所要调用的方法直到运行期才能确定
+1. 消息的发送者:
+2. 消息的接收者: 请求一个类或实例来执行某个操作时, 就是在向它发送一条消息, 方法执行的上下文环境就是接收到消息的对象
 2. 消息的组成: 方法的调用者是消息的发送者, 对象是消息的接受者, 方法名是选择子(selector), 方法名及参数是消息
 3. 消息的本质: 编译器看到消息后, 会将其转为一条标准的 C 语言函数调用
-4. 方法的查找: objectMessageSend 会按选择子的名称(键)搜索消息接收者类中的方法列表, 如果能找到与选择子名称相符的方法, 则跳转至其实现代码, 如果找不到, 就沿着起继承体系向上查找, 如果最终还是没有找到相符的方法, 则执行消息转发
+4. 方法的查找: objectMessageSend 会按选择子的名称(键)搜索消息接收者类中的方法列表, 如果能找到与选择子名称相符的方法, 则跳转至其实现代码, 如果找不到, 就沿着起继承体系向上查找父类方法, 如果最终还是没有找到相符的方法, 则执行消息转发
 
 ```
 id returnValue = [someObject messageName: parameter];	// someObject 是消息的接收者, messageName 是选择子(selector)
@@ -28,14 +30,15 @@ void objectMessageSend (id self, SEL cmd, ...);			// self 是消息接受者, cm
 1. 动态方法解析 (dynamic/lazy method resolution): 向当前类发送 resolveInstanceMethod: (对于类方法则为 resolveClassMethod:)消息, 如果返回 YES, 则系统认为请求的方法已经加入到了, 则会重新发送消息
 2. 快速转发路径 (fast forwarding path): 若果当前 target 实现了 forwardingTargetForSelector: 方法, 则调用此方法. 如果此方法返回除 nil 和 self 的其他对象, 则向返回对象重新发送消息
 3. 慢速转发路径(normal forwarding path): 首先 runtime 发送 methodSignatureForSelector: 消息查看 Selector 对应的方法签名, 即参数与返回值的类型信息, 如果有方法签名返回, runtime 则根据方法签名创建描述该消息的 NSInvocation, 向当前对象发送 forwardInvocation: 消息, 以创建的 NSInvocation 对象作为参数, 若 methodSignatureForSelector: 无方法签名返回, 则向当前对象发送 doesNotRecognizeSelector: 消息, 程序抛出异常退出
+
 ```
 /***************************************************
-	消息转发第一步: 
+	消息转发第一步:
 	若方法返回 YES, 则表示可以处理该消息, 否则进行下一步
 ***************************************************/
 + (BOOL)resolveInstanceMethod:(SEL)sel {
     NSString	*selStr = NSStringFromSelector(sel);
-	
+
 	/* 当前消息接受者可以处理该方法 */
     if ([selStr isEqualToString:@"name"]) {
         class_addMethod(self, sel, (IMP)nameGetter, "@@:");
@@ -49,12 +52,12 @@ void objectMessageSend (id self, SEL cmd, ...);			// self 是消息接受者, cm
 	/* 沿消息接受者的继承链, 判断父类是否可以处理该方法 */
     return [super resolveInstanceMethod:sel];
  }
- 
+
  void nameSetter(id self, SEL cmd, id value) {
     NSString	*fullName = value;
     NSArray		*nameArray = [fullName componentsSeparatedByString:@" "];
     PersonModel	*model = (PersonModel *)self;
-	
+
     model.firstName = nameArray[0];
     model.lastName  = nameArray[1];
 }
@@ -62,7 +65,7 @@ void objectMessageSend (id self, SEL cmd, ...);			// self 是消息接受者, cm
 id nameGetter(id self, SEL cmd) {
     PersonModel		*model = (PersonModel *)self;
     NSMutableString	*name = [[NSMutableString alloc] init];
-	
+
     if (nil != model.firstName) {
         [name appendString:model.firstName];
         [name appendString:@" "];
@@ -74,12 +77,12 @@ id nameGetter(id self, SEL cmd) {
 }
 
 /***************************************************
-	消息转发第二步: 
+	消息转发第二步:
 	查找是否有其它的接收者, 返回一个可以处理该消息的对象, 若返回 nil, 则进行下一步
 /**************************************************/
 - (id)forwardingTargetForSelector:(SEL)aSelector {
     NSString	*selStr = NSStringFromSelector(aSelector);
-	
+
     if ([selStr isEqualToString:@"companyName"]) {
         return self.companyModel;
     }
@@ -89,14 +92,14 @@ id nameGetter(id self, SEL cmd) {
 }
 
 /***************************************************
-	消息转发第三步: 
+	消息转发第三步:
 	这个方法实现得很简单。只需要改变调用目标，使消息在新目标上得以调用即可。不过，如果采用这种方式，实现的效果与第二步的消息转发是一致的。
 	所以比较有用的实现方式是：先以某种方式改变消息内容，比如追加另外一个参数，或者改换选择子，等等
 ***************************************************/
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {                          
     NSMethodSignature	*sig = nil;
     NSString			*selStr = NSStringFromSelector(aSelector);
-	
+
     if ([selStr isEqualToString:@"deptName"]) {
         sig = [self.companyModel methodSignatureForSelector:@selector(deptName:)];
     }else{
@@ -107,11 +110,11 @@ id nameGetter(id self, SEL cmd) {
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     NSString	*selStr = NSStringFromSelector(anInvocation.selector);
-	
+
     if ([selStr isEqualToString:@"deptName"]) {
         [anInvocation setTarget:self.companyModel];
         [anInvocation setSelector:@selector(deptName:)];
-		
+
         BOOL hasCompanyName = YES;
         //第一个和第一个参数是target和sel
         [anInvocation setArgument:&hasCompanyName atIndex:2];
@@ -127,4 +130,5 @@ id nameGetter(id self, SEL cmd) {
 # 参考
 
 1. [Objective-C消息发送和消息转发机制](http://www.jianshu.com/p/01a19c64499c#)
+1. [Objective-C消息发送和消息转发机制](http://www.jianshu.com/p/01a19c64499c)
 1. [Objective-C 消息转发](http://blog.csdn.net/c395565746c/article/details/8507008)

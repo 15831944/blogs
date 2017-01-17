@@ -1,24 +1,3 @@
-# NSNumber
-
-1. NSNumber 类会依据基本数据的类型创建对象
-
-```
-NSNumber *number = @1;
-number = [NSNumber numberWithInt:10];
-NSLog(@"%i", [number intValue]);
-number = [NSNumber numberWithInteger:100];
-NSLog(@"%li", [number integerValue]);
-number = [[NSNumber alloc] initWithInt:200];
-NSLog(@"%i", [number intValue]);
-number = [[NSNumber alloc] initWithInteger:400];
-NSLog(@"%li", [number integerValue]);
-if ([number isEqualToNumber:number] == YES)
-if ([number compare:number] == NSOrderedAscending)
-```
-
-# NSDecimalNumber
-
-
 # NSString
 
 1. 在栈中实例化字符串对象自动释放内存, 在堆中实例化对象需要手动释放内存
@@ -76,3 +55,7 @@ NSMutableString *str = [[NSMutableString alloc] initWithCapacity:10];	// 实例�
 ```
 
 # NSConstantString
+
+# NSAttributedString
+
+属性字符串

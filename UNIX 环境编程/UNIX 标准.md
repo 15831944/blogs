@@ -170,3 +170,4 @@ Open Group 拥有 UNIX 商标并出版 SUS
 
 1. [C标准库源码解剖(1)：类型相关的定义](http://www.aspku.com/kaifa/net/31612.html)
 2. [C标准库源码解剖(2)：错误报告errno.h](http://www.aspku.com/kaifa/net/31613.html)
+3. [errno是什么？](http://blog.csdn.net/xiaofei0859/article/details/4939733)

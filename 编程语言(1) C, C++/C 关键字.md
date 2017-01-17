@@ -87,6 +87,59 @@
 1. 使用 const 限定符修饰形参可以防止函数修改传入的参数
 2. 使用 const 限定符修饰指针和引用
 
+# volatile
+
+1. volatile 关键字会影响编译器的编译结果, 它指出其修饰的变量是随时可能发生变化的, 变量可能在程序外被改变
+2. 与 volatile 变量有关的运算将不进行编译优化, 每次使用 volatile 变量时必须从内存中其原始地址中读取, 不会去假设这个变量的值, 不会去重复使用保存在 cache 或寄存器里的备份, 例如向某个设备地址连续写入两条指令, 则指向设备地址的指针应声明为 volatile, 保证每条指令都被写入, 否则编译器可能将其优化为只写入为最后一条指令
+3. 一个参数可以同时既是 const 又是 volatile, 例如只读的状态寄存器, 它是 volatile 因为它可能被意想不到地改变, 它是 const 因为程序不应该试图去修改它
+4. 指针可以是 volatile, 例如当一个中断服务子程序修该一个指向一个 buffer 的指针时
+
+举例
+
+1. 并行设备的硬件寄存器(如状态寄存器)
+2. 一个中断服务子程序中会访问到的非自动变量(Non-automatic variables)
+3. 多线程应用中被几个任务共享的变量
+
+```
+// 返指针 *ptr 指向值的平方, 错误示例
+int square(volatile int *ptr)
+{
+	return *ptr * *ptr;
+}
+// 上述错误示例相当于如下函数实现
+int square(volatile int *ptr)
+{
+	int a, b;
+
+	/* 由于 *ptr 的值可能被意想不到地该变, 因此a和b可能是不同的 */
+	a = *ptr;
+	b = *ptr;
+
+	return a * b;
+}
+// 正确的实现
+long square(volatile int *ptr)
+{
+	int a;
+
+	a = *ptr;
+	return a * a;
+}
+
+// 错误示例
+int	*ip = ...;	// 设备地址
+*ip = 1;		// 向该设备地址传入第一个指令
+*ip = 2;		// 向该设备地址传入第二个指令
+// 以上程序可能被编译器优化为如下代码, 丢失第一个指令
+int	*ip = ...;
+*ip = 2;
+// 用 volatile 修饰指针, 不允许做任何优化, 保证命令被依次写入
+volatile int	*ip = ...;
+*ip = 1;
+*ip = 2;
+```
+
 # 参考
 
 1. [cppreference](http://en.cppreference.com/w/c/keyword)
+2. [C中的volatile用法](http://www.cnblogs.com/chio/archive/2007/11/24/970632.html)

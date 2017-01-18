@@ -4,6 +4,10 @@
 git init dirpath				# 在指定目录中初始化 git 仓库 `.git`, 默认生成 master 主分支, 不会影响目录中原有文件
 git status						# 查看仓库状态, 默认在 master 主分支
 git add filename				# 添加文件到缓存区
+git add -A						# 添加所有文件到缓存区
+git add .						# 添加新添加的文件和编辑过的文件, 不包括删除的文件
+git add -A .					# 添加所有编辑过的的文件
+git add -u						# 添加编辑过的或删除的文件, 不包括新添加的文件
 git rm –cached filename			# 移除缓存区中的指定文件
 git commit -m ‘commit message’	# 提交缓存文件, -m 选项指定提交信息
 git log							# 查看所有 commit 记录

@@ -1,4 +1,19 @@
-# 基本数据结构类型
+# 常量(constant)和变量(variable)
+
+1. 数据对象的声明: 使用 let 声明常量, 使用 var 声明变量
+2. 类型推断(type inference): 根据初始值隐式地判断数据对象的类型
+3. 显式数据类型声明(Type Annotations): 使用": "指定声明的数据类型
+4. 常量的初始化: 常量声明时可以不赋初始值, 声明后的第一次赋值将作为该常量的值, 且只能赋值一次, 常量声明但未初始化期间不可以使用, The value of a constant doesn’t need to be known at compile time
+5. 常量和变量的存储: 将常量提到与变量对等的位置, 避免可以使用常量的地方使用变量, 常量存储在内存中的常量区, 效率更高
+
+# 值类型(value type)和引用类型(inference type)
+
+1. 基本数据类型(Int, Float, String), 集合类型(Array, Set, Dictionary)的实现都是结构体
+2. 结构体是值类型, 在函数调用中采用传值方式传递, 通过不同实体间的拷贝赋值, 存储在栈中
+3. 类和对象是引用类型, 使用指针访问堆中的内存
+4. Objective C 中的以 NS 开头的类型是 Fundation 框架提供的类, 所有数据类型均采用引用方式传递
+
+# 基本数据结构类型 fundamental types
 
 1. 基本数据类型包括: Int(UInt, Int8), Float(CGFloat), Double, Bool, String, Tuple
 2. 基本数据类型的本质是结构, 自定义数据类型则为类, 类型名风格为首字母大写
@@ -23,6 +38,7 @@
 
 ## 元组 Tuple
 
+1. Tuple 是 Swift 新增的 C 和 OC 没有的数据类型, 用于创建和传递一组值, 可以作为一个复合值从一个函数返回多个值
 1. 多个元素的组合?
 1. 元组的解包: 将元组中的分量"分解出来"赋给各变量, 使用下划线忽略不需要解包的分量
 2. 分量的名称: 使用":"在初始值中或显式类型声明中为元组的各分量命名(区分":"后面接数据类型的习惯用法)
@@ -31,6 +47,7 @@
 
 ## 可选型 option
 
+1. optional 类似于 OC 中用 nil 表示空指针, 但可选型可用于任何类型, 而不仅是类
 1. 不应使用同类型中的特殊值代表"没有"这个概念, 例如用整型值404代表错误, 用0代表没有错误, 是有弊端的, 而应使用统一的符号代表"没有"这个概念
 2. swift 使用 nil 代表"没有", 它是可选型(单独的类型), 不像其他语言中, NULL 的本质还是整型（OC 中 nil 表示空指针，Swift 中则应用更为广泛）
 3. 可选型的声明: 可选型必须和其他类型共存, 必须显式声明可选型, 使用类型名接问号, 例如 Int? 代表整型的可选型, 即该类型的变量可选为整型, 也可选为 nil
@@ -59,9 +76,10 @@ nil coalesce
 2. 字符串插值: 在字符串中插入转义字符(反斜杠)加括号, 括号中为要转换为字符串的变量值, 相当于 sprintf
 3. 字符串采用 Unicode 编码, 因此不能用地址来数字符
 
-# 集合 Collections
+# 集合类型 Collection Types
 
 1. 集合数据类型包括: Array, Dictionary, Set
+2. 数组和字典的最后一个元素后面可以有逗号
 
 ## 数组 Array
 
@@ -72,11 +90,14 @@ nil coalesce
 数组的初始化
 
 ```
+var shoppingList = ["catfish", "water", "tulips", "blue paint"]		// 使用方括号初始化数组
+shoppingList[1] = "bottle of water"									// 使用方括号中的索引访问数组元素
+let emptyArray = [String]()											// 使用构造函数语法(initializer syntax)创建空数组
+shoppingList = []													// 给变量赋新值或给函数传参时, 类型可以被推断, 可以写一个空数组
 var arr = []				// 即不指定类型, 也不初始化, 则为 NSString 类型, 不建议使用
 var arr: [Int] = []
 var arr: Array<Int> = []					// 泛型
 var arr: Array<Int> = [1, 2, 3]
-var arr = [Int]()							// 构造函数
 var arr = [Int] (repeating: 0, count: 5) 	// 重复的值可以是任意类型
 var arr = Array<Int>()
 var arr = Array<Int> (repeating: 0, count: 3)
@@ -100,11 +121,20 @@ var arr = Array<Int> (repeating: 0, count: 3)
 
 ## 字典 Dictionary
 
+```
+var occupations = ["Malcolm": "Captain", "Kaylee": "Mechanic",]		// 使用方括号初始化字典
+occupations["Jayne"] = "Public Relations"							// 使用方括号中的键访问字典元素
+let emptyDictionary = [String: Float]()								// 使用构造函数语法(initializer syntax)创建空字典
+occupations = [:]													// 给变量赋新值或给函数传参时, 类型可以被推断, 可以写一个空字典
+```
 ## 集合 Set
 
-# 自定义数据类型
+# 自定义数据类型 named types
 
-## 枚举
+## 枚举 enumeration
+
+1. Use enum to create an enumeration. Like classes and all other named types, enumerations can have methods associated with them.
+2. rawValue 属性, 默认从 0 开始, 可以指定
 
 ## 结构体
 

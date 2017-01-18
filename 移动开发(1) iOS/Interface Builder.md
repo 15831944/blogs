@@ -122,7 +122,3 @@ Resizing Behavior(尺寸变化行为)
 
 1. 启动图片
 2. 启动文件 LaunchScreen.xib
-
-# action sheet
-
-# alert 对话框的设置

@@ -5,32 +5,68 @@
 3. 语句后面不需要接分号
 4. 强制类型转换也可以看做是构造函数
 5. 不支持自增/自减运算符, 原因也是编码问题?
+6. Swift adopts the readability of Objective-C’s named parameters and the power of Objective-C’s dynamic object model
+7. Swift unifies the procedural and object-oriented portions of the language
+8. Code written at global scope is used as the entry point for the program, so you don’t need a main() function
+9. 使用 print 函数打印这样的语句不需要引用任何库
 
 # Swift 语言的安全性
 
 1. 强类型语言, 表达式中不允许隐式类型转换, 操作数必须与要求类型一致, 例如条件表达式必须是 Bool 类型, 字符串不能和字符拼接
 2. 在编译阶段就可判断变量是否溢出
 3. 没有初始化的变量不可以直接被引用, 不是像其他语言那样给一个随机值或默认值, 但可选型会被默认初始化为 nil
+4. Swift adopts safe programming patterns
 
-# 常量(constant)和变量(variable)
+# 解包 unwrap
 
-1. 数据对象的声明: 使用 let 声明常量, 使用 var 声明变量
-2. 类型推断(type inference): 根据初始值隐式地判断数据对象的类型
-3. 显式数据类型声明: 使用":"指定声明的数据类型
-4. 常量的初始化: 常量声明时可以不赋初始值, 声明后的第一次赋值将作为该常量的值, 且只能赋值一次, 常量声明但未初始化期间不可以使用
-5. 常量和变量的存储: 将常量提到与变量对等的位置, 避免可以使用常量的地方使用变量, 常量存储在内存中的常量区, 效率更高
+1. 当被解包的数据是常量时, 使用强制解包则是安全的, 因为可以确保不会为空
 
-# 值类型(value type)和引用类型(inference type)
+# 下标 Subscripts
 
-1. 基本数据类型(Int, Float, String), 集合类型(Array, Set, Dictionary)的实现都是结构体
-2. 结构体是值类型, 在函数调用中采用传值方式传递, 通过不同实体间的拷贝赋值, 存储在栈中
-3. 类和对象是引用类型, 使用指针访问堆中的内存
-4. Objective C 中的以 NS 开头的类型是 Fundation 框架提供的类, 所有数据类型均采用引用方式传递
+1. 使用下标进行访问的内置的数据类型: 数组, 字典
+2. 使用 subscript 关键字定义类, 枚举, 结构体数据类型的下标
+3. set 的类型和下标返回的类型一致
+
+# 运算符重载 Operator Overloading
+
+# 扩展 Extention
+
+# Nested Type
+
+# 泛型编程 Generic
+
+# 协议 Protocol
+
+# Delegation
+
+# Error Handing
+
+# 内存管理 Memory Management
+
+# Type Casting
+
 
 # 疑问
 
 1. 最自然的数据类型(Int)执行的访问最快, 因为数据的位数和操作系统的位宽相同, 存取速度快
 2. 使用常量比变量更高效, 常量存储在内存的常量区, 存取速度快
+
+# 单词
+
+semicolon 分号
+colon 冒号
+parentheses 小括号
+backslash 反斜杠
+brackets 方括号
+Braces 大括号
+comma 逗号
+question mark 问号
+
+explicitly 显式地
+implicitly 隐式地
+
+clause 子句
+iterate over 遍历
 
 # 参考
 

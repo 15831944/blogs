@@ -14,12 +14,11 @@
 
 # storyboard
 
-1. storyboards: 用于规划 flow 或 story 来驱动你的 app
+1. storyboards: 用于规划 flow 或 story 来驱动你的 app, 包含了应用所有的视图和视图控制器
 2. canvas: 画布, storyboard 的背景, 用于添加和安排界面元素
 3. scene: 场景, 用于表示一个屏幕的内容, 每个场景有自己的视图层次, 由一个视图控制器进行管理
 4. storyboard entry point: 指向 canvas 上的 scene 的左侧的箭头
 5. outline view: 大纲视图, 显示在 canvas 的左侧, 用于查看 storyboard 中的对象层次, 以场景作为相关内容的容器进行划分
-6. content view: 目录视图对象, 用于定位视图层次顶部, 在其视图层次中作为一个容器为子视图提供服务
 7. elements: 界面元素, 包括: views, view controllers, gesture recognizers
 
 # 代码和界面对象之间的通信
@@ -110,15 +109,8 @@ Resizing Behavior(尺寸变化行为)
 2. First Responder: 第一响应者指用户当前正在交互的对象(控件或视图)
 3. Exit
 
-# Assets.xcassets
+# 设备方向 Device Orientation 和界面方向 Interface Orientation
 
-1. Assets 目录包含应用程序的所有图片
-2. 图片格式是 png(portable network graphic, 便携式网络图像)文件
-
-应用图标 AppIcon
-
-1. 图标尺寸: 点数尺寸 * 倍数 = 像素尺寸
-2. 图标类型: notification, spotlight, Settings, App
-
-1. 启动图片
-2. 启动文件 LaunchScreen.xib
+1. Portrait, Upside Down, Landscape Left(顺时针旋转90°), Landscape Right
+1. 应用级支持方向, 全局配置, 对应于 Info.plist 文件中的 Supported interface orientations 项
+2. 视图控制器支持方向(应用级支持方向的子集), 设备旋转到新的方向时, 当前活动视图调用 supportedInterfaceOrientations 方法

@@ -3,7 +3,7 @@
 ```
 git init dirpath				# 在指定目录中初始化 git 仓库 `.git`, 默认生成 master 主分支, 不会影响目录中原有文件
 git status						# 查看仓库状态, 默认在 master 主分支
-git add filename				# 添加文件到缓存区
+git add filename				# 添加指定文件到缓存区
 git add -A						# 添加所有文件到缓存区
 git add .						# 添加新添加的文件和编辑过的文件, 不包括删除的文件
 git add -A .					# 添加所有编辑过的的文件
@@ -47,6 +47,7 @@ git grep
 ```
 git clone git@github.com:username/repositoryname.git				# 克隆远程仓库到本地
 git remote add origin git@github.com:username/remoterepository.git	# 将当前本地仓库关联到远程仓库(必须已存在), 指定远程仓库名称为 origin, 之后就可直接 push 和 pull 到该名称
+git remote remove name
 git remote -v														# 查看当前所有远程仓库
 git pull origin master --allow-unrelated-histories		# 远程最新的代码更新到本地
 git push origin master									# 把本地代码推到远程仓库(origin 远程仓库的 master 分支), 先 pull 再 push, 不易发生冲突

@@ -2,13 +2,14 @@
 
 1. 标识符使用 Unicode 编码(而不是 ASCII 编码), 一个字符可能占用1个或多个字节, 支持中文以及特殊字符形式的变量名
 2. 块注释可以嵌套
-3. 语句后面不需要接分号
+3. 语句后面不需要接分号, 除非是在一行中写多条语句
 4. 强制类型转换也可以看做是构造函数
 5. 不支持自增/自减运算符, 原因也是编码问题?
 6. Swift adopts the readability of Objective-C’s named parameters and the power of Objective-C’s dynamic object model
 7. Swift unifies the procedural and object-oriented portions of the language
 8. Code written at global scope is used as the entry point for the program, so you don’t need a main() function
 9. 使用 print 函数打印这样的语句不需要引用任何库
+1. 使用空的小括号作为空语句, 而不能是分号
 
 # Swift 语言的安全性
 
@@ -61,12 +62,21 @@ brackets 方括号
 Braces 大括号
 comma 逗号
 question mark 问号
+exclamation mark 感叹号
+backticks 反引号
+asterisk 星号
+underscores 下划线
+double quotes 双引号
 
 explicitly 显式地
 implicitly 隐式地
 
 clause 子句
 iterate over 遍历
+
+prefix
+infix
+suffix
 
 # 参考
 

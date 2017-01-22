@@ -2,7 +2,7 @@
 
 1. 运算符由 Swift 标准库(Swift Standard Library)提供, 后者也是框架
 3. 使用溢出操作符 opt in to 值溢出行为
-4. ++ 和 -- 两个操作符从 Swift3 开始正式被弃用
+4. ++ 和 -- 两个操作符从 Swift3 开始正式被弃用, 原因是 Unicode 编码问题?
 5. identity operators  引用的比较运算符为 "===" 和 "!==", 比较引用的对象实例的相等性
 
 术语 Terminology

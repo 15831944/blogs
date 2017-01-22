@@ -53,6 +53,16 @@ iOS SDK 10
 3. 对象库(Object Library): 主要来自 iOS 的 UIKit 框架
 4. 媒体库(Media Library):
 
+# 类视图
+
+// MARK: - Properties
+// MARK: - Initializers
+// MARK: - Methods
+
+// TODO:
+
+// FIXME:
+
 # 快捷键
 
 | keystroke             | meaning |

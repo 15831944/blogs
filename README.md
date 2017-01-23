@@ -9,20 +9,25 @@
 
 1. [Stack Overflow](http://stackoverflow.com/)
 2. [Swifter](http://swifter.tips/)
+3. [Swift Blog](https://developer.apple.com/swift/blog/)
 
 # Apple Developer Documentation
 
-1. [MyLife: A simple app for starting iOS development][mylife]
+1. [Concepts in Objective-C Programming][Concepts]
+5. [Programming with Objective-C][OC]
+3. [Objective-C Runtime Programming Guide][Runtime]
 2. [The Swift Programming Language][Swift]
+1. [MyLife: A simple app for starting iOS development][mylife]
 3. [Start Developing iOS Apps (Swift)][iOS]
 4. [Coding Guidelines for Cocoa][Cocoa]
-5. [Programming with Objective-C][OC]
 6. [Swift Standard Library][lib]
 7. [Using Swift with Cocoa and Objective-C (Swift 3.0.1)][soc]
 
+[Concepts]:	https://developer.apple.com/library/content/documentation/General/Conceptual/CocoaEncyclopedia/Introduction/Introduction.html#//apple_ref/doc/uid/TP40010810
+[OC]:		https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011210
+[Runtime]:	https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008048
 [Swift]:	https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097
 [Cocoa]:	https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html#//apple_ref/doc/uid/10000146i
-[OC]:		https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011210
 [iOS]:		https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html#//apple_ref/doc/uid/TP40015214
 [mylife]:	https://developer.apple.com/library/prerelease/content/samplecode/MyLife/Introduction/Intro.html
 [lib]:		https://developer.apple.com/reference/swift

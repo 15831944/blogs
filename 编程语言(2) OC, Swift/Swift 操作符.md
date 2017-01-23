@@ -27,3 +27,5 @@
 8. 逻辑运算符(Logical Operators): 与和或操作符遵循最短路原则(short-circuit evaluation), 左结合性(left-associative)
 
 # 高级运算符 Advanced Operators
+
+1. 恒等运算符: 类是引用类型, 因此需要判断是否引用同一个实例, 读作"等价于"

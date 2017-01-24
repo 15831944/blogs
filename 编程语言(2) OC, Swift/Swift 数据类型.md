@@ -2,7 +2,7 @@
 
 1. 基本数据类型(Fundamental Types)包括: Int, Float, Double, Bool, String, Tuple
 2. 集合数据类型(Collection Types)包括: Array, Dictionary, Set
-3. 自定义数据类型(Named Types)包括: 枚举, 类, 结构体, 是为 Swift 创建的新类型, 首字母大写, 面向对象的实质就是自定义的数据类型
+3. 自定义数据类型(Named Types)包括: 枚举, 类, 结构体, 是为 Swift 创建的新类型, 首字母大写
 4. 基本数据类型, 集合数据类型, 枚举的实现均是结构体
 
 ## 整型 Int, UInt, Int8, Int64

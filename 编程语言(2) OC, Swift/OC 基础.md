@@ -10,6 +10,7 @@
 1. 全局变量: 定义全局变量将引起存储空间分配, extern 声明则不会, 不建议用 extern 声明的同时进行定义和初始化, 如果只有少数方法要访问某全局变量, 可以在使用前单独进行 extern 声明, 外部全局变量会破坏封装性, 全局变量名称习惯用 g 开头
 2. 局部变量: 初始值为0或 nil, 方法返回即失效, 方法的参数属于局部变量
 3. 静态局部变量: 初始值为0或 nil, 只能在声明该变量的方法内访问, 类的各实例调用该方法时访问的是同一个变量
+4. 静态常量和静态变量的定义是通过特定类型加上 global 关键字
 
 # 字面值 Literals
 
@@ -25,8 +26,8 @@
 1. 基本数据类型: 包括 int, float, double, char 可用类型修饰符 long, long long, short, signed, unsigned 修饰
 2. 布尔类型: 本质是预处理机制, 使用预定义的值 YES 和 NO
 3. 枚举类型: 在冒号后面接数据类型
-4. id 类型: 通用指针类型, 可以强制类型转换为指定类型的对象, 是多态和动态绑定的基础
-5. instancetype 类型: 决定了基于上下文的返回类型, 被继承时, 可以正确返回子类
+4. id 类型: 通用指针类型, 可以强制类型转换为指定类型的对象, 是多态和动态绑定的基础, 不能对 id 类型变量使用点运算符
+5. instancetype 类型: 决定了基于上下文的返回类型, 被继承时, 可以正确返回子类, instancetype 类型的方法返回消息接受者的类型或其子类类型
 
 # 操作符
 
@@ -64,7 +65,6 @@ struct objc_class {
 1. 定义一个类包含其他类的一个或多个对象(相当于 C++ 的类的组合, 有一个的关系)
 2. 初始化合成对象时, 应初始化其包含的对象
 
-
 # 参考
 
 书籍
@@ -75,3 +75,15 @@ struct objc_class {
 
 1. [征战Objective-C](http://www.imooc.com/learn/218)
 2. [Objective-C 面向对象初体验](http://www.imooc.com/learn/373)
+
+博客
+
+1. [Cocoa 基本原理指南 内省介绍](http://mobile.51cto.com/iphone-274246.htm)
+2. [Cocoa 基本原理指南 Cocoa 对象的生命周期](http://mobile.51cto.com/iphone-274253.htm)
+3. [Objective-C消息发送和消息转发机制](http://www.jianshu.com/p/01a19c64499c#)
+4. [Objective-C 消息转发](http://blog.csdn.net/c395565746c/article/details/8507008)
+5. [iOS之#pragma mark用法](https://my.oschina.net/u/615517/blog/90282)
+
+stackoverflow
+
+1. [What is the significance of #pragma marks? Why do we need #pragma marks?](http://stackoverflow.com/questions/6853821/what-is-the-significance-of-pragma-marks-why-do-we-need-pragma-marks)

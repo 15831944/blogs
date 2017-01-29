@@ -1,11 +1,8 @@
-# 博客
+# Introduction
 
-1. 发现规律, 认识本质, 总结学习经历
-2. 对事物的抽象, 对知识的梳理, 本身也是一种能力
-3. 战胜无知, 就战胜了一切
-4. 中文技术博客多是作者按个人偏好丢给读者的二手不完整资料
+我的学习历程及知识体系
 
-# 网站
+# Websites
 
 1. [Stack Overflow](http://stackoverflow.com/)
 2. [Swifter](http://swifter.tips/)
@@ -22,20 +19,25 @@
 4. [Coding Guidelines for Cocoa][Cocoa]
 6. [Swift Standard Library][lib]
 7. [Using Swift with Cocoa and Objective-C (Swift 3.0.1)][soc]
+1. [iOS Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/design-principles/)
+1. [Introduction to Coding Guidelines for Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
+2. [Introduction to View Programming Guide for Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaViewsGuide/Introduction/Introduction.html)
 
-[Concepts]:	https://developer.apple.com/library/content/documentation/General/Conceptual/CocoaEncyclopedia/Introduction/Introduction.html#//apple_ref/doc/uid/TP40010810
-[OC]:		https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011210
-[Runtime]:	https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008048
-[Swift]:	https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097
-[Cocoa]:	https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html#//apple_ref/doc/uid/10000146i
-[iOS]:		https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html#//apple_ref/doc/uid/TP40015214
-[mylife]:	https://developer.apple.com/library/prerelease/content/samplecode/MyLife/Introduction/Intro.html
-[lib]:		https://developer.apple.com/reference/swift
-[soc]:		https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/index.html#//apple_ref/doc/uid/TP40014216
+# Books
+
+1. 《UNIX 环境高级编程》
+2. 《鸟哥的 LINUX 私房菜》
+3. 《C 和指针》
+4. 《Linux C 编程一站式学习》
+5. 《C++ Primer Plus》
+6. 《易学 C++》
+7. 《深入浅出 MFC》
+8. 《Objective-C 程序设计》
+9. 《精通 iOS 开发》(第7版)
 
 # 课程
 
-软件工程
+软件工程专业
 
 1. 数据结构与算法
 2. 计算机组成原理
@@ -52,21 +54,9 @@
 4. 软件项目管理
 5. 计算机图形学
 
-计算机科学与技术
+计算机科学与技术专业
 
-# 书籍
-
-1. 《UNIX 环境高级编程》
-2. 《鸟哥的 LINUX 私房菜》
-3. 《C 和指针》
-4. 《Linux C 编程一站式学习》
-5. 《C++ Primer Plus》
-6. 《易学 C++》
-7. 《深入浅出 MFC》
-8. 《Objective-C 程序设计》
-9. 《精通 iOS 开发》(第7版)
-
-# C++ 教程
+# 慕课网 C++ 教程
 
 1. [C++远征之起航篇](http://www.imooc.com/learn/342)
 2. [C++远征之离港篇](http://www.imooc.com/learn/381)
@@ -76,11 +66,18 @@
 6. [C++远征之多态篇](http://www.imooc.com/learn/474)
 7. [C++远征之模板篇](http://www.imooc.com/learn/477)
 
-# iOS 教程
+# 慕课网 Swift 教程
 
-DavidChin
+liuyubobobo
 
-1. [征战Objective-C](http://www.imooc.com/learn/218)
+1. [玩儿转 Swift](http://www.imooc.com/learn/127)
+2. [玩儿转Swift 2.0（第一季)](http://www.imooc.com/learn/635)
+3. [玩儿转Swift 2.0（第二季)](http://www.imooc.com/learn/642)
+4. [玩儿转Swift 2.0（第三季)](http://www.imooc.com/learn/663)
+5. [玩儿转Swift 2.0（第四季)](http://www.imooc.com/learn/677)
+6. [玩儿转swift3新特性](http://www.imooc.com/learn/750)
+
+# 慕课网 iOS 教程
 
 Visitor.zc
 
@@ -115,15 +112,6 @@ Keegan
 5. [iOS-动画进阶](http://www.imooc.com/learn/395)
 6. [iOS动画案例之会跳舞的界面(上)](http://www.imooc.com/learn/441)
 7. [iOS动画案例之会跳舞的界面(下)](http://www.imooc.com/learn/442)
-
-liuyubobobo
-
-1. [玩儿转 Swift](http://www.imooc.com/learn/127)
-2. [玩儿转Swift 2.0（第一季)](http://www.imooc.com/learn/635)
-3. [玩儿转Swift 2.0（第二季)](http://www.imooc.com/learn/642)
-4. [玩儿转Swift 2.0（第三季)](http://www.imooc.com/learn/663)
-5. [玩儿转Swift 2.0（第四季)](http://www.imooc.com/learn/677)
-6. [玩儿转swift3新特性](http://www.imooc.com/learn/750)
 
 高德LBS开放平台
 
@@ -187,3 +175,20 @@ TerryG
 
 1. [iOS架构初探](http://www.imooc.com/learn/774)
 2. [iOS-直播间礼品发送](http://www.imooc.com/learn/711)
+
+# Epilog
+
+1. 发现规律, 认识本质, 总结学习经历
+2. 对事物的抽象, 对知识的梳理, 本身也是一种能力
+3. 战胜无知, 就战胜了一切
+4. 中文技术博客多是作者按个人偏好丢给读者的二手不完整资料
+
+[Concepts]:	https://developer.apple.com/library/content/documentation/General/Conceptual/CocoaEncyclopedia/Introduction/Introduction.html#//apple_ref/doc/uid/TP40010810
+[OC]:		https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011210
+[Runtime]:	https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008048
+[Swift]:	https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097
+[Cocoa]:	https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html#//apple_ref/doc/uid/10000146i
+[iOS]:		https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html#//apple_ref/doc/uid/TP40015214
+[mylife]:	https://developer.apple.com/library/prerelease/content/samplecode/MyLife/Introduction/Intro.html
+[lib]:		https://developer.apple.com/reference/swift
+[soc]:		https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/index.html#//apple_ref/doc/uid/TP40014216

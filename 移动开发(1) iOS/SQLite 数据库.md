@@ -1,3 +1,8 @@
+# 数据库概述
+
+1. SQL(Structed Query language, 结构化查询语言): 与关系数据库交互的标准语言
+2. ORM(Object-Relational Mapping, 对象关系映射): 关系数据库和面向对象编程语言之间的转换, Core Data 即是一种 ORM 解决方案
+
 # SQLite 概述
 
 1. SQLite 是一个轻量级关系数据库管理系统, 设计目标为针对嵌入式, 特点是占用资源低, 可移植性强, 速度快, 版本是 SQLite 3
@@ -26,20 +31,28 @@ create table USER(uid, name);							// 创建数据表
 create table if not exists USER(uid, name);				// 条件创建数据表
 drop table USER											// 删除表
 insert into USER (uid, name) values(0, 'wanghuiyong');	// 插入
-select uid from USER;									// 查询, 可使用通配符
+select uid from USER;									// 查询, 可使用通配符, 检索前必须先查询并准备
 update USER set name = 'wanghuiyong' where uid = 3;		// 修改, 使用 where 指定修改条件
 														// 更多语句
 ```
 
-# SQLite 函数
+# 绑定变量
+
+
+
+# SQLite 3 API
 
 ```
-sqlite3_open()		// 打开数据库
-sqlite3_exec()		// 执行 Create Table 语句
-sqlite3_close()		// 释放资源
+宏
+SQLITE_OK
+
+sqlite3_open(filepath, database)	// 打开指定数据库, 不存在则会新建
+sqlite3_exec()						// 执行 CREATE 语句, 将创建的新表传递到打开的数据库, 用于运行任何不返回数据的命令(更新, 插入, 删除)
+sqlite3_close(database)				// 关闭指定数据库, 释放资源
 sqlite3_prepare_V2	// 预处理 SQL 语句
+sqlite3_bind_int
 sqlite3_bind_text	// 绑定参数
-sqlite3_step		// 执行 SQL 语句, 遍历结果集
+sqlite3_step		// 执行 SQL 语句, 遍历结果集, 查询需要多次执行, 更新只需要执行一次
 sqlite3_column_text	// 提取字段数据
 ```
 

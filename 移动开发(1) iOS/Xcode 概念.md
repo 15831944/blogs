@@ -6,10 +6,6 @@ Xcode also contains the iOS SDK, which extends Xcode to include the tools, compi
 
 iOS SDK 10
 
-# App Templates 项目模板
-
-1. Single View Application
-
 # Toolbar 工具栏
 
 1. 方案(scheme): 目标和构建设置
@@ -96,5 +92,7 @@ iOS SDK 10
 
 1. Xcode -> Preferences -> Accounts -> + -> Add Apple ID -> View Details -> Create -> Done
 2. Project -> Singing -> Team ->
+
+# 属性列表编辑器
 
 # 参考

@@ -19,10 +19,17 @@
 3. 构造器方法的覆盖: 以 init 开头的方法名, 自定义操作, 以 new, alloc, copy, init 开头的方法与编译器的一些假定有关
 4. 指定的初始化方法(Designated Initializer): 一般为最复杂的, 参数最多的初始化方法, 子类可以重写此方法
 
+为什么从上到下一级一级构造?
+
+# 析构函数
+
+5. 析构函数: 为了能够释放由当前对象创建或保持的实例变量或其他对象, 需要覆写 dealloc 方法
+
 # 访问器方法 Accessor
 
 1. 取值方法: [instance property] 等价于 instance.property
 2. 设值方法: [instance setProperty: value] 等价于 instance.property = value
+3. 由属性生成的默认的访问器方法是传址调用
 
 # 块 Blocks
 
@@ -34,3 +41,7 @@
 
 1. 使用函数指针作为参数的函数有 qsort, 方法有 sortUsingFoundation:context, 可对任意数组进行排序
 2. 高阶函数还可以用于分派表 13.5.4
+
+# 类工厂方法
+
+1. 用于快速创建对象的类方法，我们称之为类工厂方法, 主要用于给对象分配并初始化内存

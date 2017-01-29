@@ -85,7 +85,3 @@ subscript(index: Int) -> Int {
 # SequenceType 和 GeneratorType
 
 1. Swift 的 for...in 可以用在所有实现了 SequenceType 的类型上
-
-# 参考
-
-1. CSDN 上的 swift 知识库的练习资料: PKO_Sample_Element, XHNewsParsingSwift

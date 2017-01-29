@@ -5,6 +5,8 @@
 3. UIView 类定义了视图的基本行为, 但并不定义其视觉表示, 需要通过其子类来为像文本框(UITextView), 按键(UIButton)及工具条(UIToolBar)这样的标准界面元素定义具体的外观和行为
 4. UIWindow 相当于画板, UIview 相当于画布， UIWindow 继承自 UIview
 5. 屏幕适配: 子视图跟随父视图自动变化, 目前已不再用 UIView 的自适应做适配, 而用 autolayout
+1. iPhone 屏幕的顶部的状态栏高度为20px
+
 
 # UIview 的作用
 

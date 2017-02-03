@@ -25,15 +25,21 @@
 
 # Books
 
-1. 《UNIX 环境高级编程》
-2. 《鸟哥的 LINUX 私房菜》
-3. 《C 和指针》
-4. 《Linux C 编程一站式学习》
-5. 《C++ Primer Plus》
-6. 《易学 C++》
-7. 《深入浅出 MFC》
-8. 《Objective-C 程序设计》
-9. 《精通 iOS 开发》(第7版)
+1. 《C 和指针》
+2. 《Linux C 编程一站式学习》
+3. 《Objective-C 程序设计》(第6版)
+4. 《鸟哥的 LINUX 私房菜 基础学习篇》(第3版)
+5. 《嵌入式 Linux 基础教程》(第2版)
+6. 《UNIX 环境高级编程》(第3版)
+7. 《C++ Primer Plus》(第6版)
+8. 《易学 C++》
+9. 《深入浅出 MFC》
+1. 《精通 iOS 开发》(第7版)
+2. 《iOS 与 OS X 多线程和内存管理》
+3. 《Objective-C 编程之道 iOS 设计模式解析》
+4. 《TCP IP 详解》
+5. 《剑指offer》
+6. 《》
 
 # 课程
 

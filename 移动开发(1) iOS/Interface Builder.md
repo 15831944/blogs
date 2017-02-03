@@ -17,6 +17,7 @@
 5. outline view: 大纲视图, 显示在 canvas 的左侧, 用于查看 storyboard 中的对象层次, 以场景作为相关内容的容器进行划分
 7. elements: 界面元素, 包括: views, view controllers, gesture recognizers
 
+nib 和 storyboard 文件中的对象是作为归档对象存储的, 实例化时调用 initWithCoder: 方法
 
 # 文件类型
 

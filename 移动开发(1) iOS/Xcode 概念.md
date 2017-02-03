@@ -93,6 +93,8 @@ iOS SDK 10
 1. Xcode -> Preferences -> Accounts -> + -> Add Apple ID -> View Details -> Create -> Done
 2. Project -> Singing -> Team ->
 
+App ID: Bundle Identifier, profiles
+
 # 属性列表编辑器
 
 # 参考

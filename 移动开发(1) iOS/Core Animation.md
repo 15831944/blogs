@@ -1,3 +1,16 @@
+# Core Animation
+
+1. Core Animation 接口包含在 Quartz Core 框架里, 允许你创建高级的动画和虚拟效果, UIKit 提供建立在 Core Animation 之上的动画。
+2. Core Animation 可以创建嵌套的对象，并且可以对它们操作、旋转、缩放和转换, 创建动态的用户界面而不用使用更底层的图形API，如OpenGL ES。
+
+Core Animation 的功能
+
+1. 创建定制动画
+2. 添加定时函数和图形
+3. 支持帧动画
+4. Specify graphical layout constraints.
+5. Group multiple-layer changes into anatomic update.
+
 # 拟物化到扁平化(flat)设计
 
 1. 扁平化设计可以符合不同的屏幕, 拟物化的阴影, 渐变效果, 纹理在不同的屏幕上呈现效果不一致

@@ -1,3 +1,38 @@
+# Foundation
+
+1. Foundation 框架为所有的应用程序提供基本系统服务, 应用程序, UIKit 和其它的框架都建立在Foundation框架上
+2. Foundation 框架是用 Object-C 对 Core Foundation 框架里许多特性的封装
+3. Foundation 框架对于 macOS 和 iOS 两个平台均适用
+
+Foundation 的功能
+
+1. 创建和管理集合，比如数组和字典
+2. 访问存储在应用程序里的图片和其它资源
+3. 创建和管理字符串
+4. 提交和接收通知
+5. 创建日期和时间对象
+6. 自动发现IP网络上的设备
+7. 操作URL流
+8. 执行异步代码
+
+Foundation 的内容
+
+1. 值对象 Value Objects
+2. XML
+3. 字符串 Strings
+4. 集合 Collections
+5. 谓词 Predicates
+6. 操作系统服务 Operating-System Services
+7. 文件系统 File System
+8. URL
+9. 进程间通信 Interprocess Communication
+1. 线程和子任务 Locking/Threading
+2. 消息 Notifications
+3. 归档和序列化 archiving and Serialization
+4. OC语言服务 Objective-C Language Services
+5. 脚本 Scripting
+6. 分布式对象 Distributed Objects
+
 # 值对象 Value
 
 1. NSValue
@@ -57,3 +92,12 @@ NSMutbaleDictionary
 枚举器
 
 5. 可以使用枚举器遍历数组, 字典等
+
+# 操作系统服务
+
+1. NSTimer 倒计时
+
+# 进程间通信
+
+1. 代表不同的系统端口, 套接字, 名字服务器，用于实现底层的 IPC
+2. NSPipe 代表一个 BSD 管道，即一种进程间的单向通讯通道

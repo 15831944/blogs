@@ -1,6 +1,11 @@
-# Core graphics
+# Core Graphics
 
-1. 绘图框架
+Core Graphics 绘图框架提供了更底层的库用于创建基于路径的复杂图形
+
+1. 抗锯齿渲染
+2. 添加梯度、图片和颜色
+3. 使用坐标空间转换(coordinate-space transformations)
+4. 创建、显示和分析PDF文档
 
 # Quartz 2D
 

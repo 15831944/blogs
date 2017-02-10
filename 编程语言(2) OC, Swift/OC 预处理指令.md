@@ -16,3 +16,5 @@
 定义预处理宏
 
 Build Settings -> Preprocessor Macros ->
+
+1. #import 不会导致重复引用

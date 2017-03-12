@@ -10,7 +10,7 @@ Product -> Analyze
 
 # clang 编译器
 
-1. .c 和 .m 可以一起编译
+1. 需要让 \_\_clang\_\_ 宏有效, .c 和 .m 可以一起编译
 
 ```
 clang -fobj-arc main.m -o program

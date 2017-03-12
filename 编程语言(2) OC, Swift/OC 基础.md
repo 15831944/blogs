@@ -2,9 +2,11 @@
 
 1. OC 由 GNU 接管, 可以用于 Linux 嵌入式开发和服务器端开发, Foundation 框架和 UIKit 框架由 OC 语言编写
 2. OC 具有封装(Encapsulation), 继承(Inheritance), 多态(Polymorphism), 重写(Override), 优势是其动态能力
-3. OC 不具有重载(overload), 模版(Template), 多继承(MI), 垃圾回收机制(Garbage Collection, Cocoa Touch 不支持)
+3. OC 不具有重载(Overload), 模版(Template), 多继承(MI), 垃圾回收机制(Garbage Collection, Cocoa Touch 不支持)
 4. OC 源文件扩展名为".m"(module), 与 C++ 混编源文件扩展名为 ".mm"
 5. OC 名称空间是程序代码与所有的库, 框架和插件共享的
+6. 统一建模语言(Unified Modeling Language, UML): 基于面向对象建立模型, 图形化的表示方法
+7. 接口(Interface): 类公开给外部的, 关于如何使用这个类的信息
 
 # 常量和变量 Constant and Variables
 
@@ -25,14 +27,17 @@
 1. 基本数据类型: 包括 int, float, double, char, 类型修饰符包括 long, long long, short, signed, unsigned
 2. 布尔类型: 本质是预处理机制, 使用预定义的值 YES 和 NO
 3. 枚举类型: 在冒号后面接数据类型
-4. id 类型: 通用指针类型, 可以强制类型转换为指定类型的对象, 是多态和动态绑定的基础, 不能对 id 类型变量使用点运算符
+4. id 类型: 通用指针类型, 可以强制类型转换为指定类型的对象, 是多态和动态绑定的基础, 不能对 id 类型变量使用点运算符, 类似于 Java 的 Object 类
 5. instancetype 类型: 决定了基于上下文的返回类型, 被继承时, 可以正确返回子类, instancetype 类型的方法返回消息接受者的类型或其子类类型
 6. Class 类型:
+7. SEL 类型: 
 
 # 操作符 Operator
 
 1. 条件运算符: 从右向左结合, OC 支持非 ANSI 扩展的语句:` condition ? : expression`
-2. 消息表达式: 方括号
+2. 消息表达式: 方括号, 使用消息表达式调用方法
+3. 使用 -> 运算符访问成员变量
+4. 使用 . 运算符访问属性
 
 # 控制流 Control Flow
 
@@ -43,7 +48,7 @@
 1. 编译指令是以@字符开头的指令
 2. @interface 指定类的接口部分
 3. @implementation 指定类的实现部分
-2. @class 声明当前类要用到的类, 可使用该类的属性, 提高效率, 但要使用该类的方法, 则需包含该类的整个头文件
+2. @class 前置声明(Forward Declaraton): 声明当前类要用到的类, 可使用该类的属性, 提高效率, 但要使用该类的方法, 则需包含该类的整个头文件
 
 # 参考
 

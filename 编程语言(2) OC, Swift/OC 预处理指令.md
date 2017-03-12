@@ -18,3 +18,5 @@
 Build Settings -> Preprocessor Macros ->
 
 1. #import 不会导致重复引用
+
+1. #import 不会导致重复引入头文件(不同于 #include)

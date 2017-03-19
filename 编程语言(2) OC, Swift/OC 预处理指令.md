@@ -20,3 +20,9 @@ Build Settings -> Preprocessor Macros ->
 1. #import 不会导致重复引用
 
 1. #import 不会导致重复引入头文件(不同于 #include)
+
+```
+MAC_OS_X_VERSION_MAX_ALLOWED	// 当前使用的开发环境(SDK)的版本
+MAC_OS_X_VERSION_MIN_REQUIRED	// 用来说明使用该 SDK 开发的应用在运行时对系统版本的最低要求
+MAC_OS_X_VERSION_10_4			// 系统版本(1040)
+```

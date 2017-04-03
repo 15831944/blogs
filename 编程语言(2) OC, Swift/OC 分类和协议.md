@@ -9,16 +9,9 @@
 6. 分类的接口: 接口可以定义为单独的文件(应包含主类的头文件)或写在主类接口文件下面(前提是可以访问主类的源代码)
 7. 分类的实现: 实现可以定义为单独的文件(主类不能访问分类方法)或写在主类实现文件下面(主类的所有用户都可以访问分类方法)
 
-# 类的扩展 Externtion
+# 扩展 Externtion
 
 1. 未命名分类: 用于类的扩展, 类扩展可以定义新的实例变量(有命名的分类不允许)并可以在多个范畴中使用, 扩展的属性和方法是主类私有的(不能让包含了类扩展的头文件对外公开), 分类方法的实现必须放在主类的实现文件中
-
-```
-#import ClassName.h
-@interface ClassName (Category)			// 分类的定义
-@interface ClassName ()					// 未命名分类的定义
-@implementation ClassName (Category)	// 分类的实现
-```
 
 # 关联引用 Associative References
 
@@ -66,9 +59,24 @@ BOOL c = [currentObject respondsToSelector: @selector (method)];		// 指定类�
 
 # 委托 Delegate
 
-1. 委托: 是负责为其他对象处理特定任务的对象, 例如应用程序委托, 将 UIApplication 的工作委托给 AppDelegate, 调用 applicationDidFinishLaunching 方法, 通过应用程序委托, 能够在某些预定义时间点为 UIApplication 类做一些工作, 类似还有选取器委托等等
+1. 委托: 委托是对象之间分担功能并协同处理时的一个典型的设计模式, 是某个对象接收到不能处理的消息时让其他对象代为处理的一种方式, 是负责为其他对象处理特定任务的对象, 例如应用程序委托, 将 UIApplication 的工作委托给 AppDelegate, 调用 applicationDidFinishLaunching 方法, 通过应用程序委托, 能够在某些预定义时间点为 UIApplication 类做一些工作, 类似还有选取器委托等等
 2. 主要类: 定义了协议的类, 可以看作是将协议定义的方法代理给了实现他们的类
 3. 代理类: 遵守(confirm to)或采用(adopt)主要类定义的协议, 实现该协议的所有方法, 实现的协议的方法可以被继承, 分类也可以采用协议
-4. 举例: UITableViewController 类遵循 UITableViewDataSource 协议和 UITableViewDelegate 协议, 让用户决定表格的行(numberOfRowsInSection:)或选中行的行为( didSelectRowAtIndexPath:)
+4. 举例: UITableViewController 类遵循 UITableViewDataSource 协议和 UITableViewDelegate 协议, 让用户决定表格的行(numberOfRowsInSection:)或选中行的行为(didSelectRowAtIndexPath:)
 
 AppDelegate 类遵循 UIApplicationDelegate 协议, 在其未命名分类中实现 didFinishLaunchingWithOptions 方法
+
+# 通知 Notification
+
+1. 通知: 将要发生的事件通知给关联的多个对象
+2. 通知中心(Notification Center): 期望取得通知的对象预先向通知中心注册期望取得的通知
+3. 发送(post): 某对象向通知中心发送"消息发送请求", 任何对象都可以自由使用通知的发送机制, 不需要在通知中心注册
+4. 观察者(observer): 消息发送的目标, 即在通知中心注册的对象
+5. 一对一的通信: 对象之间发送消息, 发送者和接受者一对一通信
+6. 多播(multicast): 某个对象向特定的多个对象发送消息, 通知属于多播
+7. 广播(broadcast): 向非特定的多个对象发送消息
+8. 通知对象: NSNotification 类实例, 集中必要的信息后发送给通知中心
+9. 通知中心: NSNotificationCenter 类, 各进程会预先准备一个默认的通知中心
+0. 通知队列(Notification Queue): NSNotificationQueue 类, 将通知对象临时存储在等待队列中
+1. 异步发送(asychronous post): 将通知追加到队列, 然后在运行回路中完成当前处理或者输入都都处理完成后, 再发送通知
+2. 同步发送(synchronous):

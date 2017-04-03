@@ -1,7 +1,8 @@
 # Core Animation
 
-1. Core Animation 接口包含在 Quartz Core 框架里, 允许你创建高级的动画和虚拟效果, UIKit 提供建立在 Core Animation 之上的动画。
-2. Core Animation 可以创建嵌套的对象，并且可以对它们操作、旋转、缩放和转换, 创建动态的用户界面而不用使用更底层的图形API，如OpenGL ES。
+1. Core Animation 接口包含在 Quartz Core 框架里, 允许你创建高级的动画和虚拟效果而不用使用更底层的图形 API，如 OpenGL ES
+2. Core Animation 可以创建嵌套的对象，并且可以对它们操作、旋转、缩放和转换
+3. UIKit 提供建立在 Core Animation 之上的动画
 
 Core Animation 的功能
 
@@ -32,6 +33,7 @@ Core Animation 的功能
 用于移动所有控件
 
 # 位置动画 position
+
 opacity
 scale
 color

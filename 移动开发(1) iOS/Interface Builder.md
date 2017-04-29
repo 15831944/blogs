@@ -37,20 +37,23 @@ nib 和 storyboard 文件中的对象是作为归档对象存储的, 实例化�
 
 # 代码和界面对象之间的通信
 
-1. 输出接口(outlet): 视图控制器通过输出接口这个特殊属性(变量)来引用 storyboard 或 nib 文件中的对象, 本质是指向 xib 文件中界面对象(控件)的指针, 使用 IBOutlet 声明该属性(变量)
+目标-动作模式 target-action paradigm : 
+
+1. 输出接口(outlet): 视图控制器通过输出接口这个特殊属性(变量)来引用 storyboard 或 nib 文件中的对象, 本质是指向 xib 文件中界面对象(控件)的指针, 使用 IBOutlet 声明该属性(变量), 即视图对象作为控制器对象的属性, 向视图对象发消息
 2. 输出接口集合(outlet collection): 把多个同类型的对象关联到一个 NSArray 属性, 不必为每个对象单独创建属性
-3. 操作方法(action method): 对 storyboard 或 nib 文件中的界面对象进行设置, 以触发控制器中的某些特殊方法, 例如点击按钮就调用代码中的某个相关操作方法, 本质是 xib 文件中某一个控件的 action, 使用 IBAction 来声明该方法
+3. 操作方法(action method): 对 storyboard 或 nib 文件中的界面对象进行设置, 以触发控制器中的某些特殊方法, 例如点击按钮就调用代码中的某个相关操作方法, 本质是 xib 文件中某一个控件的 action, 使用 IBAction 来声明该方法, 即视图对象向视图控制器发消息, 消息发送者可以作为方法的参数, 以便不同的视图对象可以复用一个操作方法
 4. IBOutlet 和 IBAction 声明用于让 Interface Builder 上的控件识别输出接口或操作方法的标记, Interface Builder 根据 IBOutlet 来寻找可以在 Builder 里操作的成员变量, 根据IBAction 来说明该方法将与 Interface Builder 界面上的某个事件对应, 即与控件的相应动作相关联, 对于编译器而言, 前者为空, 后者为 void, 没有实际意义
 5. 任何一个被声明为 IBOutlet 并且在 Interface Builder 里被连接到一个 UI 组件的成员变量, 会被额外保持(retain)一次, 只要使用了 IBOutlet 变量, 一定需要在 dealloc 或者 viewDidUnload 里 release 这个变量
 6. sender 参数指向触发该操作方法的对象, 使得一个操作方法可以对多个控件做出响应, 并通过 sender 参数知道到底是哪个控件触发了这个操作方法
+7. 一个控件可以触发多个操作方法, 如果一个控件已经关联了一个操作方法, 而后又将该控件的同一事件关联另一个方法, 不是不会断开前一个方法
 
 ```
 #ifndef IBOutlet
-#define IBOutlet
+#define IBOutlet	// 对编译器没有实际意义, 对 Interface Builder 有意义
 #endif
 
 #ifndef IBAction
-#define IBAction void
+#define IBAction void	// OC 中返回类型必须是 IBAction 
 #endif
 
 @IBOutlet weak var myButton: UIButton!						// Swift 中声明输出接口, 是常见属性, 必须是可选值
@@ -71,52 +74,6 @@ IBOutlet UILabel *label;				// 变量 label 在 Interface Builder 里被连接�
 - (IBAction)button_click: (id)sender;	// sender 是指当前的那个 control, 这样就可以不但是一个 button 对应一个 action, 而且可以让多个 button 对应与同一个 action
 ```
 
-# 自动布局 autolayout
-
-1. stack view (UIStackView): A stack view provides a streamlined interface for laying out a collection of views in either a column or a row.
-1. 自动布局 (Auto Layout): 为视图添加约束(constraint)
-2. Trait Variations: 尺寸分类
-
-约束 Constraints
-
-1. 蓝色引导虚线 blue layout guides
-1. 约束实线: 蓝色表示成功, 橙色表示有问题
-
-拖动到父类
-
-1. Leading Space to Container Margin,       Label.leading(左边缘到父视图左侧距离) = leadingMargin(16) + 150(视图左侧到容器左侧边缘的距离)
-2. Trailing Space to Container Margin,      trailingMargin = Label.trailing(右边缘到父视图左侧距离) + 159
-3. Vertical Spacing to Top Layout Guide,    Label.top = Top Layout Guide.bottom + 80
-4. Vertical Spacing to Bottom Layout Guide, Bottom Layout Guide.top = Label.bottom + 467
-
-5. Center Horizontally in Container 在容器中水平居中, Label.centerX = centerX
-6. Center Vertically in Container 在容器中垂直居中,   Label.centerY = centerY
-
-7. Equal Widths
-8. Equal Height
-9. Aspect Ratio
-
-自动布局按钮
-
-Embed In Stack
-
-Align(对齐)
-
-1. Horizontally in Container
-2. Vertically in Container
-
-Pin(固定)
-
-1. Spacing to nearest neighbor, Constrain to margins 容器和屏幕左右侧距离16像素
-2. Width, Height
-3. Equal Widths, Equal Height, Aspect Ratio(尺寸变化行为)
-4. Align
-
-Resolve Auto Layout Issues(解决自动布局问题)
-
-
-Resizing Behavior(尺寸变化行为)
-
 # View Controller Scene
 
 1. View Controller: 视图控制器对象, 从文件加载控制器及相关的视图, 其中 View(主视图) 代表 UIView 类的一个实例
@@ -126,5 +83,6 @@ Resizing Behavior(尺寸变化行为)
 # 设备方向 Device Orientation 和界面方向 Interface Orientation
 
 1. Portrait, Upside Down, Landscape Left(顺时针旋转90°), Landscape Right
-1. 应用级支持方向, 全局配置, 对应于 Info.plist 文件中的 Supported interface orientations 项
-2. 视图控制器支持方向(应用级支持方向的子集), 设备旋转到新的方向时, 当前活动视图调用 supportedInterfaceOrientations 方法
+2. 应用级支持方向, 全局配置, 对应于 Info.plist 文件中的 Supported interface orientations 项
+3. 视图控制器支持方向(应用级支持方向的子集), 设备旋转到新的方向时, 当前活动视图调用 supportedInterfaceOrientations 方法
+4. 界面方向是相对于设备的, 设备方向是握持方向

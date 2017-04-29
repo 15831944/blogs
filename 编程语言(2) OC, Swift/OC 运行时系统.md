@@ -188,11 +188,6 @@ id nameGetter(id self, SEL cmd) {
 }
 ```
 
-# 目标-动作模式 targer-action paradigm
-
-1. 动作方法(action method)
-2. 输出口(outlet)
-
 # 撤销构造
 
 1. 撤销和重做(undo redo): NSUndoManger 撤销管理器

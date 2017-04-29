@@ -26,8 +26,8 @@
 2. 协议是无类的(classless), 即不引用任何类, 与具体实现无关, 协议可进行扩展, 定义新协议采用已有协议, 一个协议中不可以重复声明签名不同而选择器相同的方法, 多个协议中可以重复包含同一个方法的声明
 3. 采用(adopt): 类的接口声明中指定了某个协议(本质是将协议中的方法作为了类声明的一部分)
 4. 遵循(conform): 类使用协议并实现了该协议声明的所有方法
-5. 协议的适用性: 对象是否适用于指定协议
-6. 匿名对象(anonymous object): 代码中值关注协议和抽象类, 没有具体类名的对象
+5. 协议的适用性: 对象是否适用于指定协议, 适用于协议的属性相当于该类的代理, 可以调用协议方法
+6. 匿名对象(anonymous object): 代码中只关注协议和抽象类, 没有具体类名的对象
 7. 协议的继承: 协议可以继承自一个或多个协议, 系统框架提供的协议中很多都继承了 NSObject 协议(协议名可以和类名相同)
 8. 协议中可选实现方法: @required, @optional, 需要动态检查可选方法是否可用
 
@@ -59,8 +59,8 @@ BOOL c = [currentObject respondsToSelector: @selector (method)];		// 指定类�
 
 # 委托 Delegate
 
-1. 委托: 委托是对象之间分担功能并协同处理时的一个典型的设计模式, 是某个对象接收到不能处理的消息时让其他对象代为处理的一种方式, 是负责为其他对象处理特定任务的对象, 例如应用程序委托, 将 UIApplication 的工作委托给 AppDelegate, 调用 applicationDidFinishLaunching 方法, 通过应用程序委托, 能够在某些预定义时间点为 UIApplication 类做一些工作, 类似还有选取器委托等等
-2. 主要类: 定义了协议的类, 可以看作是将协议定义的方法代理给了实现他们的类
+1. 委托: 委托是对象之间分担功能并协同处理时的一个典型的设计模式, 是某个对象接收到不能处理的消息时让其他对象代为处理的一种方式, 是负责为其他对象处理特定任务的对象, 使用协议来实现委托, 例如应用程序委托, 将 UIApplication 的工作委托给 AppDelegate, 调用 applicationDidFinishLaunching 方法, 通过应用程序委托, 能够在某些预定义时间点为 UIApplication 类做一些工作, 类似还有选取器委托等等
+2. 主要类: 适用于协议的类, 可以看作是将协议定义的方法代理给了实现他们的类
 3. 代理类: 遵守(confirm to)或采用(adopt)主要类定义的协议, 实现该协议的所有方法, 实现的协议的方法可以被继承, 分类也可以采用协议
 4. 举例: UITableViewController 类遵循 UITableViewDataSource 协议和 UITableViewDelegate 协议, 让用户决定表格的行(numberOfRowsInSection:)或选中行的行为(didSelectRowAtIndexPath:)
 

@@ -1,4 +1,4 @@
-# iOS SDK
+# iOS SDK (Software Development Kit)
 
 Cocoa Touch
 
@@ -79,6 +79,8 @@ iOS SDK 10
 | Help -> Documention and API Reference | 参考文档
 | Preference -> Downloads -> Components | 下载 Command Line Tool 或 Simulator 等
 
+Editor -> Canvas 画布
+
 # 单词缩写
 
 | char | meaning  |
@@ -96,5 +98,7 @@ iOS SDK 10
 App ID: Bundle Identifier, profiles
 
 # 属性列表编辑器
+
+
 
 # 参考

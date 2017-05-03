@@ -12,6 +12,7 @@ GNU工具链中包含的项目有：
 
 1. GNU make：用于编译和构建的自动工具；
 2. GNU编译器集合（GCC）：一组多种编程语言的编译器；
-3. GNU Binutils：包含链接器、汇编器和其它工具的工具集；
+3. GNU Binutils：二进制工具集, 包含链接器、汇编器和其它工具的工具集；
 4. GNU Debugger（GDB）：代码调试工具；
 5. GNU autotools 构建系统: Autoconf, Autoheader, Automake, Libtool
+6. m4 宏预处理器

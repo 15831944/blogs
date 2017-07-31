@@ -82,3 +82,6 @@
 1. [ 关于#pragma code_seg](http://blog.csdn.net/whatday/article/details/7100855)
 2. [#pragma详细解释](http://blog.csdn.net/nodeman/article/details/45477067)
 3. [iOS之#pragma mark用法](https://my.oschina.net/u/615517/blog/90282)
+4. [带参数的宏定义，利用宏参数创建字符串——#运算符](http://blog.csdn.net/trandy/article/details/8553495)
+5. [c语言中的宏，#号##号，可变参数](http://blog.csdn.net/gneveek/article/details/8761190)
+6. [C/C++宏定义的可变参数详细解析](http://www.jb51.net/article/41517.htm)

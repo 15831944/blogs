@@ -83,3 +83,10 @@ Mode 3 CPOL=1, CPHA=1	// 空闲时为高电平, 时钟上升沿时采样
 时钟相位CPHA: 即SPI在SCLK第几个边沿开始采样（0:第一个边沿开始; 1:第二个边沿开始）
 
 sd 卡的 spi 常用的是 mode 0 和 mode 3, 这两种模式的相同的地方是都在时钟上升沿采样传输数据，区别这两种方式的简单方法就是看空闲时，时钟的电平状态，低电平为mode 0 ，高电平为mode 3。.
+
+# 参考
+
+1. [linux基础之spi驱动程序理解](http://blog.csdn.net/xqmoo8/article/details/8043474)
+2. [弄懂SPI接口](http://blog.csdn.net/bytxl/article/details/50324427)
+3. [如何弄懂SPI接口？看这个你就知道了](http://www.360doc.com/content/15/1203/07/908538_517544358.shtml)
+4. [SPI读写总结-FreedomXura-ChinaUnix博客](http://blog.chinaunix.net/uid-20788517-id-3031990.html)

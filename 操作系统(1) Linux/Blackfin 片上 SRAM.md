@@ -12,3 +12,7 @@ sram 中
 # 如何避免写冲突
 
 头信息中记录文件个数，写入是先添加到队列，按顺序存入
+
+# 参考
+
+1. [再读内核存储管理(8)：片内SRAM的使用](http://blog.csdn.net/lights_joy/article/details/2556923)

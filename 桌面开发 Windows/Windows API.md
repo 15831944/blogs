@@ -21,4 +21,8 @@ GetModuleFileName
 
 得到当前应用进程的指针, 访问到这个进程中的对象, 单一的 CWinApp 对象的指针(A pointer to the single CWinApp object for the application)
 
+```
 CWinApp *AFXAPI AfxGetApp()
+```
+
+# Ribbon 界面

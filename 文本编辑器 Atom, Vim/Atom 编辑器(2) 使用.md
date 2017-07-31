@@ -1,8 +1,17 @@
 # Snippets
 
-使用 `alt-shift-S` 查找和执行当前可用的代码段
+1. 使用 `alt-shift-S` 查找和执行当前可用的代码段
 
-# Markdown
+默认快捷键配置
+
+```
+'atom-text-editor:not([mini])':
+  'alt-shift-S': 'snippets:available'
+```
+
+## Markdown 格式
+
+1. 按下快捷键后，按 tab 键，即可显示出代码段效果
 
 | keystroke | snippets       |
 | --------- | -------------- |

@@ -44,3 +44,8 @@ int rslt = ({
     a+3;
 });				//复合声明返回值(Compound Statements Returning a Value):在一对圆括号中的最后一个表达式所计算的值为返回值, rslt所获得的返回值为8
 ```
+
+# 参考
+
+1. [GNU C中不为人知的特色：__attribute__机制](http://blog.csdn.net/juana1/article/details/6849120)
+2. [linux内核 asmlinkage宏-wqfhenanxc-ChinaUnix博客](http://blog.chinaunix.net/uid-7390305-id-2057287.html)

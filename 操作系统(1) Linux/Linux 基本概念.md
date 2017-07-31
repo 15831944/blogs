@@ -31,13 +31,15 @@
 
 例行性工作调度
 
-1. cron 命令, 字面上就是百万年执行一次的意思
+1. cron 命令, 克龙, 时间单位, 一克龙为一百万年, 字面上就是百万年执行一次的意思
 2. crontab 服务
 
 单一工作调度
 
 1. at 命令, 字面上就是在某一时刻的意思
 2. batch 命令, 实际上也是调用 at 命令，并且可以用 atq (at queue) 和 atrm (at remove) 来进行管理
+
+Linux系统的服务有独立启动（stand alone）及超级服务（super daemon）两种方式。
 
 stand_alone
 

@@ -47,6 +47,7 @@
 
 1. C语言程序设计
 1. Visual Basic
+1. Altium designer
 1. Frontpage
 1. Flash
 1. 组态软件

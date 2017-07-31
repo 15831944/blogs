@@ -239,3 +239,5 @@ double max(double x, double y)	// 实际名称变为 max_double_double
 4. [C＋＋初始化与赋值](http://www.cnblogs.com/chio/archive/2008/10/06/1305145.html)
 5. [c++中，引用和指针的区别](http://blog.csdn.net/dujiangyan101/article/details/2844138)
 6. [C++的一大误区——深入解释直接初始化与复制初始化的区别](http://blog.csdn.net/ljianhui/article/details/9245661)
+
+1. [c++远征之封装片（下）练习题，小人走迷宫，做了点改进_慕课手记](http://www.imooc.com/article/12003)

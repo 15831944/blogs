@@ -85,6 +85,15 @@ vim 就不多解释了，问题是 vim 和 一般 GUI 下的软件的操作习�
 
 `ctrl-space`
 
+## Keybinding resolver
+
+Show what commands a keybinding resolves to
+
+如果你按下快捷键之后没有执行命令，或者执行了错误的命令，那个键位的快捷键可能出了些问题。Atom自带keybinding resolver，一个小巧的包来帮助你理解执行了哪个快捷键。
+
+
+
+
 
 
 # 社区插件 Community Packages
@@ -107,3 +116,7 @@ vim 就不多解释了，问题是 vim 和 一般 GUI 下的软件的操作习�
 ## language-viml
 
 vim 脚本语言语法高亮
+
+# 参考
+
+1. [Atom飞行手册翻译： 3.7 调试](https://segmentfault.com/a/1190000003058018)

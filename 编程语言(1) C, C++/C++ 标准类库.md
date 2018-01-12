@@ -1,3 +1,20 @@
+# C++ 库
+
+| libraries                   |     |
+| --------------------------- | --- |
+| Utilities library           |     |
+| Strings library             |     |
+| Containers library          |     |
+| Algorithms library          |     |
+| Iterators library           |     |
+| Numerics library            |     |
+| Input/Output library        |     |
+| Localizations library       |     |
+| Regular expressions library |     |
+| Atomic operations library   |     |
+| Thread support library      |     |
+| Filesystem library          |     |
+
 # iostream
 
 1. << 操作符一次读取一个字符串(单词)
@@ -24,31 +41,37 @@ close
 
 # string (string)
 
+1. 字符串对象相比于字符串数据类型操作更加简便
 1. 使用 L, u, U 分别表示 wchar_t, char16_t, char32_t 类型的字符串
 2. 使用 u8 前缀表示 UTF-8编码的字符串
 3. 使用 R 前缀表示原始(raw)字符串, 可以自定义定界符
 
-## 初始化
+string 对象的初始化
 
 ```
-string s1;			// 定义空的字符串对象
-string s2("abc");	// 用字符串字面值初始化字符串对象
+string s1;			// 定义空字符串对象
+string s2("abc");	// 使用字符串字面值直接初始化
 string s3 = "abc";
 string s4 = {"abc"};
-string s5(s2);
-string s6(n,'c');	// 将 s4 初始化为 n 个 字符 'c' 的副本
+string s5(s2);		// 使用另一个字符串进行初始化
+string s6(n,'c');	// 初始化为 n 个 字符 'c' 的副本
 ```
 
-## 赋值, 拼接, 附加
+string 对象的访问, 赋值, 拼接, 附加, 判断
 
 1. 字符串拼接只适用于字符串对象, 必须是变量, 两个字面值字符串不可以使用 "+" 进行拼接
 
 ```
+str1[n];				// 返回 char 类型
 str2 = str1;
-str3 = str1 + str2;
+str3 = str1 + str2;		// 拼接, 字符串字面值之间不可以进行拼接
 str2 += str1;
+str1 == str2
 ```
 
-## 成员函数
+string 对象的成员函数
 
-1. size()
+```
+empty()
+size()					// 返回整型
+```

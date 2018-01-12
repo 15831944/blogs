@@ -1,4 +1,4 @@
-STL, standard template library
+标准模块库, STL, standard template library
 
 # 迭代器 iterator
 
@@ -43,7 +43,7 @@ vector<T> v4(n);		// n个有值初始化元素
 
 1. 键值对
 
-# array
+# 数组 array
 
 1. 长度固定
 2. 存储在栈中

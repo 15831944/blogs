@@ -1,3 +1,5 @@
+# Win 32 SDK
+
 # initialization-file functions
 
 They retrieve information from and copy information to a system- or application-defined initialization file. These functions are provided only for compatibility with 16-bit versions of Windows. New applications should use the registry.

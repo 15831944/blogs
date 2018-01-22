@@ -5,12 +5,13 @@
 | DOS         | main    | mz     | 可以调用 C Runtime 函数, 不可调用 Windows API |
 | Console     | main    | exe    | 可以调用 GUI 无关部分的 windows API 和 MFC    |
 | SDK         | WinMain | exe    | windows API                               |
-| MFC         |         | exe    | MFC                                       |
+| MFC         | WinMain | exe    | MFC                                       |
 
 1. mz (Mark Zbikowski)
 2. exe (Portable Executable)
 3. DOS 以外都属于 Win32 程序，可以在 Windows 下的 DOS Box 或 IDE 中编译
 4. dumpbin 工具可以观察 PE 格式文件
+5. SDK 指 C 函数, 需要包含 Windows.h 头文件, MFC 是 C++ 类库和以 afx 开头的全局 C 函数, SDK 的 C 函数的第一个参数往往是句柄, 在 MFC 中则变成调用方法的对象
 
 # Windows SDK 程序开发流程
 
@@ -72,7 +73,7 @@ import 函数库的作用
 # 消息为基础, 事件驱动
 
 1. 应用程序等待事件输入, 输入由操作系统捕捉, 以消息形式进入程序中
-2. 用户模块(User Module)负责各个外围的驱动程序, User Module -> SendMessage() -> Window procedure
+2. 用户模块(User Module)负责各个外围的驱动程序, User Module -> SendMessage() -> 窗口过程 Window procedure
 3. 程序调用 GetMessage API 取得一个消息，程序的生命靠其推动
 4. 窗口负责接收并处理消息, 每个窗口使用一个 窗口过程函数(window procedure) 负责处理消息
 
@@ -90,15 +91,13 @@ import 函数库的作用
 | nmake.exe | Microsoft |
 | make.exe  | Borland   |
 
-# 函数调用方式
+# 函数调用约定 Calling convention
 
-参数进入堆栈的次序
+决定参数进入堆栈的次序, 处理堆栈的责任归属
 
-处理堆栈的责任归属
-
-| 调用习惯  |   |
-| -------- | - |
-| _stdcall |  |
+| 调用习惯  | 宏定义    |
+| -------- | -------- |
+| _stdcall | CALLBACK |
 | _pascall |  |
 | _cdecl   |  |
 

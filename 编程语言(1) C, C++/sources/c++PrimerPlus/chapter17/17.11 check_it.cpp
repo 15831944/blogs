@@ -17,10 +17,10 @@ int main()
 		cout << "Loop terminated because EOF encountered\n";
 	}
 
-	// cout << "Last vale entered = " << input << endl;
-	// cout << "Sum = " << sum << endl;
+	cout << "Last vale entered = " << input << endl;
+	cout << "Sum = " << sum << endl;
 
-	// 排除不匹配的输入, 但只能排除一个
+	// 排除不匹配的输入, 只能排除一个单词
 	if (cin.fail() && !cin.eof())	// failed because of mismatched input
 	{
 		cin.clear();		// reset stream state 否则无法继续输入
@@ -32,13 +32,6 @@ int main()
 		cout << "I cannot go on!\n";
 		exit(1);
 	}
-
-	while (cin >> input)	// 如果 istream 对象的错误状态被设置, 则该对象为 false
-	{
-		sum += input;
-	}
-	cout << "Last vale entered = " << input << endl;
-	cout << "Sum = " << sum << endl;
 
 	system("pause");
 	return 0;

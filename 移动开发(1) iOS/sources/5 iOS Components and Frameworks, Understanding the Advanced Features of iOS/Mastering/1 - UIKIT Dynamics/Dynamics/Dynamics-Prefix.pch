@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files of the 'Dynamics' target in the 'Dynamics' project
+//
+
+#import <Availability.h>
+
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif

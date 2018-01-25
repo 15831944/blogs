@@ -56,6 +56,8 @@
 
 ## 类型限定符 type qualifier
 
+cv限定符
+
 | keywords | meaning                   |
 | -------- | ------------------------- |
 | const    | const type qualifier      |

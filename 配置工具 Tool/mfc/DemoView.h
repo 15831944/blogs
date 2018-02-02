@@ -19,13 +19,13 @@ public:
 
 // Attributes
 public:
-	CDemoDoc* GetDocument();
+	CDemoDoc* GetDocument();	// 此函数有两种实现
 protected:
-	bool runing;
-	RECT rect;
-	CDC  *pViewDc;
-	int  cx,cy;
-	CString str;
+	bool	m_bIsRuning;
+	RECT	m_rect;
+	int		m_cx;
+	int		m_cy;
+	CString	m_strWelcome;
 // Operations
 public:
 

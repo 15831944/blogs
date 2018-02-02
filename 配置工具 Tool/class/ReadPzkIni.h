@@ -13,7 +13,7 @@
 #include "MyStdioFile.h"
 
 extern bool lizhen;
-class CReadPzkIni  
+class CReadPzkIni
 {
 public:
 	CReadPzkIni();
@@ -21,7 +21,7 @@ public:
 	virtual ~CReadPzkIni();
 
 public:
-	
+
 	bool IniFileOpened;
 
 	bool EverModified;
@@ -56,7 +56,7 @@ public:
 	FDGCfgStru FDGFileTemp;
 
 protected:
-	CString IniFileName;
+	CString IniFileName;		// 当前打开的配置文件名
 	CMyStdioFile mStdioFile;
 	CMyStdioFile mStdioFile_tmp;
 
@@ -108,7 +108,7 @@ private:
 	bool Getprot_select(CString KeyName,CString KeyStr);//绍兴集中式保护
 	bool GetZjUnit(CString KeyName, CString KeyStr, int CurNum);
 	bool CReadPzkIni::GetZjBzt(CString KeyName, CString KeyStr);
-	
+
 	CString WriteSXJZSNote(int );//写绍兴集中式注释
 
 public:

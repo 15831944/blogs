@@ -71,6 +71,7 @@ void CDemoDoc::Dump(CDumpContext& dc) const
 /////////////////////////////////////////////////////////////////////////////
 // CDemoDoc commands
 
+// 系统自动传入当前打开的文件名
 BOOL CDemoDoc::OnOpenDocument(LPCTSTR lpszPathName)
 {
 	// if (!CDocument::OnOpenDocument(lpszPathName))
@@ -79,11 +80,11 @@ BOOL CDemoDoc::OnOpenDocument(LPCTSTR lpszPathName)
 	// TODO: Add your specialized creation code here
 	if(lpszPathName != mPzkIni.GetFileName())
 	{
-		if (pFrame->CurActiveView != 0)
+		if (pFrame->m_CurActiveView != 0)
 		{
 			CView *pView = (CView*)pFrame->m_wndSplitter->GetPane(0,1);
 			BOOL bclose;
-			bclose = pFrame->SendSaveMsg(pView,pFrame->CurActiveView);
+			bclose = pFrame->SendSaveMsg(pView,pFrame->m_CurActiveView);
 			if( bclose != TRUE)
 				return FALSE;
 		}
@@ -102,6 +103,7 @@ BOOL CDemoDoc::OnOpenDocument(LPCTSTR lpszPathName)
 	AfxGetMainWnd()->SetWindowText(TitleName+lpszPathName);
 	return TRUE;
 }
+
 /*
 void CDemoDoc::OnFileOpen()
 {

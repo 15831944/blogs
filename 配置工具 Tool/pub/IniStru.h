@@ -1,3 +1,5 @@
+// 配置文件结构
+
 const unsigned short BitMask[] = {
 		0x0001,0x0002,0x0004,0x0008,
 		0x0010,0x0020,0x0040,0x0080,
@@ -349,17 +351,17 @@ typedef struct {
 //	int Flt_RepEnable; //#故障报文上报使能
 	int PLC_Enable;//PLC投入
 	int FixActTime;   //保护固有动作时间(ms,设置范围30~45ms)
-	
+
 	int MxType;//母线类型
 	int LeftDTUNum;//左侧终端数量
-	
+
 	int ProtNumPerLine;			//每条线路的保护项数
 
 } SXJZSNormalStru;
 
 
 typedef struct {
-	
+
 	int Switch_Type;       //开关类型(0-断路器, 1-负荷开关)
 	int SBO_Num;		//线路SBO号
 	int Switch_Num;	// #线路开关号
@@ -432,7 +434,7 @@ typedef struct {
 
 
 typedef struct {
-	
+
 	int Switch_Type;       //开关类型(0-断路器, 1-负荷开关)
 	int SBO_Num;		//线路SBO号
 	int Switch_Num;	// #线路开关号
@@ -440,7 +442,7 @@ typedef struct {
 } KMGLineCfgStru;
 
 typedef struct {
-	
+
 	int Line;
 	int Type;
 	CString Name;
@@ -481,7 +483,7 @@ typedef struct {
 
 
 typedef struct {
-	
+
 	CString LineName; //线路名
 	int YxNum;		//遥测数
 	int YcNum;	// 遥信数
@@ -554,7 +556,7 @@ typedef struct {
 } FDGNormalStru;
 
 typedef struct {
-	
+
 	int Switch_Type;       //开关类型(0-断路器, 1-负荷开关)
 //	int SBO_Num;		//线路SBO号
 //	int Switch_Num;	// #线路开关号
@@ -562,7 +564,7 @@ typedef struct {
 } FDGLineCfgStru;
 
 typedef struct {
-	
+
 	int Line;
 	int Type;
 	CString Name;

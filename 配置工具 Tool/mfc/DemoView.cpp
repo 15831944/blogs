@@ -32,33 +32,32 @@ UINT CDemoView::RunStr(LPVOID para)
 {
 	CDemoView *pthis = (CDemoView *)para;
 //	CDC  *pDc = (CDC *)para;
-	int strlen = pthis->str.GetLength()*8;
+	int strlen = pthis->m_strWelcome.GetLength()*8;
 	int strhei = 8;
 	int addx,addy;
-	pthis->cx = pthis->cy = 0;
+	pthis->m_cx = pthis->m_cy = 0;
 	addx = 4;
 	addy = 2;
-	pthis->pViewDc = pthis->GetDC();
-	while(pthis->runing)
+
+	while(pthis->m_bIsRuning)
 	{
-		if(pthis->cx<0)
-			pthis->cx = 0;
-		if(pthis->cy<0)
-			pthis->cy = 0;
-//		pthis->pViewDc->TextOut(cx,cy,str);
+		if(pthis->m_cx<0)
+			pthis->m_cx = 0;
+		if(pthis->m_cy<0)
+			pthis->m_cy = 0;
 		pthis->Invalidate();
-		pthis->cx+=addx;
-		pthis->cy+=addy;
-		if( (pthis->cx + strlen) >= (pthis->rect.right) || (pthis->cx <= 0))
+		pthis->m_cx+=addx;
+		pthis->m_cy+=addy;
+		if( (pthis->m_cx + strlen) >= (pthis->m_rect.right) || (pthis->m_cx <= 0))
 		{
 			addx = -addx;
 		}
-		if((pthis->cy + strhei) >= (pthis->rect.bottom) || (pthis->cy <= 0))
+		if((pthis->m_cy + strhei) >= (pthis->m_rect.bottom) || (pthis->m_cy <= 0))
 		{
 			addy = -addy;
 		}
 		Sleep(20);
-		TRACE(Str(pthis->cx)+" "+Str(pthis->cy)+"\n");
+		TRACE(Str(pthis->m_cx)+" "+Str(pthis->m_cy)+"\n");
 	}
 
 	return TRUE;
@@ -67,13 +66,13 @@ UINT CDemoView::RunStr(LPVOID para)
 CDemoView::CDemoView()
 {
 	// TODO: add construction code here
-	runing = false;
-	str = "欢迎使用MK保护故障配置编辑工具";
+	m_bIsRuning = false;
+	m_strWelcome = "欢迎使用MK保护故障配置编辑工具";
 }
 
 CDemoView::~CDemoView()
 {
-	runing = false;
+	m_bIsRuning = false;
 }
 
 BOOL CDemoView::PreCreateWindow(CREATESTRUCT& cs)
@@ -100,30 +99,31 @@ void CDemoView::OnDraw(CDC* pDC)
 	cx = (rect.right - rect.left)/2 + rect.left - 115;
 //	CDC *dc = pDC;//GetDC();
 //	CFont *font = dc->GetCurrentFont();
-//	pViewDc = pDC;
-	if (!runing)
+	if (!m_bIsRuning)
 	{
-		runing = true;
+		m_bIsRuning = true;
 		AfxBeginThread(CDemoView::RunStr,this);
 	}
 	//pDC->TextOut(cx,cy,"欢迎使用PZK300方式字编辑工具!");
 */
-	int height = 30;//(m_totalLog.cy / 10) / 5;  // 1/5 of box size
-	CFont    *m_font, *oldFont;
-	m_font = new CFont();
-    m_font->CreateFont(height, 0, 0, 0,
+
+	/* 设置欢迎字符串的字体 */
+	int		height = 30;//(m_totalLog.cy / 10) / 5;  // 1/5 of box size
+	CFont    *font, *oldFont;
+	font = new CFont();
+    font->CreateFont(height, 0, 0, 0,
          FW_NORMAL, FALSE, FALSE,
          FALSE, ANSI_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
          DEFAULT_QUALITY, VARIABLE_PITCH | FF_DONTCARE, "宋体");//"Arial");
+	oldFont = pDC->SelectObject(font);
 
-	oldFont = pDC->SelectObject(m_font);
-
+	/* 在中间位置显示欢迎字符串 */
 	RECT rect;
 	GetClientRect(&rect);
 	int cx,cy;
 	cy = (rect.bottom - rect.top)/2 + rect.top;
 	cx = (rect.right - rect.left)/2 + rect.left - 150;
-	pDC->TextOut(cx,cy,str);
+	pDC->TextOut(cx,cy,m_strWelcome);
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -154,11 +154,11 @@ void CDemoView::OnInitialUpdate()
 {
 	CView::OnInitialUpdate();
 
-	//GetClientRect(&rect);
+	//GetClientRect(&m_rect);
 
-	if (!runing)
+	if (!m_bIsRuning)
 	{
-		runing = true;
+		m_bIsRuning = true;
 //		AfxBeginThread(CDemoView::RunStr,this);
 	}
 	// TODO: Add your specialized code here and/or call the base class
@@ -167,8 +167,8 @@ void CDemoView::OnInitialUpdate()
 void CDemoView::OnSize(UINT nType, int cx, int cy)
 {
 	CView::OnSize(nType, cx, cy);
-	//GetWindowRect(&rect);
-	GetClientRect(&rect);
+	//GetWindowRect(&m_rect);
+	GetClientRect(&m_rect);
 	// TODO: Add your message handler code here
 
 }

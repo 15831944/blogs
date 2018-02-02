@@ -14,7 +14,7 @@
 
 class CMainFrame : public CFrameWnd
 {
-	
+
 protected: // create from serialization only
 	CMainFrame();
 	DECLARE_DYNCREATE(CMainFrame)
@@ -36,7 +36,6 @@ public:
 
 // Implementation
 public:
-	void InitializeOutlookBar();
 	virtual ~CMainFrame();
 #ifdef _DEBUG
 	virtual void AssertValid() const;
@@ -44,26 +43,23 @@ public:
 #endif
 
 protected:  // control bar embedded members
-	CStatusBar  m_wndStatusBar;
-	CToolBar    m_wndToolBar;
-	CXTOutBarCtrl  m_wndOutlookBar;
-
-	CImageList	   m_ImageLarge;
-	CImageList	   m_ImageSmall;
-	bool             m_bDestroy;
-//	CMyTreeCtrl m_wndTreeCtrl,m_wndTreeCtrl1;
-//	CMyTreeCtrl m_wndTreeCtrl2,m_wndTreeCtrl3;
-	CImageList *m_pImageList;
-	bool bCreateNewView;
-
-	bool bCreateSplitter;
-	int  mPreSelFolder,mPreSelItem;
-	bool BeginCreateOutlookBar;
-	CView* pNewActiveView;
+	CStatusBar		m_wndStatusBar;
+	CToolBar		m_wndToolBar;
+	CXTOutBarCtrl	m_wndOutlookBar;
+	CImageList		m_ImageLarge;
+	CImageList		m_ImageSmall;
+	CImageList*		m_pImageList;
+	bool			m_bDestroy;
+	bool			m_bCreateNewView;
+	bool			m_bCreateSplitter;
+	int				m_PreSelFolder;
+	int				m_PreSelItem;
+	CView*			m_pNewActiveView;
 public:
-	int CurActiveView;
-	CSplitterWnd *m_wndSplitter;
+	int				m_CurActiveView;
+	CSplitterWnd*	m_wndSplitter;
 public:
+	void InitializeOutlookBar();
 	BOOL  ShowOutLookBar();
 	BOOL  SendSaveMsg(CView *pView,int mDlgCtrlId);
 	BOOL  SendUnSaveMsg(CView *pView,int mDlgCtrlId);

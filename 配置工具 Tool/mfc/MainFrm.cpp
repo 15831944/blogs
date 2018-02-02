@@ -71,7 +71,6 @@ CReadPzkIni mPzkIni;
 extern int CurProcNum;
 extern int mObjNum;
 extern int RtuNo;
-//bool bCreateSplitter = false;
 CView *pOldView = NULL;
 bool bCloseWindow = true;
 extern CDemoApp theApp;
@@ -124,18 +123,17 @@ static UINT indicators[] =
 CMainFrame::CMainFrame()
 {
 	// TODO: add member initialization code here
-	CurActiveView = 0;
-	bCreateSplitter = false;
-	mPreSelFolder=-1;
-	mPreSelItem=-1;
-	BeginCreateOutlookBar = false;
+	m_CurActiveView = 0;
+	m_bCreateSplitter = false;
+	m_PreSelFolder=-1;
+	m_PreSelItem=-1;
 }
 
 CMainFrame::~CMainFrame()
 {
-	if(bCreateSplitter)
+	if(m_bCreateSplitter)
 	{
-//		delete m_pImageList;
+		// delete m_pImageList;
 		delete m_wndSplitter;
 	}
 }
@@ -184,14 +182,14 @@ LRESULT CMainFrame::OnOutbarNotify(WPARAM wParam, LPARAM lParam)
 	XT_OUTBAR_INFO* pOBInfo = (XT_OUTBAR_INFO*)lParam;
 	ASSERT(pOBInfo);
 	int mSelFolder,mSelItem;
-	
+
 //	CString str;
 	switch (nBarAction)
 	{
 	case OBN_XT_ITEMCLICK:
 		mSelFolder = pOBInfo->nFolder;
 		mSelItem   = pOBInfo->nIndex;
-		if ((mSelFolder == mPreSelFolder) && (mSelItem == mPreSelItem))
+		if ((mSelFolder == m_PreSelFolder) && (mSelItem == m_PreSelItem))
 		{
 			return TRUE;
 		}
@@ -201,8 +199,8 @@ LRESULT CMainFrame::OnOutbarNotify(WPARAM wParam, LPARAM lParam)
 			bCloseWindow = true;
 			break;
 		}
-		mPreSelFolder = mSelFolder;
-		mPreSelItem = mSelItem;
+		m_PreSelFolder = mSelFolder;
+		m_PreSelItem = mSelItem;
 
 		switch(mSelFolder)
 		{
@@ -211,45 +209,45 @@ LRESULT CMainFrame::OnOutbarNotify(WPARAM wParam, LPARAM lParam)
 			{
 			case 0:
 				m_wndSplitter->CreateView(0,1,RUNTIME_CLASS(CPlcCfgView),CSize(100,100),NULL);
-				CurActiveView = SXPLC_DLG;//PZK300_CFG_DLG;
+				m_CurActiveView = SXPLC_DLG;//PZK300_CFG_DLG;
 				break;
 			case 1:
 				m_wndSplitter->CreateView(0,1,RUNTIME_CLASS(CProtCfgView),CSize(900,900),NULL);
-				CurActiveView = PROTECT_DLG;
+				m_CurActiveView = PROTECT_DLG;
 				break;
 			case 2:
 				m_wndSplitter->CreateView(0,1,RUNTIME_CLASS(CZjPlcCfgView),CSize(900,900),NULL);
-				CurActiveView = ZJPLC_DLG;
+				m_CurActiveView = ZJPLC_DLG;
 				break;
 			case 3:
 				m_wndSplitter->CreateView(0,1,RUNTIME_CLASS(C36BCANSHU),CSize(900,900),NULL);
-				CurActiveView = JZSPLC_DLG;
+				m_CurActiveView = JZSPLC_DLG;
 				break;
 			case 4:
 			//	AfxMessageBox("FFFFF");
 				m_wndSplitter->CreateView(0,1,RUNTIME_CLASS(CFaultCfgView),CSize(900,900),NULL);
-				CurActiveView = FAULT_DLG;
+				m_CurActiveView = FAULT_DLG;
 				break;
 			case 5:
 			//	AfxMessageBox("00000000");
 				m_wndSplitter->CreateView(0,1,RUNTIME_CLASS(CSxJzsCfgView),CSize(900,900),NULL);
-				CurActiveView = SXJZS_DLG;
+				m_CurActiveView = SXJZS_DLG;
 				break;
 			case 6:
 				//fxMessageBox("00000000");
 				m_wndSplitter->CreateView(0,1,RUNTIME_CLASS(CKMGCfgView),CSize(900,900),NULL);
-				CurActiveView = KMG_DLG;
+				m_CurActiveView = KMG_DLG;
 				break;
 			case 7:
 				m_wndSplitter->CreateView(0,1,RUNTIME_CLASS(CSxyj),CSize(900,900),NULL);
-				CurActiveView = SXYJ_DLG;
+				m_CurActiveView = SXYJ_DLG;
 			default:
 				break;
 			}
 			break;
 		default:
 			m_wndSplitter->CreateView(0,1,RUNTIME_CLASS(CDemoView),CSize(100,100),NULL);
-			CurActiveView = 0;
+			m_CurActiveView = 0;
 			break;
 		}
 //		m_wndSplitter->CreateView(0,1,RUNTIME_CLASS(CTempClass),CSize(100,100),NULL);
@@ -259,7 +257,7 @@ LRESULT CMainFrame::OnOutbarNotify(WPARAM wParam, LPARAM lParam)
 	case OBN_XT_FOLDERCHANGE:
 		TRACE2( "Folder selected: %d, Name: %s.\n", pOBInfo->nIndex, pOBInfo->lpszText);
 		break;
-		
+
 	case OBN_XT_ONLABELENDEDIT:
 		TRACE2( "Item edited: %d, New name: %s.\n", pOBInfo->nIndex, pOBInfo->lpszText);
 		break;
@@ -267,7 +265,7 @@ LRESULT CMainFrame::OnOutbarNotify(WPARAM wParam, LPARAM lParam)
 	case OBN_XT_ONGROUPENDEDIT:
 		TRACE2( "Folder edited: %d, New name: %s.\n", pOBInfo->nIndex, pOBInfo->lpszText);
 		break;
-		
+
 	case OBN_XT_DRAGITEM:
 		TRACE3( "Dragging From: %d, To: %d, Name: %s.\n", pOBInfo->nDragFrom, pOBInfo->nDragTo, pOBInfo->lpszText);
 		break;
@@ -275,9 +273,9 @@ LRESULT CMainFrame::OnOutbarNotify(WPARAM wParam, LPARAM lParam)
 	case OBN_XT_ITEMHOVER:
 		TRACE2( "Hovering Item: %d, Name: %s.\n", pOBInfo->nIndex, pOBInfo->lpszText);
 		break;
-		
+
 	case OBN_XT_DELETEITEM:
-		
+
 /*		if (!m_bDestroy && AfxMessageBox(_T("Are you sure you want to remove this folder shortcut?"),
 			MB_ICONWARNING|MB_YESNO) == IDNO)
 		{
@@ -286,7 +284,7 @@ LRESULT CMainFrame::OnOutbarNotify(WPARAM wParam, LPARAM lParam)
 		}
 		TRACE2( "Item deleted: %d, Name: %s.\n", pOBInfo->nIndex, pOBInfo->lpszText);
 */		break;
-		
+
 	case OBN_XT_DELETEFOLDER:
 /*		if (!m_bDestroy && AfxMessageBox(_T("Are you sure you want to remove the specified folder?"),
 			MB_ICONWARNING|MB_YESNO) == IDNO)
@@ -331,12 +329,11 @@ void CMainFrame::Dump(CDumpContext& dc) const
 // CMainFrame message handlers
 BOOL CMainFrame::ShowOutLookBar()
 {
-	BeginCreateOutlookBar = true;
 	CCreateContext pContext;
 	pContext.m_pCurrentDoc = GetActiveDocument();
 	pContext.m_pNewViewClass = RUNTIME_CLASS(CDemoView);
-	CurActiveView = 0;
-	if (!bCreateSplitter)
+	m_CurActiveView = 0;
+	if (!m_bCreateSplitter)
 	{
 		if(pOldView == NULL)
 		{
@@ -390,19 +387,18 @@ BOOL CMainFrame::ShowOutLookBar()
 	m_wndSplitter->RecalcLayout();
 	RecalcLayout();
 	pOldView->ShowWindow(SW_HIDE);
-	if(bCreateNewView)
+	if(m_bCreateNewView)
 	{
-		delete pNewActiveView;
-		bCreateNewView = false;
+		delete m_pNewActiveView;
+		m_bCreateNewView = false;
 	}
 //	pOldView->SetDlgCtrlID(0);
 	m_wndSplitter->RecalcLayout();
 	RecalcLayout();
 	m_wndSplitter->ShowWindow(SW_SHOW);
 	// Add items to the outlook bar.
-	mPreSelFolder=-1;mPreSelItem=-1;
+	m_PreSelFolder=-1;m_PreSelItem=-1;
 	InitializeOutlookBar();
-	BeginCreateOutlookBar = false;
 
 	return TRUE;
 }
@@ -422,7 +418,7 @@ void CMainFrame::InitializeOutlookBar()
 	CString tempStr;
 	int iFolder; // index of the added folder
 
-	if(!bCreateSplitter)
+	if(!m_bCreateSplitter)
 	{
 		m_ImageSmall.Create (16, 16, ILC_COLOR16|ILC_MASK, 2, 1);
 		m_ImageLarge.Create (32, 32, ILC_COLOR16|ILC_MASK, 2, 1);
@@ -499,16 +495,16 @@ void CMainFrame::InitializeOutlookBar()
 	m_wndSplitter->SetColumnInfo( 1, r.Width()/5, 0 );
 //	m_wndSplitter1.SetSplitterStyle(XT_SPLIT_NOFULLDRAG);
 	m_wndSplitter->RecalcLayout();
-	bCreateSplitter = true;
+	m_bCreateSplitter = true;
 }
 
-void CMainFrame::OnDestroy() 
+void CMainFrame::OnDestroy()
 {
 	m_bDestroy = true;
 	CFrameWnd::OnDestroy();
 }
 
-void CMainFrame::Serialize(CArchive& ar) 
+void CMainFrame::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())
 	{	// storing code
@@ -518,7 +514,7 @@ void CMainFrame::Serialize(CArchive& ar)
 	}
 }
 
-void CMainFrame::OnFileClose1() 
+void CMainFrame::OnFileClose1()
 {
 	// TODO: Add your command handler code here
 	CCreateContext context;
@@ -527,23 +523,23 @@ void CMainFrame::OnFileClose1()
 	if(!pOldView)
 		return;
 
-//	if(CurActiveView == 0)
+//	if(m_CurActiveView == 0)
 //		return;
 	if(!mPzkIni.IniFileOpened)
 		return;
 
-	if (CurActiveView != 0)
+	if (m_CurActiveView != 0)
 	{
 		CView *pView = (CView*)m_wndSplitter->GetPane(0,1);
 		BOOL bclose;
-		bclose = SendSaveMsg(pView,CurActiveView);
+		bclose = SendSaveMsg(pView,m_CurActiveView);
 		if( bclose != TRUE)
 			return;
 	}
 	if(!mPzkIni.CloseFile())
 		return;
 
-	CurActiveView = 0;
+	m_CurActiveView = 0;
 //	pOldView->ShowWindow(SW_SHOW);
 	m_wndSplitter->ShowWindow(SW_HIDE);
 
@@ -552,20 +548,20 @@ void CMainFrame::OnFileClose1()
 	AfxGetMainWnd()->SetWindowText(TitleName);
 	RecalcLayout();
 
-//	if(bCreateNewView)
-//		pNewActiveView->DestroyWindow();
-	pNewActiveView = (CView*)new CDemoView;
+//	if(m_bCreateNewView)
+//		m_pNewActiveView->DestroyWindow();
+	m_pNewActiveView = (CView*)new CDemoView;
 	CRect rect;
 //	rect = CFrameWnd::rectDefault;
 	context.m_pCurrentDoc = this->GetActiveDocument();//pOldView->GetDocument();//new CDocument[1];
-	pNewActiveView->Create(NULL, NULL, 0L, rect, // and the frame
+	m_pNewActiveView->Create(NULL, NULL, 0L, rect, // and the frame
 		this, 0, &context);
-	pNewActiveView->OnInitialUpdate();
-	bCreateNewView = true;
+	m_pNewActiveView->OnInitialUpdate();
+	m_bCreateNewView = true;
 
-	SetActiveView(pNewActiveView);
-	pNewActiveView->ShowWindow(SW_SHOW);
-	SetWindowLong(pNewActiveView->m_hWnd, GWL_ID, AFX_IDW_PANE_FIRST);  // gotta have it
+	SetActiveView(m_pNewActiveView);
+	m_pNewActiveView->ShowWindow(SW_SHOW);
+	SetWindowLong(m_pNewActiveView->m_hWnd, GWL_ID, AFX_IDW_PANE_FIRST);  // gotta have it
 	RecalcLayout();
 //	pDc->SetPathName("",TRUE);
 
@@ -578,31 +574,31 @@ void CMainFrame::OnFileClose1()
 void CMainFrame::OnFileMysave()
 {
 	// TODO: Add your command handler code here
-	
+
 	if(!mPzkIni.IniFileOpened)
 	{
 		AfxMessageBox("在保存文件前请先打开文件!");
 		return;
 	}
-	
-	if (CurActiveView != 0)
+
+	if (m_CurActiveView != 0)
 	{
 		CView *pView = (CView*)m_wndSplitter->GetPane(0,1);
 		BOOL bclose;
-		bclose = SendSaveMsg(pView,CurActiveView);
+		bclose = SendSaveMsg(pView,m_CurActiveView);
 		if( bclose != TRUE)
 		{
-			SendUnSaveMsg(pView,CurActiveView);
+			SendUnSaveMsg(pView,m_CurActiveView);
 			return;
 		}
-		
+
 	}
 
 	CDocument *pDc = pOldView->GetDocument();
 	CString CurPathName = pDc->GetPathName();
 	if(mPzkIni.GetFileName() == "")
 		pDc->DeleteContents();
-		
+
 	if(!mPzkIni.SaveToIni())
 		return;
 	if(pOldView != NULL)
@@ -619,7 +615,7 @@ void CMainFrame::OnFileMysave()
 
 void CMainFrame::OnFileMysaveAs()
 {
-	
+
 	// TODO: Add your command handler code here
 	if(!mPzkIni.IniFileOpened)
 	{
@@ -640,7 +636,7 @@ void CMainFrame::OnFileMysaveAs()
 		if (i == IDNO)
 			return;
 	}
-	
+
 	if(pOldView != NULL)
 	{
 		CDocument *pDc = pOldView->GetDocument();
@@ -651,18 +647,18 @@ void CMainFrame::OnFileMysaveAs()
 	mPzkIni.SaveToIni(lpszPathName);
 }
 
-void CMainFrame::OnFileNew() 
+void CMainFrame::OnFileNew()
 {
 	// TODO: Add your command handler code here
 #ifndef __SUPERMODE
 	return;
 #endif
 
-	if (CurActiveView != 0)
+	if (m_CurActiveView != 0)
 	{
 		CView *pView = (CView*)m_wndSplitter->GetPane(0,1);
 		BOOL bclose;
-		bclose = SendSaveMsg(pView,CurActiveView);
+		bclose = SendSaveMsg(pView,m_CurActiveView);
 		if( bclose != TRUE)
 			return;
 
@@ -683,12 +679,12 @@ void CMainFrame::OnFileNew()
 		SetWindowText(TitleName + "新建配置文件");
 	}
 	if (!ShowOutLookBar())
-		msgbox("显示OutLookBar失败!");	
+		msgbox("显示OutLookBar失败!");
 }
 
-void CMainFrame::OnFileOpen() 
+void CMainFrame::OnFileOpen()
 {
-	
+
 	// TODO: Add your command handler code here
 	CString filter;
 
@@ -705,7 +701,7 @@ void CMainFrame::OnFileOpen()
 	byd_ZeroI = false;
 	byd_Voltage = false;
 	byd_Current = false;
-	
+
 	CString lpszPathName = dlg.GetPathName();
 	CFileFind findfile;
 	if(!findfile.FindFile(lpszPathName))
@@ -723,11 +719,11 @@ void CMainFrame::OnFileOpen()
 	}
 //	OnOpenDocument((LPCTSTR)lpszPathName);
 	//CView *pView = GetActiveView();
-	if (CurActiveView != 0)
+	if (m_CurActiveView != 0)
 	{
 		CView *pView = (CView*)m_wndSplitter->GetPane(0,1);
 		BOOL bclose;
-		bclose = SendSaveMsg(pView,CurActiveView);
+		bclose = SendSaveMsg(pView,m_CurActiveView);
 		if( bclose != TRUE)
 			return;
 	}
@@ -784,11 +780,11 @@ void CMainFrame::OpenUploadFile(int FileType)
 	}
 	if(!findfile.FindFile(lpszPathName))
 		return;
-	if (CurActiveView != 0)
+	if (m_CurActiveView != 0)
 	{
 		CView *pView = (CView*)m_wndSplitter->GetPane(0,1);
 		BOOL bclose;
-		bclose = SendSaveMsg(pView,CurActiveView);
+		bclose = SendSaveMsg(pView,m_CurActiveView);
 		if( bclose != TRUE)
 			return;
 
@@ -893,21 +889,21 @@ BOOL CMainFrame::SendUnSaveMsg(CView *pView,int mDlgCtrlId)
 	return TRUE;
 }
 
-BOOL CMainFrame::DestroyWindow() 
+BOOL CMainFrame::DestroyWindow()
 {
 	// TODO: Add your specialized code here and/or call the base class
 
 	return CFrameWnd::DestroyWindow();
 }
 
-void CMainFrame::OnClose() 
+void CMainFrame::OnClose()
 {
 	// TODO: Add your message handler code here and/or call default
-	if (CurActiveView != 0)
+	if (m_CurActiveView != 0)
 	{
 		CView *pView = (CView*)m_wndSplitter->GetPane(0,1);
 		BOOL bclose;
-		bclose = SendSaveMsg(pView,CurActiveView);
+		bclose = SendSaveMsg(pView,m_CurActiveView);
 		if( bclose != TRUE)
 		return;
 	}
@@ -931,7 +927,7 @@ LRESULT CMainFrame::OnSetWinText(WPARAM wParam, LPARAM lParam)
 
 extern UINT UploadFile(LPVOID para);
 
-void CMainFrame::OnUplaod() 
+void CMainFrame::OnUplaod()
 {
 	// TODO: Add your command handler code here
 	CString dstFileName;
@@ -997,13 +993,13 @@ void CMainFrame::OnUplaod()
 		arrStr.Add("/mnt/");
 	}
 	AfxBeginThread(UploadFile, &arrStr);
-	
+
 	UpLoadDlg.DoModal(FileType);
 }
 
 extern UINT DownloadFile(LPVOID para);
 
-void CMainFrame::OnDownlaod() 
+void CMainFrame::OnDownlaod()
 {
 	// TODO: Add your command handler code here
 	CString filter;
@@ -1014,7 +1010,7 @@ void CMainFrame::OnDownlaod()
 
 	CString tempFileName;
 	char tempPath[256];
-	
+
 	/*
 	if(!theApp.m_uFtp)
 	{
@@ -1039,7 +1035,7 @@ void CMainFrame::OnDownlaod()
 //		if(GetFloderPath(lpszPathName, &lpszFolderName) != TRUE)
 		//	return;
 		//lpszFileName = dlg.GetFileName();
-		
+
 		/*if((lpszPathName.Compare(tempFileName) != 0) &&
 			!CopyFile(lpszPathName, tempFileName, FALSE))	//FALSE means:if newfile exist, overwrite it
 		{
@@ -1082,13 +1078,13 @@ void CMainFrame::OnDownlaod()
 		}
 		//	AfxMessageBox(tempFileName);
 		//CString ss;
-		if (CurActiveView != 0)
+		if (m_CurActiveView != 0)
 		{
 			CView *pView = (CView*)m_wndSplitter->GetPane(0,1);
 			BOOL bclose;
-			//ss.Format("%d",CurActiveView);
+			//ss.Format("%d",m_CurActiveView);
 			//AfxMessageBox(ss);
-			bclose = SendSaveMsg(pView,CurActiveView);
+			bclose = SendSaveMsg(pView,m_CurActiveView);
 
 			if(!bclose)
 				return;
@@ -1106,7 +1102,7 @@ void CMainFrame::OnDownlaod()
 	{
 		arrStr.Add("/opt/");
 	}
-	else 
+	else
 	{
 		arrStr.Add("/mnt/");
 	}
@@ -1133,7 +1129,7 @@ void CMainFrame::OnDownlaod()
 	DownLoadDlg.DoModal();
 }
 
-void CMainFrame::OnUpdateFileNew(CCmdUI* pCmdUI) 
+void CMainFrame::OnUpdateFileNew(CCmdUI* pCmdUI)
 {
 	// TODO: Add your command update UI handler code here
 #ifndef __SUPERMODE
@@ -1145,8 +1141,8 @@ void CMainFrame::OnUpdateFileNew(CCmdUI* pCmdUI)
 
 void CMainFrame::CreateNewView()
 {
-//	pNewActiveView = (CView*)new CDemoView;
-	bCreateNewView = false;
+//	m_pNewActiveView = (CView*)new CDemoView;
+	m_bCreateNewView = false;
 	return;
 	RECT rect;
 	rect.left = 0;
@@ -1154,11 +1150,11 @@ void CMainFrame::CreateNewView()
 
 	CCreateContext context;
 	context.m_pCurrentDoc = this->GetActiveDocument();//pOldView->GetDocument();//new CDocument[1];
-	pNewActiveView->Create(NULL, NULL, 0L, rect, // and the frame
+	m_pNewActiveView->Create(NULL, NULL, 0L, rect, // and the frame
 		this, 0, &context);
 }
 
-void CMainFrame::OnDownfile() 
+void CMainFrame::OnDownfile()
 {
 	// TODO: Add your command handler code here
 	CString filter;
@@ -1195,7 +1191,7 @@ void CMainFrame::OnConnect()
 
 void CMainFrame::OnShutdown()
 {
-	
+
 	if(SocketInterf.Socket[0])
 	{
 		_close(SocketInterf.Socket[0]);
@@ -1208,10 +1204,10 @@ void CMainFrame::OnShutdown()
 		SocketInterf.Socket[1] = 0;
 	}
 
-	LoginIn = false;	
+	LoginIn = false;
 }
 
-void CMainFrame::OnResetMk() 
+void CMainFrame::OnResetMk()
 {
 	// TODO: Add your command handler code here
 	CallReset();

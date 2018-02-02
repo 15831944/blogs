@@ -1,3 +1,14 @@
+# 应用程序框架 Application Framework
+
+1. C Runtimes 函数库
+2. Windows API, 开发 SDK 程序, 实现为 C 函数, 需要包含 Windows.h 头文件
+1. MFC, Microsoft Foundation Class, 开发 MFC 程序, 实现为 C++ 类库和以 afx 开头的全局 C 函数
+2. OWL, Object Window Library, C++
+3. ATL, Active Template Library, C++
+4. WPF, Windows Presentation Foundation, C#, 属于 .NET Framework 3.0
+
+1. SDK 的 C 函数的第一个参数往往是句柄, 在 MFC 中则变成调用方法的对象
+
 # Win32 平台程序基础
 
 | Type        | entry   | format | 特点                                      |
@@ -11,7 +22,7 @@
 2. exe (Portable Executable)
 3. DOS 以外都属于 Win32 程序，可以在 Windows 下的 DOS Box 或 IDE 中编译
 4. dumpbin 工具可以观察 PE 格式文件
-5. SDK 指 C 函数, 需要包含 Windows.h 头文件, MFC 是 C++ 类库和以 afx 开头的全局 C 函数, SDK 的 C 函数的第一个参数往往是句柄, 在 MFC 中则变成调用方法的对象
+5. 程序执行: 加载器 -> C Startup Code -> WinMain
 
 # Windows SDK 程序开发流程
 
@@ -21,7 +32,7 @@
 | Image Editor  | .bmp .ico .cur | binary    |
 | Font Editor   | .fon           | binary    |
 
-.rc 脚本文件用于描述上述资源文件
+1. \.rc 脚本文件用于描述上述资源文件
 
 | 编译器/链接器 | 文件类型                     | 组成                    |
 | ----------- | --------------------------- | ---------------------- |
@@ -29,11 +40,24 @@
 | RC Compiler | .rc, .h -> .res             | UI(user Interface) 资源 |
 | Linker      | .obj .res .def .lib -> .exe | 可执行程序               |
 
-.def 模块定义文件记录模块名称, 程序段和数据段的内存特性, 堆和栈的大小, CALLBACK 函数名称等
+1. \.def 模块定义文件记录模块名称, 程序段和数据段的内存特性, 堆和栈的大小, CALLBACK 函数名称等
 
-# 函数库
+rc 文件描述的资源类型
 
-## C Runtimes
+| resource type | 说明 |
+| ------------- | ---- |
+| ICON          | 图标 |
+| MENU          | 菜单(静态) |
+| DIALOGEX      | 对话框 |
+| CURSOR        | 光标 |
+| BITMAP        | 位图 |
+| FONT          | 字体 |
+| ACCELERATORS  | 快捷键 |
+| STRING        | 字符串 |
+| VERSIONINFO   | 版本信息 |
+| TOOLBAR       | 工具栏 |
+
+# C Runtimes 函数库
 
 | C Runtimes | 说明 |
 | ---------- | ----- |
@@ -49,7 +73,7 @@
 | Debug Multithreaded (static)                     | libcmtd.lib | -MTd |
 | Debug Multithreaded DLL (dynamic import library) | msvcrtd.lib | -MDd |
 
-## Windows API
+# Windows API
 
 动态链接函数库
 
@@ -68,7 +92,7 @@ import 函数库的作用
 | COMMDLG.DLL  | COMDLG32.LIB |
 | TOOLHELP.DLL | TH32.LIB     |
 
-前3个为 windosw 三大模块，由 WINDOWS.H 提供
+前3个为 windosw 三大模块，由 windows.h 提供
 
 # 消息为基础, 事件驱动
 
@@ -76,6 +100,7 @@ import 函数库的作用
 2. 用户模块(User Module)负责各个外围的驱动程序, User Module -> SendMessage() -> 窗口过程 Window procedure
 3. 程序调用 GetMessage API 取得一个消息，程序的生命靠其推动
 4. 窗口负责接收并处理消息, 每个窗口使用一个 窗口过程函数(window procedure) 负责处理消息
+5. 窗口过程函数是 CALLBACK 函数, 即要被系统调用, 因为程序不关心的消息要由操作系统默认处理
 
 输入的分类
 
@@ -101,54 +126,19 @@ import 函数库的作用
 | _pascall |  |
 | _cdecl   |  |
 
-# 程序执行
-
-加载器 -> C Startup Code -> WinMain
-
 # 多任务
 
 GetMessage 函数
 
-协同式多任务(强制性多任务)
-
-抢先式多任务(非强制性多任务)
-
-# 窗口函数
-
-窗口函数是 CALLBACK 函数, 即要被系统调用, 因为程序不关心的消息要由操作系统默认处理
-
-# 消息映射 Msssage Map
-
-# 对话框的运行
-
-1. modal 对话框: 令其父窗口无效，直到对话框结束
-2. modeless 对话框: 父窗口与对话框共同运行
-
-对话框模板(dialog templete)
-
-对话框函数(dialog procedure)
-
-# rc 文件描述的资源类型
-
-| resource type | 说明 |
-| ------------- | ---- |
-| ICON          | 图标 |
-| MENU          | 菜单 |
-| DIALOGEX      | 对话框 |
-| SURSOR        |  |
-| BITMAP        |  |
-| FONT          |      |
-| ACCELERATORS  | 快捷键 |
-| STRING        |  |
-| VERSIONINFO   |  |
-| TOOLBAR       |  |
+1. 协同式多任务(强制性多任务)
+2. 抢先式多任务(非强制性多任务)
 
 # 进程与线程
 
-## 核心对象 kernel object
+核心对象 kernel object
 
 | 核心对象      | 产生方法            | 用途 |
-| ------------ | ----------------- | - |
+| ------------ | ----------------- | --- |
 | event        | CreateEvent       | 线程同步 |
 | mutex        | CreateMutex       | 线程同步 |
 | semaphore    | CreateSemaphore   | 线程同步 |
@@ -163,11 +153,11 @@ GetMessage 函数
 4. 线程是 CPU 的调度单位，用来执行程序代码
 5. process 对象是一个数据结构，用来管理线程
 
-## 线程优先级 Priority
+线程优先级 Priority
 
-范围: 0(最低) - 31(最高)
+1. 范围: 0(最低) - 31(最高)
 
-### 优先级等级 Priority Class
+优先级等级 Priority Class
 
 | Class    | CreateProcess 函数       |  |
 | -------- | ----------------------- | --- |
@@ -176,7 +166,7 @@ GetMessage 函数
 | high     | HIGH_PRIORITY_CLASS     | 13 |
 | realtime | REALTIME_PRIORITY_CLASS | 24 |
 
-### 相对优先级
+相对优先级
 
 | SetThreadPriority 函数参数     | 调整幅度 |
 | ----------------------------- | --- |
@@ -187,39 +177,6 @@ GetMessage 函数
 | THREAD_PRIORITY_HIGHEST       | 2 |
 | THREAD_PRIORITY_IDLE          | realtime 等级则指定为16, 否则为1 |
 | THREAD_PRIORITY_TIME_CRITICAL | realtime 等级则指定为31, 否则为15 |
-
-
-
-# 应用程序框架 Application Framework
-
-1. MFC, Microsoft Foundation Class
-2. OWL, ObjectWindow Library
-3. ATL
-4. WPF
-
-# DC (Device context)
-
-1. 设备描述表或设备上下文, 相当于画布, 绘图环境, 要在哪里绘图, 包括: 显示器, 打印机, 存储器, 数据的索引等
-
-# GDI 对象 (Graphics Device Interface)
-
-1. GDI 是图形设备接口, 它的主要任务是负责系统与绘图程序之间的信息交换, 处理所有 Windows 程序的图形输出
-2. 不允许程序直接访问物理显示硬件(显示器, 打印机等), 通过获得与特定窗口相关联设备环境的抽象接口间接访问显示硬件, 用户无需关心具体的物理设备类型, Windows 参考设备环境的数据结构完成数据的输出
-
-有6种 GDI 对象可以用于 DC:
-
-1. Region  区域(画布)
-2. Pen     画笔
-3. Palette 调色板(颜料盒)
-4. Font    字体
-5. Brush   刷子(用来刷大面积背景色的粗画笔)
-6. Bitmap  位图
-
-接口
-
-1. SelectOBject 函数, 选择或更换画笔对象
-2. GetStockObject 函数, 获取系统提供的缺省画笔
-3. DeleteObject 函数, 清理画笔
 
 # 文件句柄 file handle
 
@@ -250,18 +207,17 @@ GetMessage 函数
 
 MFC 框架(类库)是 C++ 类库
 
-1. 对 Win32 应用程序编程接口的封装, 用一个 C++ Object 来包装一个 Windows Object, 例如: class CWnd 是一个 C++ window object, 它把 Windows window (HWND) 及相关 API 函数封装在 C++ window object 的成员函数内, C++ window object 的成员变量 m_hWnd 就是 Windows window 的窗口句柄
-2. 对应用程序概念的封装, 使用 SDK 编写 Windows 应用程序时, 总要定义窗口过程, 登记 Windows Class, 创建窗口等等. MFC 把许多类似的处理封装起来, 替程序员完成这些工作. MFC 提出了以"文档-视图"为中心的编程模式, MFC 类库封装了对该编程模式的支持. 文档是用户操作的数据对象, 视图是数据操作的窗口, 用户通过视图处理和查看数据
-3. 对 COM/OLE 特性的封装, OLE 建立在 COM 模型之上, 由于支持 OLE 的应用程序必须实现一系列的接口, 因而相当繁琐, MFC 的 OLE 类封装了 OLE API 大量复杂的工作, 这些类提供了实现 OLE 更高级的接口
-4. 对 ODBC 功能的封装, 提供 ODBC 的更高级接口的 C++ 类, 封装了 ODBC API 大量复杂的工作, 提供了一种数据库编程模式
-
-# 单文档界面(SingleDocumentInterface)
+1. 对 Win32 应用程序编程接口的封装, 用 C++ 对象包装 Windows 对象, 例如: CWnd 类(C++ 窗口对象)把 Windows 窗口句柄(HWND)及相关 API 函数封装成 m_hWnd 数据成员和一些成员函数
+2. 对应用程序概念的封装, 使用 SDK 编写 Windows 应用程序时, 总要定义窗口过程, 登记 Windows Class, 创建窗口等等. MFC 把许多类似的处理封装起来, 替程序员完成这些工作.
+3. MFC 提出了以"文档-视图"为中心的编程模式, MFC 类库封装了对该编程模式的支持. 文档是用户操作的数据对象, 视图是数据操作的窗口, 用户通过视图处理和查看数据
+4. 对 COM/OLE 特性的封装, OLE 建立在 COM 模型之上, 由于支持 OLE 的应用程序必须实现一系列的接口, 因而相当繁琐, MFC 的 OLE 类封装了 OLE API 大量复杂的工作, 这些类提供了实现 OLE 更高级的接口
+5. 对 ODBC 功能的封装, 提供 ODBC 的更高级接口的 C++ 类, 封装了 ODBC API 大量复杂的工作, 提供了一种数据库编程模式
 
 # 参考
 
 书籍
 
-1. 深入浅出.MFC
+1. 深入浅出MFC
 
 教程
 

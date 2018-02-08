@@ -13,7 +13,7 @@ static char address[MAX_ADDRESSES][ADDR_LENGTH];
 static char   phone[MAX_ADDRESSES][PHONE_LENGTH];
 
 static int find_entry (char const *name_to_find)
-{ 
+{
     int entry;
 
     for (entry = 0; entry < MAX_ADDRESSES; entry++)

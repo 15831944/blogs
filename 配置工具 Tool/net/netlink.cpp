@@ -21,7 +21,6 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
-// Cnetlink dialog
 void InitSocket();
 bool LoginIn;
 extern CStringArray IpArr;
@@ -56,10 +55,10 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // Cnetlink message handlers
 
-void Cnetlink::OnOK() 
+void Cnetlink::OnOK()
 {
 	// TODO: Add extra validation here
-	
+
 	CString dstIp;
 	int i;
 	LoginIn = false;
@@ -92,15 +91,15 @@ void Cnetlink::OnOK()
 
 	CreateALink(1, dstIp);
 
-	
-	
+
+
 	CDialog::OnOK();
 }
 
-void Cnetlink::OnCancel() 
+void Cnetlink::OnCancel()
 {
 	// TODO: Add extra cleanup here
-	
+
 	CDialog::OnCancel();
 }
 
@@ -123,14 +122,14 @@ void Cnetlink::FindNeighBor()
 	bool opt = true;
 	//设置为广播类型
 	setsockopt(s,SOL_SOCKET,SO_BROADCAST,(char FAR*)&opt,sizeof(opt));
-	
+
 	int iMode=1;//0阻塞
 	ioctlsocket(s,FIONBIO,(u_long FAR*)&iMode);
 
 	int nlen = sizeof(addrto);
 	int ret=sendto(s,smsg,strlen(smsg)+1,0,(sockaddr *)&addrto,nlen);
 	if(ret == SOCKET_ERROR)
-	{	
+	{
 		AfxMessageBox(WSAGetLastError());
 		AfxMessageBox("bad");
 	}
@@ -149,16 +148,16 @@ void Cnetlink::FindNeighBor()
 }
 
 
-void Cnetlink::OnButton1() 
+void Cnetlink::OnButton1()
 {
 	// TODO: Add your control notification handler code here
 	SetCursor(LoadCursor(NULL, IDC_WAIT));
 	FindNeighBor();
-	SetCursor(LoadCursor(NULL, IDC_ARROW));	
-	
+	SetCursor(LoadCursor(NULL, IDC_ARROW));
+
 }
 
-void Cnetlink::OnDblclkList1() 
+void Cnetlink::OnDblclkList1()
 {
 	// TODO: Add your control notification handler code here
 	int sel = m_List.GetCurSel();
@@ -172,17 +171,17 @@ void Cnetlink::OnDblclkList1()
 	if(FindComboItem >= 0)
 		m_Combo.SetCurSel(FindComboItem);
 	else
-	{ 
+	{
 		int SelComboItem = m_Combo.AddString(ip);
 //		IpArr.Add(ip);
 		m_Combo.SetCurSel(SelComboItem);
 	}
 }
 
-BOOL Cnetlink::OnInitDialog() 
+BOOL Cnetlink::OnInitDialog()
 {
 	CDialog::OnInitDialog();
-	
+
 //	AfxMessageBox("netlink");
 	// TODO: Add extra initialization here
 	SetCursor(LoadCursor(NULL, IDC_WAIT));
@@ -199,7 +198,7 @@ BOOL Cnetlink::OnInitDialog()
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }
 
-void Cnetlink::OnResetMk() 
+void Cnetlink::OnResetMk()
 {
 	// TODO: Add your command handler code here
 }

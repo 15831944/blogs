@@ -6,8 +6,7 @@
 #endif // _MSC_VER > 1000
 // MyTreeCtrl.h : header file
 //
-const UINT RETURN_PRESEL_ITEM  = (WM_USER+100);
-const UINT DELETE_NEW_NODE = (WM_USER+101);
+
 /////////////////////////////////////////////////////////////////////////////
 // CMyTreeCtrl window
 class CMyTreeCtrl : public CTreeCtrl

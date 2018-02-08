@@ -5,7 +5,6 @@
 #include "Demo.h"
 #include "ReadPzkIni.h"
 #include "MyFun.h"
-
 #include "MainFrm.h"
 #include "TempClass.h"
 #include "DemoView.h"
@@ -26,7 +25,6 @@
 #include "SxJzsCfgView.h"
 #include "KMGCfgView.h"
 #include "Sxyj.h"
-
 #include "NetPort.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -67,23 +65,18 @@ const unsigned short SXJZS_DLG	 = 10025;
 const unsigned short KMG_DLG	 = 10026;
 const unsigned short SXYJ_DLG    = 10027;
 
-CReadPzkIni mPzkIni;
-extern int CurProcNum;
-extern int mObjNum;
-extern int RtuNo;
-CView *pOldView = NULL;
-bool bCloseWindow = true;
-extern CDemoApp theApp;
-CUpLoadDlg UpLoadDlg;
-CDownLoadDlg DownLoadDlg;
-/////////////////////////////////////////////////////////////////////////////
-// CMainFrame
-int isisis;
+CReadPzkIni		mPzkIni;
+CView			*pOldView = NULL;
+bool			bCloseWindow = true;
+CUpLoadDlg		UpLoadDlg;
+CDownLoadDlg	DownLoadDlg;
 
+extern CDemoApp theApp;
 extern bool LoginIn;
 extern SocketInterfStru SocketInterf;
 extern bool CallReset();
-
+/////////////////////////////////////////////////////////////////////////////
+// CMainFrame
 
 IMPLEMENT_DYNCREATE(CMainFrame, CFrameWnd)
 
@@ -105,7 +98,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_COMMAND(ID_SHUTDOWN, OnShutdown)
 	ON_COMMAND(ID_RESET_MK, OnResetMk)
 	//}}AFX_MSG_MAP
-	ON_MESSAGE(XTWM_OUTBAR_NOTIFY, OnOutbarNotify)
+	ON_MESSAGE(XTWM_OUTBAR_NOTIFY, OnOutbarNotify)		// 用户自定义消息
 	ON_MESSAGE(SET_FRAME_WINTEXT, OnSetWinText)
 END_MESSAGE_MAP()
 
@@ -125,13 +118,13 @@ CMainFrame::CMainFrame()
 	// TODO: add member initialization code here
 	m_CurActiveView = 0;
 	m_bCreateSplitter = false;
-	m_PreSelFolder=-1;
-	m_PreSelItem=-1;
+	m_PreSelFolder = -1;
+	m_PreSelItem = -1;
 }
 
 CMainFrame::~CMainFrame()
 {
-	if(m_bCreateSplitter)
+	if (m_bCreateSplitter)
 	{
 		// delete m_pImageList;
 		delete m_wndSplitter;
@@ -143,6 +136,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
+	/* 创建工具栏 */
 	if (!m_wndToolBar.CreateEx(this, TBSTYLE_FLAT, WS_CHILD | WS_VISIBLE | CBRS_TOP
 		| CBRS_GRIPPER | CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC) ||
 		!m_wndToolBar.LoadToolBar(IDR_MAINFRAME))
@@ -151,6 +145,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;      // fail to create
 	}
 
+	/* 创建状态栏 */
 	if (!m_wndStatusBar.Create(this) ||
 		!m_wndStatusBar.SetIndicators(indicators,
 		  sizeof(indicators)/sizeof(UINT)))
@@ -175,6 +170,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	return 0;
 }
 
+// 用户自定义消息, 输出窗口?
 LRESULT CMainFrame::OnOutbarNotify(WPARAM wParam, LPARAM lParam)
 {
 	int nBarAction = (int)wParam;
@@ -403,12 +399,6 @@ BOOL CMainFrame::ShowOutLookBar()
 	return TRUE;
 }
 
-static UINT nIcons[] =
-{
-    IDI_ICON1, IDI_ICON3,  IDI_ICON4,  IDI_ICON7,
-    IDI_ICON8, IDI_ICON2,  IDI_ICON11, IDI_ICON6,
-    IDI_ICON9, IDI_ICON10, IDI_ICON5
-};
 
 void CMainFrame::InitializeOutlookBar()
 {
@@ -417,6 +407,11 @@ void CMainFrame::InitializeOutlookBar()
 //	HTREEITEM hTreeItem;
 	CString tempStr;
 	int iFolder; // index of the added folder
+	static UINT nIcons[] = {
+	    IDI_ICON1, IDI_ICON3,  IDI_ICON4,  IDI_ICON7,
+	    IDI_ICON8, IDI_ICON2,  IDI_ICON11, IDI_ICON6,
+	    IDI_ICON9, IDI_ICON10, IDI_ICON5
+	};
 
 	if(!m_bCreateSplitter)
 	{

@@ -36,5 +36,5 @@ int main()
 	pc1 = new (buffer) JustTesting;		// place object in buffer
 	pc2 = new JustTesting("Heap1", 20);	// place object on heap
 
-	cout << 
+	cout <<
 }

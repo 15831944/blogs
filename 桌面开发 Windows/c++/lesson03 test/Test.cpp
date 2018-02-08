@@ -21,7 +21,7 @@
 BEGIN_MESSAGE_MAP(CTestApp, CWinApp)
 	ON_COMMAND(ID_APP_ABOUT, &CTestApp::OnAppAbout)
 	// 基于文件的标准文档命令
-	ON_COMMAND(ID_FILE_NEW, &CWinApp::OnFileNew)
+	ON_COMMAND(ID_FILE_NEW, &CWinApp::OnFileNew)	// // 文件菜单, 打开命令 wanghuiyong
 	ON_COMMAND(ID_FILE_OPEN, &CWinApp::OnFileOpen)
 END_MESSAGE_MAP()
 

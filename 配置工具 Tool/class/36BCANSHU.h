@@ -6,7 +6,6 @@
 #endif // _MSC_VER > 1000
 // 36BCANSHU.h : header file
 //
-extern int isisis;
 /////////////////////////////////////////////////////////////////////////////
 // C36BCANSHU form view
 #ifndef __AFXEXT_H__

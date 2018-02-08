@@ -370,7 +370,7 @@ void RelLinuxCmd(LinuxCmdStru *LinuxCmd)
 **********************************************************/
 BOOL Dispose(unsigned char *msg,int len)
 {
-//	CString( LPCTSTR lpch, int nLength ); 
+//	CString( LPCTSTR lpch, int nLength );
 	LinuxCmdStru LinuxCmd;
 	CString CmdName;
 	bool returnVal = false;
@@ -678,7 +678,7 @@ BOOL TransToLinuxCmd(unsigned char *msg,
 
 	CString str;
 	int Pos,StartPos,SpacePos,EnterPos;
-	memcpy(str.GetBuffer(len),msg,len); 
+	memcpy(str.GetBuffer(len),msg,len);
 	str.ReleaseBuffer();
 	//初始化LinuxCmd
 	LinuxCmd->Entity = NULL;
@@ -833,7 +833,7 @@ BOOL TransToLinuxCmd(unsigned char *msg,
 		StartPos = str.Find("[",Pos+1);        //找完了一个[...]<...>..
 		                                       //继续找
 	} //全找完了
-//	pTempEntity->next = NULL;		
+//	pTempEntity->next = NULL;
 
 	return TRUE;
 }
@@ -1135,7 +1135,7 @@ UINT DownloadFile(LPVOID para)
 	CFileStatus fs;
 	char formatStr[32];
 	int blocknum;
-TRACE("\nnow download files\n");	
+TRACE("\nnow download files\n");
 	CMainFrame *pFrame = (CMainFrame*)theApp.m_pMainWnd;//(CMainFrame*)(AfxGetApp()->GetMainWnd());
 	int CopyPersent = 0;
 
@@ -1214,8 +1214,8 @@ TRACE("block num is %d\n", blocknum);
 	NewAEntity(&pEntity,"modifytime");
 	NewAEntityObj(&pEntityObj);
 	file.GetStatus(fs);
-	sprintf(formatStr,	 "%d-%d-%d %d:%d:%d", 
-						 fs.m_mtime.GetYear(), fs.m_mtime.GetMonth(), 
+	sprintf(formatStr,	 "%d-%d-%d %d:%d:%d",
+						 fs.m_mtime.GetYear(), fs.m_mtime.GetMonth(),
 						 fs.m_mtime.GetDay(), fs.m_mtime.GetHour(),
 						 fs.m_mtime.GetMinute(), fs.m_mtime.GetSecond() );
 	strcpy(pEntityObj->EntityObj, formatStr);
@@ -1275,7 +1275,7 @@ TRACE("block num is %d\n", blocknum);
 		}
 
 		CopyPersent = (i * 100) / blocknum;
-		
+
 		if(bAlowDownLoad)
 			DownLoadDlg.SendMessage(DOWNLOAD_PROGRESS, CopyPersent, NULL);
 	}
@@ -1373,9 +1373,8 @@ UINT UploadFile(LPVOID para)
 		UpLoadDlg.PostMessage(WM_CLOSE, NULL, NULL);
 		return FALSE;
 	}
-	
+
 	bAlowUpLoad = true;
-//	pFrame->SendMessage(FILE_COPY_PROGRESS, CopyPersent,(LPARAM)"file");
 	while((mUpFile.CurBlock < mUpFile.BlockNum) && bAlowUpLoad)
 	{
 		strcpy(LinuxCmd.CmdName, "getfile");

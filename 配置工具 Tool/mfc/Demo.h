@@ -24,9 +24,16 @@ extern BOOL SendToUsb(LinuxCmdStru1 *LinuxCmd, int wait_flag,bool bNeedRequest);
 extern BOOL SendToUsb(char *buf, int len, int wait_flag, bool bNeedRequest);
 
 /* 用户自定义消息 */
-const UINT FILE_COPY_PROGRESS   = WM_USER + 2;	//文件拷贝过程
-const UINT UPLOAD_PROGRESS		= WM_USER + 3;	//上载进度
-const UINT DOWNLOAD_PROGRESS	= WM_USER + 4;	//下载进度
+const UINT SHOW_TEXT_AT_TOOLBAR = (WM_USER + 1);	// 根据分割窗口调节工具栏分割线位置
+const UINT FILE_COPY_PROGRESS   = (WM_USER + 2);	// 文件拷贝过程动态改变状态栏上进度条进度
+const UINT UPLOAD_PROGRESS		= (WM_USER + 3);	// 上载进度
+const UINT DOWNLOAD_PROGRESS	= (WM_USER + 4);	// 下载进度
+const UINT RETURN_PRESEL_ITEM   = (WM_USER + 100);
+const UINT DELETE_NEW_NODE      = (WM_USER + 101);
+const UINT SAVE_FILE            = (WM_USER + 102);
+const UINT UNSAVE_FILE          = (WM_USER + 103);
+const UINT SET_FRAME_WINTEXT    = (WM_USER + 104);
+const UINT XTWM_OUTBAR_NOTIFY   = (WM_USER + 1018);
 
 /* 全局变量声明 */
 extern CString		TitleName;

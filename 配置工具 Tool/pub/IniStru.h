@@ -291,11 +291,6 @@ typedef struct {
 	CtrlTimeStru	CtrlTime;
 } PlcStru;
 
-const UINT SAVE_FILE = (WM_USER+102);
-const UINT UNSAVE_FILE = (WM_USER+103);
-
-const UINT SET_FRAME_WINTEXT = (WM_USER + 104);
-
 typedef struct {
 	bool PlcEnable;		//PLC逻辑控制开关
 	int UnitTotal;		//=10;	#总控制单元数

@@ -4,13 +4,6 @@ typedef struct mysize_
 	long cy;
 }MySize;
 
-/***********定义系统消息************************/
-const UINT SHOW_TEXT_AT_TOOLBAR = WM_USER + 1; //根据分割窗口调节
-										//工具栏分割线位置
-const UINT FILE_COPY_PROGRESS   = WM_USER + 2; //文件拷贝过程
-										//动态改变状态栏上进度条进度
-const UINT ON_MYFOLDER_COMBO    = WM_USER + 3; //根据工具栏上地址
-										//栏里的路径改变当前目录
 /************************************************/
 
 /************ list项类型 ************************/

@@ -1,0 +1,1466 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Demo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Demo.ico"
+IDR_DEMOTYPE            ICON    DISCARDABLE     "res\\DemoDoc.ico"
+IDI_ICON1               ICON    DISCARDABLE     "res\\icon9.ico"
+IDI_ICON2               ICON    DISCARDABLE     "res\\icon10.ico"
+IDI_ICON3               ICON    DISCARDABLE     "res\\icon11.ico"
+IDI_ICON12              ICON    DISCARDABLE     "res\\icon2.ico"
+IDI_ICON5               ICON    DISCARDABLE     "res\\icon3.ico"
+IDI_ICON6               ICON    DISCARDABLE     "res\\icon4.ico"
+IDI_ICON7               ICON    DISCARDABLE     "res\\icon5.ico"
+IDI_ICON8               ICON    DISCARDABLE     "res\\icon6.ico"
+IDI_ICON9               ICON    DISCARDABLE     "res\\icon7.ico"
+IDI_ICON10              ICON    DISCARDABLE     "res\\icon8.ico"
+IDI_ICON11              ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_MAINICON            ICON    DISCARDABLE     "res\\CNTROUTL.ICO"
+IDI_ICON4               ICON    DISCARDABLE     "res\\Phone14.ico"
+IDI_ICON14              ICON    DISCARDABLE     "res\\Shell32 067.ico"
+IDI_UPLOAD              ICON    DISCARDABLE     "res\\ARW03UP.ICO"
+IDI_DOWNLOAD            ICON    DISCARDABLE     "res\\ARW03DN.ICO"
+IDI_KEHUI_ICON          ICON    DISCARDABLE     "res\\Kehui.ico"
+IDI_ICON15              ICON    DISCARDABLE     "res\\Shell32 226.ico"
+IDI_ICON16              ICON    DISCARDABLE     "res\\network.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_BITMAP2             BITMAP  DISCARDABLE     "res\\bitmap2.bmp"
+IDB_BITMAP3             BITMAP  DISCARDABLE     "res\\bitmap3.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_MYSAVE
+    BUTTON      ID_FILE_CLOSE1
+    SEPARATOR
+    BUTTON      ID_CONNECT
+    BUTTON      ID_SHUTDOWN
+    BUTTON      ID_RESET_MK
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_UPLOAD
+    BUTTON      ID_DOWNLAOD
+    BUTTON      ID_DOWNFILE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "保存(&S)\tCtrl+S",            ID_FILE_MYSAVE
+        MENUITEM "另存为(&A)...",               ID_FILE_MYSAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "关闭(&E)...\tCtrl+E",         ID_FILE_CLOSE1
+        MENUITEM SEPARATOR
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "撤消(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "剪切(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",            ID_EDIT_PASTE
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+    END
+    POPUP "设备(&E)"
+    BEGIN
+        MENUITEM "上载(&U)",                    ID_UPLOAD
+        MENUITEM SEPARATOR
+        MENUITEM "下载(&D)",                    ID_DOWNLAOD
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于本工具(&A)...",           ID_APP_ABOUT
+    END
+END
+
+IDR_ITEM_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "数据项编辑菜单"
+    BEGIN
+        MENUITEM "添加项",                      ID_ITEM_ADD
+        MENUITEM SEPARATOR
+        MENUITEM "删除项",                      ID_ITEM_REMOVE
+        MENUITEM SEPARATOR
+        MENUITEM "编辑项",                      ID_ITEM_EDIT
+        MENUITEM SEPARATOR
+        MENUITEM "保存",                        ID_ITEM_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "取消",                        ID_ITEM_CANCEL
+    END
+END
+
+IDR_TREE_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "haha"
+    BEGIN
+        MENUITEM "添加",                        IDC_MENU_ADDITEM
+        MENUITEM SEPARATOR
+        MENUITEM "删除",                        IDC_MENU_REMOVEITEM
+    END
+END
+
+IDR_RTU_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "heihei"
+    BEGIN
+        MENUITEM "添加",                        ID_MENUITEM32801
+        MENUITEM "删除",                        IDR_REMOVERTU
+        MENUITEM SEPARATOR
+    END
+END
+
+IDR_MENU_EDIT_300 MENU DISCARDABLE 
+BEGIN
+    POPUP "300的配置"
+    BEGIN
+        MENUITEM "添加(&A)",                    ID_300_ADD
+        MENUITEM SEPARATOR
+        MENUITEM "插入(&I)",                    ID_300_INSERT
+        MENUITEM SEPARATOR
+        MENUITEM "删除(&R)",                    ID_300_REMOVE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROITEMDLG DIALOG DISCARDABLE  0, 0, 283, 173
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "保护对象配置"
+FONT 11, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,65,134,48,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,147,133,48,14
+    LTEXT           "对象名称:",IDC_STATIC,12,18,35,8
+    EDITTEXT        IDC_EDIT1,72,15,64,12,ES_AUTOHSCROLL
+    LTEXT           "投退:",IDC_STATIC,160,17,20,8
+    COMBOBOX        IDC_COMBO1,192,15,77,43,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "定值:",IDC_STATIC,21,46,24,8
+    LTEXT           "时间:",IDC_STATIC,161,45,20,8
+    GROUPBOX        "",IDC_STATIC,6,3,270,119
+    LTEXT           "定值单位:",IDC_STATIC,18,72,42,8
+    EDITTEXT        IDC_EDIT2,73,69,62,16,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT23,73,42,64,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,192,42,71,17,ES_AUTOHSCROLL
+END
+
+IDD_OBJITEMDLG DIALOG DISCARDABLE  0, 0, 235, 161
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "故障对象配置"
+FONT 11, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,37,119,48,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,116,119,50,14
+    LTEXT           "线路号:",IDC_STATIC,122,77,28,14,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT1,151,74,39,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_VISIBLE | WS_DISABLED
+    LTEXT           "投退:",IDC_STATIC,23,29,22,8
+    COMBOBOX        IDC_COMBO1,47,25,53,43,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "上限值:",IDC_STATIC22,126,24,28,8
+    LTEXT           "下限值:",IDC_STATIC33,16,51,28,8
+    LTEXT           "     时间:",IDC_STATIC44,111,47,44,10
+    GROUPBOX        "",IDC_STATIC,7,7,205,103
+    LTEXT           "定值单位:",IDC_STATIC55,12,77,37,8
+    EDITTEXT        IDC_EDIT4,158,20,39,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,48,49,52,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,157,46,39,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,49,74,52,14,ES_AUTOHSCROLL
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于本工具"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,21
+    LTEXT           "MK保护故障逻辑编辑工具 1.0 版",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2015",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "最新版本2016/5/28 保护配置文件改变",IDC_STATIC,39,39,
+                    182,16
+END
+
+IDD_Dlg DIALOG DISCARDABLE  0, 0, 187, 99
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,29,78,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,105,78,50,14
+    CTEXT           "欢迎使用MK保护配置编辑工具",IDC_STATIC,43,31,104,15,
+                    SS_CENTERIMAGE
+END
+
+IDD_PUBDLG DIALOG DISCARDABLE  0, 0, 187, 110
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+END
+
+IDD_PZK300_NORMAL_CFG DIALOG DISCARDABLE  0, 0, 324, 192
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,15,12,186,141
+    PUSHBUTTON      "保存",IDC_SAVE,24,162,50,14
+    EDITTEXT        IDC_EDIT1,220,17,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT2,219,42,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT3,222,69,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO1,219,102,48,48,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "取消",IDC_CANCEl,117,162,50,14
+END
+
+IDD_PZK300_PROTECT_CFG DIALOG DISCARDABLE  0, 0, 285, 181
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,18,21,114,72
+    PUSHBUTTON      "保存",IDC_SAVE,12,138,50,14
+    EDITTEXT        IDC_EDIT1,176,38,40,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT2,174,57,40,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO1,174,78,48,30,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "取消",IDC_CANCEl,126,138,50,14
+END
+
+IDD_UPLOAD DIALOG DISCARDABLE  0, 0, 245, 88
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "上载"
+FONT 8, "System"
+BEGIN
+    PUSHBUTTON      "取 消",IDCANCEL,189,34,44,13
+    PUSHBUTTON      "编辑",IDC_EDIT,98,63,50,14
+    PUSHBUTTON      "保存",IDC_SAVE,166,63,50,14
+    PUSHBUTTON      "退出",IDC_EXIT,29,63,50,14
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,
+                    21,37,158,8
+    LTEXT           "Static",IDC_EDIT1,22,20,209,8
+END
+
+IDD_DOWNLOAD DIALOG DISCARDABLE  0, 0, 231, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "下载"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "取 消",IDCANCEL,173,40,45,13
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,
+                    16,42,147,8
+    EDITTEXT        IDC_EDIT1,17,20,145,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    PUSHBUTTON      "复位终端",IDOK,173,14,45,13
+END
+
+IDD_PROTECT_VIEW DIALOGEX 0, 0, 409, 350
+STYLE WS_CHILD
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,70,23,71,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT3,70,47,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,275,47,74,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT21,82,76,49,12,ES_AUTOHSCROLL
+    CONTROL         "保护虚遥信产生使能",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,180,77,83,10
+    CONTROL         "保护信息产生使能",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,275,77,75,10
+    COMBOBOX        IDC_COMBO2,15,7,220,91,CBS_DROPDOWNLIST | NOT WS_VISIBLE | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO1,49,139,65,95,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "保存",IDC_SAVE,56,323,50,14
+    PUSHBUTTON      "取消",IDC_CANCEl,215,323,50,14,NOT WS_TABSTOP
+    LTEXT           "每条线路的保护类型数:",IDC_STATIC,180,50,79,8
+    EDITTEXT        IDC_EDIT2,231,23,118,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT5,95,130,49,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDIT6,250,151,56,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDIT7,123,147,49,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDIT8,243,134,57,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED,WS_EX_TRANSPARENT
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,18,167,329,129
+    GROUPBOX        "信息",IDC_STATIC,10,5,345,65
+    COMBOBOX        IDC_COMBO4,7,329,46,66,CBS_DROPDOWNLIST | NOT WS_VISIBLE | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "版本号:",IDC_STATIC,15,25,27,8
+    LTEXT           "创建时间:",IDC_STATIC,180,25,35,8,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    LTEXT           "总的线路数:",IDC_STATIC,14,49,42,8
+    GROUPBOX        "",IDC_STATIC,7,122,346,184
+    LTEXT           " 线路号:",IDC_STATIC,11,141,32,8
+    LTEXT           "FTU电压接线方式:",IDC_STATIC,16,101,62,11
+    COMBOBOX        IDC_COMBO3,279,329,44,49,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "就地操作遥信号：",IDC_PROTEDIT2,186,150,60,8,NOT 
+                    WS_VISIBLE | WS_DISABLED,WS_EX_TRANSPARENT
+    CONTROL         "List2",IDC_LIST2,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,18,175,35,100
+    CONTROL         "List3",IDC_LIST3,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,90,303,37,17
+    LTEXT           "远方操作遥信号：",IDC_PROTEDIT1,24,132,60,8,NOT 
+                    WS_VISIBLE | WS_DISABLED,WS_EX_TRANSPARENT
+    LTEXT           "开关状态量:",IDC_PROTEDIT4,191,135,42,8,NOT WS_VISIBLE | 
+                    WS_DISABLED,WS_EX_TRANSPARENT
+    LTEXT           "Remote operation enable:",IDC_PROTEDIT3,18,147,97,8,NOT 
+                    WS_VISIBLE | WS_DISABLED,WS_EX_TRANSPARENT
+    CONTROL         "List4",IDC_LIST4,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,171,303,28,14
+    CONTROL         "List5",IDC_LIST5,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,201,303,31,16
+    EDITTEXT        IDC_EDIT9,130,329,48,14,ES_RIGHT | ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    CONTROL         "List5",IDC_LIST6,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,234,303,31,16
+    CONTROL         "List5",IDC_LIST7,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,265,303,31,16
+    CONTROL         "List5",IDC_LIST8,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,294,303,31,16
+    CONTROL         "List5",IDC_LIST9,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,357,13,31,16
+    CONTROL         "List5",IDC_LIST10,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,358,29,31,16
+    CONTROL         "List5",IDC_LIST11,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,44,31,16
+    CONTROL         "List5",IDC_LIST12,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,361,59,31,16
+    CONTROL         "List5",IDC_LIST13,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,360,74,31,16
+    CONTROL         "List5",IDC_LIST14,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,360,86,31,16
+    CONTROL         "List5",IDC_LIST15,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,104,31,16
+    CONTROL         "List5",IDC_LIST16,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,122,31,16
+    CONTROL         "List5",IDC_LIST17,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,138,31,16
+    CONTROL         "List5",IDC_LIST18,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,155,31,16
+    CONTROL         "List5",IDC_LIST19,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,361,170,31,16
+    CONTROL         "List5",IDC_LIST20,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,361,183,31,16
+    CONTROL         "List5",IDC_LIST21,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,199,31,16
+    CONTROL         "List5",IDC_LIST22,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,213,31,16
+    CONTROL         "List5",IDC_LIST23,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,228,31,16
+    CONTROL         "List5",IDC_LIST24,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,243,31,16
+    CONTROL         "List5",IDC_LIST25,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,361,258,31,16
+    CONTROL         "List5",IDC_LIST26,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,272,31,16
+    CONTROL         "List5",IDC_LIST27,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,288,31,16
+    CONTROL         "List5",IDC_LIST28,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,302,31,16
+    CONTROL         "List5",IDC_LIST29,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,358,317,31,16
+    CONTROL         "List5",IDC_LIST30,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,360,327,31,16
+    CONTROL         "List5",IDC_LIST31,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,334,321,31,16
+    CONTROL         "List5",IDC_LIST32,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,332,307,31,16
+    LTEXT           "保护固有动作时间：",IDC_PROTEDIT5,14,79,67,8
+    LTEXT           "ms",IDC_STATIC,133,76,11,9
+    CONTROL         "联络简化接线",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,83,
+                    101,57,10
+    CONTROL         "联络完全接线",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,
+                    162,100,55,11
+    CONTROL         "典型接线",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,238,
+                    100,42,12
+END
+
+IDD_FAULT_VIEW DIALOG DISCARDABLE  0, 0, 575, 350
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT1,58,20,80,12,ES_AUTOHSCROLL | ES_READONLY
+    COMBOBOX        IDC_COMBO1,58,44,187,95,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "故障检测虚遥信分相上报使能",IDC_CHECK2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,68,113,10
+    CONTROL         "越限告警SOE使能",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,68,73,10
+    CONTROL         "故障报文上报使能",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,253,67,75,10
+    EDITTEXT        IDC_EDIT3,49,91,80,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "保存",IDC_SAVE,56,329,50,14
+    PUSHBUTTON      "取消",IDC_CANCEl,214,329,50,14,NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT2,231,23,118,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT4,328,97,74,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT5,134,127,49,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT6,292,122,56,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT7,118,146,49,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT8,291,146,57,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO2,64,167,284,91,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,18,116,329,198
+    GROUPBOX        "信息",IDC_STATIC,8,6,345,55
+    COMBOBOX        IDC_COMBO4,7,329,46,66,CBS_DROPDOWNLIST | NOT WS_VISIBLE | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "版本号:",IDC_STATIC,16,22,27,8
+    LTEXT           "创建时间:",IDC_STATIC,180,25,35,8,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    LTEXT           "总的线路数:",IDC_STATIC,360,122,42,8,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    LTEXT           "每条线路的保护类型数:",IDC_STATIC,323,122,79,8,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    GROUPBOX        "",IDC_STATIC,9,82,346,242
+    LTEXT           "故障类型：",IDC_STATIC,17,45,38,8
+    LTEXT           "线路数",IDC_PROTEDIT1,18,93,23,8
+    LTEXT           "就地操作遥信号",IDC_PROTEDIT2,192,124,53,8,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    LTEXT           "Remote operation enable:",IDC_PROTEDIT3,19,146,97,8,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    LTEXT           "Line_Switch_Local:",IDC_PROTEDIT4,192,146,73,8,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    LTEXT           "接线方式:",IDC_STATIC,19,169,35,8,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO3,279,329,44,49,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List2",IDC_LIST2,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,90,312,35,15
+    CONTROL         "List3",IDC_LIST3,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,133,314,37,17
+    CONTROL         "List4",IDC_LIST4,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,171,315,28,14
+    CONTROL         "List5",IDC_LIST5,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,203,314,31,16
+    EDITTEXT        IDC_EDIT9,130,330,48,14,ES_RIGHT | ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    CONTROL         "List5",IDC_LIST6,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,234,314,31,16
+    CONTROL         "List5",IDC_LIST7,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,265,314,31,16
+    CONTROL         "List5",IDC_LIST8,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,295,313,31,16
+    CONTROL         "List5",IDC_LIST9,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,357,13,31,16
+    CONTROL         "List5",IDC_LIST10,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,358,29,31,16
+    CONTROL         "List5",IDC_LIST11,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,44,31,16
+    CONTROL         "List5",IDC_LIST12,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,361,59,31,16
+    CONTROL         "List5",IDC_LIST13,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,360,74,31,16
+    CONTROL         "List5",IDC_LIST14,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,360,86,31,16
+    CONTROL         "List5",IDC_LIST15,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,104,31,16
+    CONTROL         "List5",IDC_LIST16,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,122,31,16
+    CONTROL         "List5",IDC_LIST17,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,138,31,16
+    CONTROL         "List5",IDC_LIST18,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,155,31,16
+    CONTROL         "List5",IDC_LIST19,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,361,170,31,16
+    CONTROL         "List5",IDC_LIST20,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,361,183,31,16
+    CONTROL         "List5",IDC_LIST21,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,199,31,16
+    CONTROL         "List5",IDC_LIST22,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,213,31,16
+    CONTROL         "List5",IDC_LIST23,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,228,31,16
+    CONTROL         "List5",IDC_LIST24,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,362,243,31,16
+    CONTROL         "List5",IDC_LIST25,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,361,258,31,16
+    CONTROL         "List5",IDC_LIST26,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,272,31,16
+    CONTROL         "List5",IDC_LIST27,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,288,31,16
+    CONTROL         "List5",IDC_LIST28,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,359,302,31,16
+    CONTROL         "List5",IDC_LIST29,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,358,317,31,16
+    CONTROL         "List5",IDC_LIST30,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,360,327,31,16
+    CONTROL         "List5",IDC_LIST31,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,334,327,31,16
+    CONTROL         "List5",IDC_LIST32,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,335,313,31,16
+    EDITTEXT        IDC_EDIT21,118,101,49,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT22,292,101,56,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    LTEXT           "保护固有动作时间",IDC_PROTEDIT5,19,103,60,8,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    LTEXT           "远方操作遥信号",IDC_PROTEDIT6,192,103,53,8,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_EDIT10,357,3,213,313,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL
+END
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 119, 116
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+END
+
+IDD_CHOOSEFILE DIALOG DISCARDABLE  0, 0, 207, 192
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择文件"
+FONT 10, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,25,171,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,110,171,50,14
+    GROUPBOX        "请选择您要上载的文件类型",IDC_STATIC,7,105,193,45
+    COMBOBOX        IDC_COMBO1,33,126,133,63,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,34,63,133,78,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "请选择您要上载的产品\\工程型",IDC_STATIC,7,50,193,36
+    CONTROL         "标准产品",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,20,20,
+                    47,11
+    CONTROL         "工程项目",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,101,20,
+                    44,11
+END
+
+IDD_PLCCFG_VIEW DIALOG DISCARDABLE  0, 0, 384, 380
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,10,5,362,50
+    LTEXT           "总控单元数(最大32):",IDC_STATIC,129,17,73,8
+    EDITTEXT        IDC_EDIT1,208,14,40,12,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "进线数：",IDC_STATIC,21,38,31,8
+    EDITTEXT        IDC_EDIT2,63,36,40,12,ES_AUTOHSCROLL
+    LTEXT           "进线1的出线数：",IDC_STATIC,129,38,57,8
+    LTEXT           "进线2的出线数：",IDC_STATIC,267,38,57,8
+    EDITTEXT        IDC_EDIT3,192,36,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,327,36,40,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,10,60,362,70
+    LTEXT           "进线重合闸延时时间(ms):",IDC_STATIC,20,76,88,8
+    EDITTEXT        IDC_EDIT5,112,71,40,12,ES_AUTOHSCROLL
+    LTEXT           "出线重合闸延时时间(ms):",IDC_STATIC,193,76,88,8
+    EDITTEXT        IDC_EDIT6,285,71,40,12,ES_AUTOHSCROLL
+    LTEXT           "进线重构延时时间(ms):",IDC_STATIC,20,95,80,8
+    EDITTEXT        IDC_EDIT7,112,90,40,12,ES_AUTOHSCROLL
+    LTEXT           "母联备自投延时时间(ms):",IDC_STATIC,193,95,88,8
+    EDITTEXT        IDC_EDIT8,285,90,40,12,ES_AUTOHSCROLL
+    LTEXT           "t5(ms):",IDC_STATIC,20,116,29,8
+    EDITTEXT        IDC_EDIT9,112,111,40,12,ES_AUTOHSCROLL
+    LTEXT           "t6(ms):",IDC_STATIC,193,116,29,8
+    EDITTEXT        IDC_EDIT10,285,111,40,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,10,135,362,222
+    LTEXT           "投/退",IDC_STATIC,35,145,20,8
+    LTEXT           "定值(单位0.01V）",IDC_STATIC,113,145,62,8
+    LTEXT           "延时(单位:ms)",IDC_STATIC,179,145,51,8
+    CONTROL         "进线1失压保护投入",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,160,79,10
+    EDITTEXT        IDC_EDIT11,120,160,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT12,183,160,45,12,ES_AUTOHSCROLL
+    CONTROL         "进线2失压保护投入",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,180,79,10
+    EDITTEXT        IDC_EDIT13,120,179,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT14,183,179,45,12,ES_AUTOHSCROLL
+    CONTROL         "母联开关逻辑备投保护投入",IDC_CHECK3,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,25,220,105,10
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,20,237,345,115
+    PUSHBUTTON      "保存",IDC_SAVE,34,361,50,14
+    PUSHBUTTON      "取消",IDC_CANCEl,170,362,50,14
+    COMBOBOX        IDC_COMBO1,258,362,48,42,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "PLC逻辑功能投/退",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,21,17,77,10
+    CONTROL         "母联开关自动备投投入",IDC_CHECK5,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,25,200,90,10
+    EDITTEXT        IDC_EDIT15,120,198,45,12,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT16,183,198,45,12,ES_AUTOHSCROLL | WS_DISABLED
+    GROUPBOX        "开关动作时间(单位ms)",IDC_STATIC,253,146,111,66
+    LTEXT           "分闸时间",IDC_STATIC,262,171,31,8
+    LTEXT           "合闸时间",IDC_STATIC,262,190,31,8
+    EDITTEXT        IDC_EDIT17,304,169,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT18,304,188,45,12,ES_AUTOHSCROLL
+    CONTROL         "出线重合前判电压",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,267,16,75,10
+    CONTROL         "逻辑备投前判断电压",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,147,220,83,10
+    EDITTEXT        IDC_EDITBOX,323,362,40,14,ES_AUTOHSCROLL | ES_NUMBER | 
+                    NOT WS_VISIBLE
+    LTEXT           "逻辑有压(V)：",IDC_STATIC,251,221,50,8
+    EDITTEXT        IDC_EDIT20,310,218,50,12,ES_AUTOHSCROLL
+END
+
+IDD_ZJPLC_VIEW DIALOG DISCARDABLE  0, 0, 367, 324
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,10,3,336,30
+    LTEXT           "总控单元数(最大32):",IDC_STATIC,192,16,73,8
+    EDITTEXT        IDC_EDIT1,271,13,40,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,10,34,336,31
+    LTEXT           "进线重合闸延时时间(ms):",IDC_STATIC,20,47,88,8
+    EDITTEXT        IDC_EDIT2,112,45,40,12,ES_AUTOHSCROLL
+    LTEXT           "逻辑时间(ms):",IDC_STATIC,193,47,51,8
+    EDITTEXT        IDC_EDIT3,271,45,40,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,10,117,336,181
+    CONTROL         "PLC逻辑功能投/退",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,21,16,77,10
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,19,129,319,161
+    PUSHBUTTON      "保存",IDC_SAVE,88,304,50,14
+    PUSHBUTTON      "取消",IDC_CANCEl,236,304,50,14
+    COMBOBOX        IDC_COMBO1,174,305,48,42,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDITBOX,294,304,40,14,ES_AUTOHSCROLL | ES_NUMBER | 
+                    NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,10,65,336,51
+    CONTROL         "主单元备自投保护投入",IDC_BZTENABLE1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,23,79,90,10
+    CONTROL         "进线备自投保护投入",IDC_BZTENABLE2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,194,78,83,10
+    LTEXT           "逻辑有压(单位:V)",IDC_STATIC,20,98,69,8
+    EDITTEXT        IDC_NORMALVOL,112,96,48,13,ES_AUTOHSCROLL
+END
+
+IDD_36BCANSHU_VIEW DIALOG DISCARDABLE  0, 0, 421, 386
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "版本号:",IDC_STATIC,21,26,32,8
+    LTEXT           "创建时间:",IDC_STATIC,171,26,48,8
+    LTEXT           "无流门槛值(mA):",IDC_STATIC,21,105,73,8
+    LTEXT           "无压门槛值(V):",IDC_STATIC,171,105,74,8
+    LTEXT           "开关模式:",IDC_STATIC,171,81,63,8
+    EDITTEXT        IDC_EDIT1,98,22,62,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,247,22,141,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,98,101,62,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,247,101,141,12,ES_AUTOHSCROLL
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,36,238,340,116
+    COMBOBOX        IDC_COMBO4,264,334,54,66,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "保存",IDC_SAVE,135,362,59,17
+    LTEXT           "出线重合闸时间(s)",IDC_STATIC,228,192,85,8
+    LTEXT           "母联备自投时间(s)",IDC_STATIC,228,216,85,8
+    EDITTEXT        IDC_EDIT10,329,188,59,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT11,329,210,59,14,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "取消",IDC_CANCEl,217,362,59,17,NOT WS_TABSTOP
+    COMBOBOX        IDC_COMBO1,247,77,141,72,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "PLC逻辑关系投/退",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,21,79,76,10
+    LTEXT           "进线1的出线数：",IDC_STATIC,21,54,69,9
+    LTEXT           "进线2的出线数：",IDC_STATIC,171,54,67,9
+    EDITTEXT        IDC_EDIT3,98,52,62,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,247,52,141,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,329,142,59,14,ES_AUTOHSCROLL
+    CONTROL         "I段进线1重合闸使能",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,143,83,10
+    CONTROL         "I段进线2重合闸使能",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,116,143,83,10
+    CONTROL         "II段进线1重合闸使能",IDC_CHECK4,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,25,169,87,10
+    CONTROL         "II段进线2重合闸使能",IDC_CHECK5,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,116,169,87,10
+    CONTROL         "母联备自投使能",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,25,195,87,10
+    LTEXT           "进线1重合闸时间(s)",IDC_STATIC,228,144,86,8
+    LTEXT           "进线2重合闸时间(s)",IDC_STATIC,228,168,82,8
+    EDITTEXT        IDC_EDIT8,329,166,59,14,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,14,7,393,118
+    GROUPBOX        "",IDC_STATIC,14,133,192,99
+    GROUPBOX        "",IDC_STATIC,207,133,200,99
+END
+
+IDD_CREATE_NET_LINK DIALOG DISCARDABLE  0, 0, 242, 196
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "连接"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "连接",IDOK,35,172,50,14
+    PUSHBUTTON      "取消",IDCANCEL,143,172,50,14
+    LISTBOX         IDC_LIST1,13,27,212,73,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO1,13,147,212,56,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "临近的终端",IDC_STATIC,8,11,225,92
+    GROUPBOX        "目标机",IDC_STATIC,8,134,224,32
+    PUSHBUTTON      "刷新",IDC_BUTTON1,180,114,41,16
+END
+
+IDD_SXJZS_VIEW DIALOG DISCARDABLE  0, 0, 722, 424
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,36,178,385,92
+    COMBOBOX        IDC_COMBO2,491,101,86,56,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "线路类型",IDC_STATIC,274,117,39,11
+    CONTROL         "判分支线逻辑",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,189,310,60,10
+    CONTROL         "重合闸投入",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,41,311,53,10
+    CONTROL         "判电压",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,122,311,41,10
+    CONTROL         "判开关位置",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,189,336,53,10
+    GROUPBOX        "逻辑参数配置",IDC_STATIC_TISHI,27,292,403,63
+    LTEXT           "线路号",IDC_STATIC,33,117,28,11
+    COMBOBOX        IDC_COMBO3,63,114,53,104,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO4,474,276,112,67,CBS_DROPDOWN | CBS_SORT | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "线路SBO号",IDC_STATIC,220,156,38,11
+    EDITTEXT        IDC_EDIT1,264,154,45,16,ES_AUTOHSCROLL
+    LTEXT           "线路开关号",IDC_STATIC,323,156,42,11
+    EDITTEXT        IDC_EDIT2,370,152,46,16,ES_AUTOHSCROLL
+    GROUPBOX        "保护参数配置",IDC_STATIC,26,140,404,140
+    COMBOBOX        IDC_COMBO5,40,384,49,64,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT3,319,384,48,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "版本号",IDC_STATIC,479,156,27,11,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT4,508,153,59,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_VISIBLE
+    LTEXT           "总线路数",IDC_STATIC,31,28,39,12
+    EDITTEXT        IDC_EDIT5,76,26,60,14,ES_AUTOHSCROLL
+    LTEXT           "线路保护类型数",IDC_STATIC,466,25,59,12,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT7,530,20,50,13,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_VISIBLE
+    CONTROL         "保护虚遥信产生使能",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,170,81,87,10
+    CONTROL         "保护信息产生使能",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,266,81,75,10
+    GROUPBOX        "信息",IDC_STATIC,16,7,427,62
+    PUSHBUTTON      "保存",IDC_BUTTON1,125,385,50,14
+    PUSHBUTTON      "取消",IDC_BUTTON2,215,384,47,15
+    GROUPBOX        "",IDC_STATIC,16,101,427,266
+    CONTROL         "PLC投入",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,465,39,68,19
+    LTEXT           "保护动作固有时间",IDC_STATIC,19,81,71,15
+    EDITTEXT        IDC_EDIT6,89,78,50,16,ES_AUTOHSCROLL
+    LTEXT           "毫秒",IDC_STATIC,145,81,19,12
+    EDITTEXT        IDC_EDIT8,353,309,42,12,ES_AUTOHSCROLL
+    LTEXT           "主线功率为负重合闸时间",IDC_STATIC_EDIT8,263,311,90,8
+    LTEXT           "秒",IDC_STATIC_EDIT81,400,310,14,12
+    LTEXT           "主线功率为正重合闸时间",IDC_STATIC_EDIT9,263,335,88,8
+    EDITTEXT        IDC_EDIT9,353,332,44,13,ES_AUTOHSCROLL
+    LTEXT           "秒",IDC_STATIC,400,334,8,14
+    CONTROL         "（线路1-12为左侧，线路13-24为右侧）",IDC_STATIC,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOTIFY | NOT WS_VISIBLE | 
+                    WS_GROUP,479,67,156,13
+    COMBOBOX        IDC_COMBO1,385,383,58,61,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT10,449,7,255,358,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+    CONTROL         "断路器",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,41,157,
+                    38,10
+    CONTROL         "负荷开关",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,91,157,
+                    45,10
+    CONTROL         "组合电器",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,148,
+                    157,45,10
+    CONTROL         "主线",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,320,116,31,
+                    10
+    CONTROL         "分支线",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON,367,115,
+                    38,10
+    EDITTEXT        IDC_EDIT11,169,115,85,15,ES_AUTOHSCROLL
+    LTEXT           "线路名",IDC_STATIC,136,117,32,13
+    EDITTEXT        IDC_EDIT12,33,333,48,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "单母线",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,31,52,38,10
+    CONTROL         "双母线",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,83,52,38,10
+    LTEXT           "左侧线路数",IDC_STATIC_LeftDTUNum,152,52,44,8
+    EDITTEXT        IDC_EDIT13,203,49,42,12,ES_AUTOHSCROLL
+END
+
+IDD_KMG_VIEW DIALOG DISCARDABLE  0, 0, 460, 448
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "断路器",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,80,199,51,10
+    CONTROL         "负荷开关",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,141,
+                    199,45,10
+    CONTROL         "组合电器(负荷开关+熔断器)",IDC_RADIO3,"Button",
+                    BS_AUTORADIOBUTTON,202,199,118,10
+    CONTROL         "联络简化接线",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,99,159,61,15
+    CONTROL         "联络完全接线",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON,
+                    177,162,60,10
+    CONTROL         "典型接线",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,251,
+                    162,45,10
+    GROUPBOX        "开关类型设定",IDC_STATIC,13,180,412,39
+    CTEXT           "版本号：",IDC_STATIC,19,33,37,10
+    EDITTEXT        IDC_EDIT1,57,30,52,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "故障类型：",IDC_STATIC,22,61,40,14
+    COMBOBOX        IDC_COMBO1,65,59,166,110,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "信息",IDC_STATIC,17,15,408,66
+    LTEXT           "线路保护类型数：",IDC_STATIC,173,31,60,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT2,244,28,50,13,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_VISIBLE
+    CONTROL         "保护虚遥信使能",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,117,77,10
+    CONTROL         "保护信息上报使能",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,160,116,84,10
+    CONTROL         "越限告警虚遥信使能",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,140,94,10
+    CONTROL         "故障检测分相虚遥信使能",IDC_CHECK4,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,287,138,102,10
+    CONTROL         "故障报文上报使能",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,160,138,83,10
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,27,244,384,131
+    EDITTEXT        IDC_EDIT3,31,399,39,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO2,364,398,51,62,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "开关类型：",IDC_STATIC,22,199,50,8
+    PUSHBUTTON      "保存",IDC_BUTTON1,93,401,50,19
+    PUSHBUTTON      "取消",IDC_BUTTON2,237,400,51,20
+    GROUPBOX        "",IDC_STATIC,13,227,413,157
+    LTEXT           "线路SBO号:",IDC_STATIC,324,28,45,12,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT4,373,25,41,16,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "线路开关号:",IDC_STATIC,323,54,47,12,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT5,372,54,37,16,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "故障录波使能",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,286,117,77,10
+    LTEXT           "FTU电压接线方式：",IDC_STATIC,19,161,73,13
+    LTEXT           "保护固有动作时间：",IDC_PROTEDIT5,19,93,78,9
+    EDITTEXT        IDC_EDIT6,98,91,45,16,ES_AUTOHSCROLL
+    LTEXT           "ms",IDC_STATIC,148,92,13,11
+END
+
+IDD_SXYJ_VIEW DIALOG DISCARDABLE  0, 0, 608, 437
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST2,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,25,269,290,119
+    EDITTEXT        IDC_EDIT2,260,97,33,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO1,60,69,48,80,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "线路号",IDC_STATIC,25,71,33,11
+    LTEXT           "线路名",IDC_STATIC,130,72,32,10
+    EDITTEXT        IDC_EDIT3,163,69,97,15,ES_AUTOHSCROLL
+    LTEXT           "遥信个数",IDC_STATIC,25,101,34,13
+    EDITTEXT        IDC_EDIT4,63,98,41,12,ES_AUTOHSCROLL
+    LTEXT           "遥测个数",IDC_STATIC,24,248,41,11
+    EDITTEXT        IDC_EDIT5,69,246,38,13,ES_AUTOHSCROLL
+    LTEXT           "总线路数",IDC_STATIC,25,25,38,9
+    EDITTEXT        IDC_EDIT6,69,22,42,14,ES_AUTOHSCROLL
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,26,117,287,119
+    EDITTEXT        IDC_EDIT8,256,247,32,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    GROUPBOX        "线路设置",IDC_STATIC,17,86,306,312
+    GROUPBOX        "基本信息",IDC_STATIC,17,7,305,57
+    LTEXT           "终端名",IDC_STATIC,29,44,29,11
+    EDITTEXT        IDC_EDIT1,69,41,84,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "保存",IDC_BUTTON1,80,404,43,19
+    PUSHBUTTON      "取消",IDC_BUTTON2,185,403,49,20
+    EDITTEXT        IDC_EDIT7,330,13,260,374,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Demo Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Demo\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Demo.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Demo 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PROITEMDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_OBJITEMDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 142
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+
+    IDD_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+
+    IDD_PUBDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_PZK300_NORMAL_CFG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 317
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 185
+    END
+
+    IDD_PZK300_PROTECT_CFG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 278
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_PROTECT_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 343
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 112
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_CHOOSEFILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 185
+    END
+
+    IDD_PLCCFG_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 377
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 376
+    END
+
+    IDD_ZJPLC_VIEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 360
+        BOTTOMMARGIN, 317
+    END
+
+    IDD_36BCANSHU_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 414
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 379
+    END
+
+    IDD_CREATE_NET_LINK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_SXJZS_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 713
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 420
+    END
+
+    IDD_KMG_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 452
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 442
+    END
+
+    IDD_SXYJ_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 601
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 432
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROITEMDLG DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 4, 0
+0x6579, 0x0073, 
+    IDC_COMBO1, 0x403, 3, 0
+0x6f6e, "\000" 
+    0
+END
+
+IDD_OBJITEMDLG DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 4, 0
+0x6579, 0x0073, 
+    IDC_COMBO1, 0x403, 3, 0
+0x6f6e, "\000" 
+    0
+END
+
+IDD_PZK300_PROTECT_CFG DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 5, 0
+0x5254, 0x4555, "\000" 
+    IDC_COMBO1, 0x403, 6, 0
+0x4146, 0x534c, 0x0045, 
+    0
+END
+
+IDD_FAULT_VIEW DLGINIT
+BEGIN
+    IDC_COMBO3, 0x403, 5, 0
+0xb6cd, 0xebc8, "\000" 
+    IDC_COMBO3, 0x403, 5, 0
+0xcbcd, 0xf6b3, "\000" 
+    0
+END
+
+IDD_PROTECT_VIEW DLGINIT
+BEGIN
+    IDC_COMBO3, 0x403, 5, 0
+0xb6cd, 0xebc8, "\000" 
+    IDC_COMBO3, 0x403, 5, 0
+0xe6b8, 0xafbe, "\000" 
+    IDC_COMBO3, 0x403, 5, 0
+0xcbcd, 0xf6b3, "\000" 
+    0
+END
+
+IDD_PLCCFG_VIEW DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 5, 0
+0xb6cd, 0xebc8, "\000" 
+    IDC_COMBO1, 0x403, 5, 0
+0xcbcd, 0xf6b3, "\000" 
+    0
+END
+
+IDD_ZJPLC_VIEW DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 5, 0
+0xb6cd, 0xebc8, "\000" 
+    IDC_COMBO1, 0x403, 5, 0
+0xcbcd, 0xf6b3, "\000" 
+    0
+END
+
+IDD_36BCANSHU_VIEW DLGINIT
+BEGIN
+    IDC_COMBO4, 0x403, 5, 0
+0xb6cd, 0xebc8, "\000" 
+    IDC_COMBO4, 0x403, 5, 0
+0xcbcd, 0xf6b3, "\000" 
+    0
+END
+
+IDD_SXJZS_VIEW DLGINIT
+BEGIN
+    IDC_COMBO5, 0x403, 5, 0
+0xafb6, 0xf7d7, "\000" 
+    IDC_COMBO5, 0x403, 5, 0
+0xe6b8, 0xafbe, "\000" 
+    IDC_COMBO5, 0x403, 5, 0
+0xcbcd, 0xf6b3, "\000" 
+    IDC_COMBO1, 0x403, 5, 0
+0xe6b8, 0xafbe, "\000" 
+    IDC_COMBO1, 0x403, 5, 0
+0xcbcd, 0xf6b3, "\000" 
+    0
+END
+
+IDD_CHOOSEFILE DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 13, 0
+0xa3b1, 0xa4bb, 0xe4c5, 0xc3d6, 0xc4ce, 0xfebc, "\000" 
+    IDC_COMBO2, 0x403, 16, 0
+0x5a50, 0x2d4b, 0x3635, 0xb142, 0xd7ea, 0xb0bc, 0xb1e6, 0x00be, 
+    0
+END
+
+IDD_KMG_VIEW DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 1, 0
+"\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Demo\n\nDemo\n\n\nDemo.Document\nDemo Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "保护工具"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+    ID_FILE_PRINT           "打印\n打印"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    ID_FILE_MRU_FILE16      "打开该文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MYSAVE          "保存\n保存"
+    ID_UPLOAD               "上载\n上载"
+    ID_DOWNLAOD             "下载\n下载"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_CLOSE1          "关闭\n关闭"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_DOWNFILE             "下载任意文件\n下载任意文件"
+    ID_CONNECT              "连接\n连接"
+    ID_SHUTDOWN             "断开连接\n断开连接"
+    32805                   "复位终端\n复位终端"
+END
+
+#endif    // Chinese (中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\Demo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

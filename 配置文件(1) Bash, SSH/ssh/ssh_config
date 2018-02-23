@@ -1,0 +1,79 @@
+
+# This is the ssh client system-wide configuration file.  See
+# ssh_config(5) for more information.  This file provides defaults for
+# users, and the values can be changed in per-user configuration files
+# or on the command line.
+
+# Configuration data is parsed as follows:
+# 配置文件解析顺序，即生效的优先级
+
+#  1. command line options
+#  2. user-specific file
+#  3. system-wide file
+
+# Any configuration value is only changed the first time it is set.
+# Thus, host-specific definitions should be at the beginning of the
+# configuration file, and defaults at the end.
+# 首次设置有效，因此，指定的配置放前面，默认配置放后面
+
+# Site-wide defaults for some commonly used options.  For a comprehensive
+# list of available options, their meanings and defaults, please see the
+# ssh_config(5) man page.
+
+Host *
+#   使用的计算机范围，通配符“*”表示全部
+#   ForwardAgent no
+#   设置连接是否经过验证代理（如果存在）转发给远程计算机
+#   ForwardX11 no
+#   设置X11连接是否被自动重定向到安全的通道和显示集
+#   ForwardX11Trusted yes
+#   是否允许转发X11会话
+
+#   RhostsRSAAuthentication no
+#   设置是否使用RSA进行rhosts的安全验证
+#   RSAAuthentication yes
+#   设置是否使用RSA进行安全验证
+#   PasswordAuthentication yes
+#   设置是否需要口令验证
+#   HostbasedAuthentication no
+#   GSSAPIAuthentication no
+#   GSSAPIDelegateCredentials no
+#   GSSAPIKeyExchange no
+#   GSSAPITrustDNS no
+#   BatchMode no
+#   如果为yes，则交互输入口令时的提示（passphrase/password的提示）信息将被禁止
+#   CheckHostIP yes
+#   设置SSH是否查看连接到服务器的主机的IP地址以防止DNS欺骗。建议设置为yes
+#   AddressFamily any
+#   ConnectTimeout 0
+#   StrictHostKeyChecking ask
+#   如果设置成yes，SSH就不会自动把计算机的密钥加入$HOME/.ssh/known_hosts文件，
+#   并且一旦计算机的密匙发生了变化，就拒绝连接
+#   IdentityFile ~/.ssh/identity
+#   IdentityFile ~/.ssh/id_rsa
+#   RSA安全验证文件的位置
+#   IdentityFile ~/.ssh/id_dsa
+#   DSA安全验证文件的位置
+#   IdentityFile ~/.ssh/id_ecdsa
+#   IdentityFile ~/.ssh/id_ed25519
+#   Port 22
+#   服务器端口
+#   Protocol 2
+#   使用的SSH协议
+#   Cipher 3des
+#   设置加密方式
+#   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-cbc,3des-cbc
+#   MACs hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160
+#   EscapeChar ~
+#   设置Escape（转义）字符
+#   Tunnel no
+#   TunnelDevice any:any
+#   PermitLocalCommand no
+#   VisualHostKey no
+#   ProxyCommand ssh -q -W %h:%p gateway.example.com
+#   RekeyLimit 1G 1h
+    SendEnv LANG LC_*
+#   局部环境变量
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no

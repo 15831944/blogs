@@ -1,0 +1,127 @@
+# Package generated configuration file
+# See the sshd_config(5) manpage for details
+
+# What ports, IPs and protocols we listen for
+Port 22
+# sshd 的监听端口号，默认为22
+# Use these options to restrict which interfaces/protocols sshd will bind to
+#ListenAddress ::
+#ListenAddress 0.0.0.0
+# 设置sshd服务绑定的IP地址，0.0.0.0表示侦听所有地址
+Protocol 2
+# 默认只使用2.*版本的SSH协议
+# HostKeys for protocol version 2
+HostKey /etc/ssh/ssh_host_rsa_key
+# SSH2版本的RSA密钥存放位置
+HostKey /etc/ssh/ssh_host_dsa_key
+# SSH2版本的DSA密钥存放位置
+HostKey /etc/ssh/ssh_host_ecdsa_key
+# SSH2版本的ECDSA密钥存放位置
+HostKey /etc/ssh/ssh_host_ed25519_key
+#Privilege Separation is turned on for security
+UsePrivilegeSeparation yes
+
+# Lifetime and size of ephemeral version 1 server key
+KeyRegenerationInterval 3600
+# 密钥每隔1小时生成一次
+ServerKeyBits 1024
+# SSH服务器密钥的位数
+
+# Logging
+SyslogFacility AUTH
+# 设置sshd发送到syslog所使用的日志类型
+LogLevel INFO
+# syslog日志级别
+
+# Authentication:
+LoginGraceTime 120
+# 设置如果用户不能成功登录，sshd将会在这个配置参数指定的时间过后断开连接（单位为秒）
+PermitRootLogin prohibit-password
+#  如果为yes则允许root用户使用ssh登录，为no则表示不允许root进行ssh登录
+StrictModes yes
+# 设置sshd在接受登录请求前是否检查用户的主目录以及rhosts文件的权限和所有者等信息。
+# 防止目录和文件设成任何人都有写权限
+
+RSAAuthentication yes
+# 是否允许RSA验证
+PubkeyAuthentication yes
+# 是否允许公钥验证
+#AuthorizedKeysFile	%h/.ssh/authorized_keys
+# 公钥文件存放的位置(默认屏蔽?)
+
+# Don't read the user's ~/.rhosts and ~/.shosts files
+IgnoreRhosts yes
+# 验证时是否使用'~/.rhosts'和'~/.shosts'文件
+
+# For this to work you will also need host keys in /etc/ssh_known_hosts
+RhostsRSAAuthentication no
+# 设置是否允许用rhosts或/etc/hosts.equiv加上RSA进行安全验证
+
+# similar for protocol version 2
+HostbasedAuthentication no
+# Uncomment if you don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
+#IgnoreUserKnownHosts yes
+# 设置sshd在进行RhostsRSAAuthentication安全验证时是否信任用户的'~/.ssh/known_hosts'文件
+
+# To enable empty passwords, change to yes (NOT RECOMMENDED)
+PermitEmptyPasswords no
+# 设置是否允许用空口令登录
+
+# Change to yes to enable challenge-response passwords (beware issues with
+# some PAM modules and threads)
+ChallengeResponseAuthentication no
+# 设置是否允许使用提示/应答式认证。sshd支持login.conf文件中定义的所有认证类型
+
+# Change to no to disable tunnelled clear text passwords
+#PasswordAuthentication yes
+# 设置是否需要口令验证，默认为yes
+
+# Kerberos options
+# Kerneros验证选项
+#KerberosAuthentication no
+#KerberosGetAFSToken no
+#KerberosOrLocalPasswd yes
+#KerberosTicketCleanup yes
+
+# GSSAPI options
+# GSSAPI 验证选项
+#GSSAPIAuthentication no
+#GSSAPICleanupCredentials yes
+# 清除验证信息
+
+X11Forwarding yes
+# 设置sshd是否允许X11转发，默认为允许
+X11DisplayOffset 10
+PrintMotd no
+# 设置sshd是否在用户登录时显示/etc/motd中的信息
+PrintLastLog yes
+# 交互式登录时是否输出用户上次登录的日期和时间
+TCPKeepAlive yes
+# TCP活动保持
+#UseLogin no
+# 指定login命令是否可用于交互式登录会话
+
+#MaxStartups 10:30:60
+#Banner /etc/issue.net
+# 设置保存banner信息的文件位置，用户登录后会显示该banner信息
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+# 指定客户端发送的那些环境变量能后复制到当前会话的运行环境
+# （客户端需要设置其配置文件ssh_config中的SendEnv参数）
+
+Subsystem sftp /usr/lib/openssh/sftp-server
+# 用于配置一个外部的服务程序，如文件传输服务器sftp-server。配置参数的值应该是一个系统名与命令，
+# 能够基于客户系统的请求开始运行。sftp-server命令实现了sftp文件传输子系统。这个配置参数仅使用与SSH2
+
+# Set this to 'yes' to enable PAM authentication, account processing,
+# and session processing. If this is enabled, PAM authentication will
+# be allowed through the ChallengeResponseAuthentication and
+# PasswordAuthentication.  Depending on your PAM configuration,
+# PAM authentication via ChallengeResponseAuthentication may bypass
+# the setting of "PermitRootLogin without-password".
+# If you just want the PAM account and session checks to run without
+# PAM authentication, then enable this but set PasswordAuthentication
+# and ChallengeResponseAuthentication to 'no'.
+UsePAM yes
+# 是否启用PAM插件式认证模块，默认为yes

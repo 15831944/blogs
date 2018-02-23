@@ -1,0 +1,16 @@
+[user]
+	email = weifeng19911024@163.com
+	name = wanghuiyong
+[core]
+	editor = vim
+	quotepath = false # 设置显示中文文件名
+[color]
+	ui = true
+[alias]
+	st = status
+	co = checkout
+	cm = commit
+	br = branch
+	psm = push origin master
+	plm = pull origin master
+	lg = log --graph --pretty=fomat:'%Cred%%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'--abbrev-commit --date=relative

@@ -1,4 +1,5 @@
-/* 例 10. 读队列时阻塞
+/*
+例 10. 读队列时阻塞
 本例示范创建一个队列，由多个任务往队列中写数据，以及从队列中把数据读出。
 这个队列创建出来保存long 型数据单元。往队列中写数据的任务没有设定阻塞超时时
 间，而读队列的任务设定了超时时间。
@@ -31,7 +32,7 @@ static void vSenderTask(void *pvParameters)
 	}
 }
 
-/* 读队列任务 */
+/* 读队列任务 参数未使用 */
 static void vReceiverTask( void *pvParameters )
 {
 	long				lReceivedValue;

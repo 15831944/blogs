@@ -1,5 +1,3 @@
-# Kinetis SDK
-
 # Task
 
 OSA_TaskCreate		xTaskCreate

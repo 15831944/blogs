@@ -9,7 +9,7 @@
 # Kinetis
 
 1. Kinetis 系列属于飞思卡尔低功耗的32位微控制器/单片机, 架构基于 ARM Cortex-M 内核
-2. Kinetis 包含多个系列的MCU，它们软硬件互相兼容，集成了丰富的功能和特性，具有出类拔萃的低功耗性能和功能扩展性。
+2. Kinetis 包含多个系列的 MCU，它们软硬件互相兼容，集成了丰富的功能和特性，具有出类拔萃的低功耗性能和功能扩展性。
 
 1. Kinetis K系列/MK（Cortex-M4）
 1. Kinetis L系列/MKL（低功耗Cortex-M0+）
@@ -33,14 +33,16 @@ beyond those offered in the Kinetis KL0x MCU family
 1. MKL17 Z128 VMP4
 1. MKL17 Z256 VMP4
 1. MKL17 Z128 VLH4
-1. MKL17 Z256 VLH4
+1. MKL17 Z256 VLH4 用的是这个
 1. MKL17 Z256 CAL4R
 
 # Kinetis Design Studio
 
-Help -> Install New Software -> Add
-
 # Freescale Kinetis SDK
+
+先安装 SDK, 再将 Eclipse 添加到 KDS
+
+Help -> Install New Software -> Add -> Archive
 
 # Processor Expert
 

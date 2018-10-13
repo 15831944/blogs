@@ -18,7 +18,7 @@ PE 为特定的硬件生成设备驱动代码, 如果存在第二个相同类型
 
 # HAL
 
-1. HAL 是一个软件层, 视图将操作系统从硬件独立出来, 主要提供两段代码: CPU 和平台初始化, 设备驱动程序, 均由 PE 引擎生成, 当 LDD 和它相应的 RTOS 组件在 PE 项目中整合的时候
+1. HAL 是一个软件层, 试图将操作系统从硬件独立出来, 主要提供两段代码: CPU 和平台初始化, 设备驱动程序, 均由 PE 引擎生成, 当 LDD 和它相应的 RTOS 组件在 PE 项目中整合的时候
 
 1. LDD, Logical Device Driver Component
 2. PDD, Physical Device Driver Component

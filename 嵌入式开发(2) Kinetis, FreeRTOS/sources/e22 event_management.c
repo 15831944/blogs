@@ -6,7 +6,7 @@
 #define mainSECOND_TASK_BIT ( 1UL << 1UL )
 #define mainISR_BIT ( 1UL << 2UL )
 
-// 任务函数, 定时事件, 置位事件组的 bit0 和 bit1
+// 任务函数, 定时事件, 置位事件组中的 bit0 和 bit1
 static void vEventBitSettingTask( void *pvParameters )
 {
 	const TickType_t xDelay200ms = pdMS_TO_TICKS( 200UL ), xDontBlock = 0;
@@ -22,11 +22,12 @@ static void vEventBitSettingTask( void *pvParameters )
 	}
 }
 
-// 中断服务例程, 置位事件组的 bit2
+// 中断服务例程, 每500ms, 置位事件组中的 bit2
 static uint32_t ulEventBitSettingISR( void )
 {
 	static const char *pcString = "Bit setting ISR -\t about to set bit 2.\r\n";
 	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
 	xTimerPendFunctionCallFromISR(vPrintStringFromDaemonTask, (void *)pcString, 0, &xHigherPriorityTaskWoken);	// 发送到  RTOS daemon task 执行打印输出
 	xEventGroupSetBitsFromISR(xEventGroup, mainISR_BIT, &xHigherPriorityTaskWoken);		// 写入 timer command queue
 	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);		// 上下文切换
@@ -60,7 +61,7 @@ int main( void )
 {
 	xEventGroup = xEventGroupCreate();
 	xTaskCreate(vEventBitSettingTask, "Bit Setter", 1000, NULL, 1, NULL);
-	xTaskCreate(vEventBitReadingTask, "Bit Reader", 1000, NULL, 2, NULL);
+	xTaskCreate(vEventBitReadingTask, "Bit Reader", 1000, NULL, 2, NULL);	// the reading task will pre-empt the writing task each time the reading task’s unblock condition is met.
 	xTaskCreate(vInterruptGenerator, "Int Gen", 1000, NULL, 3, NULL);		// 用于产生软件中断
 	vPortSetInterruptHandler(mainINTERRUPT_NUMBER, ulEventBitSettingISR);	// 安装中断服务例程
 	vTaskStartScheduler();
